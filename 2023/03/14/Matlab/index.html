@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    <meta name="description" content="Hexo Theme Redefine">
+    <meta name="author" content="CGC">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png">
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2023/03/14/matlab/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="Matlab">
+    <meta property="og:description" content="Hexo Theme Redefine">
+    <meta property="og:url" content="http://example.com2023/03/14/Matlab/">
+    
+    <meta property="og:site_name" content="CGC">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Matlab">
+    <meta name="twitter:description" content="Hexo Theme Redefine">
+    <meta name="twitter:image" content="/images/favicon_cgc.svg">
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/favicon_cgc.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon_cgc.svg">
+    <meta name="theme-color" content="#005080">
+    <link rel="shortcut icon" href="/images/favicon_cgc.svg">
+    
+    <title>
+        
+            Matlab -
+        
+        CGC
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/assets/fonts.css">
+
+    
+    
+    
+    <script id="hexo-configurations">
+    let REDEFINE = window.REDEFINE || {};
+    REDEFINE.hexo_config = {"hostname":"example.com","root":"/","language":"en"};
+    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"/images/avatar_cgc.svg","favicon":"/images/favicon_cgc.svg","og_image":{"enable":false,"image_url":null},"article_img_align":"center","right_side_width":"210px","content_max_width":"1000px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title_color":{"light":"#fff","dark":"#d1d1b6"},"font_sizes":{"title":"2.8rem","subtitle":"1.5rem"},"line_height":1.2,"title":"Theme Redefine","subtitle":{"enable":true,"list":["是我还是我","不一样的花火"]},"custom_font":{"enable":false,"font_family":null,"font_url":null}},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":false,"preload":true},"code_block":{"copy":true,"style":"mac","custom_font":{"enable":false,"font_family":null,"font_url":null}},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"1.2.1","friend_links":{"columns":2},"home_article":{"date_format":"auto","category":{"enable":true,"limit":3},"tag":{"enable":true,"limit":3}},"plugins":{"aplayer":{"enable":false,"audio":[{"name":null,"artist":null,"url":null,"cover":null},{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}}};
+    REDEFINE.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+    
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="menu-wrapper">
+    
+    <div class="menu-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                CGC
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        HOME
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        ARCHIVES
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    target="_blank" rel="noopener" href="https://status.evanluo.top/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-chart-bar"></i>
+                                        
+                                        STATUS
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown" 
+                                    href="#" onClick="return false;">
+                                    
+                                        
+                                            <i class="fa-regular fa-user"></i>
+                                        
+                                        ABOUT&nbsp;<i class="fa-solid fa-chevron-down"></i>
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                    
+                                        <li>
+                                        <a href="/about">ME
+                                        </a>
+                                        </li>
+                                    
+                                        <li>
+                                        <a target="_blank" rel="noopener" href="https://github.com/CGC12123">GITHUB
+                                        </a>
+                                        </li>
+                                    
+                                        <li>
+                                        <a target="_blank" rel="noopener" href="https://CGC12123.github.io">BLOG
+                                        </a>
+                                        </li>
+                                    
+                                    </ul>
+                                
+                            </li>
+                    
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="menu-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                HOME
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                ARCHIVES
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        target="_blank" rel="noopener" href="https://status.evanluo.top/"  >
+                             
+                                
+                                    <i class="fa-regular fa-chart-bar"></i>
+                                
+                                STATUS
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="has-dropdown" 
+                        href="#" onClick="return false;">
+                            
+                                
+                                    <i class="fa-regular fa-user"></i>
+                                
+                                ABOUT&nbsp;<i class="fa-solid fa-chevron-down"></i>
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                              
+                        
+                            <li class="dropdown-item flex-center">
+                                <a class="dropdown-item" href="/about">ME</a>
+                            </li>
+                        
+                            <li class="dropdown-item flex-center">
+                                <a class="dropdown-item" target="_blank" rel="noopener" href="https://github.com/CGC12123">GITHUB</a>
+                            </li>
+                        
+                            <li class="dropdown-item flex-center">
+                                <a class="dropdown-item" target="_blank" rel="noopener" href="https://CGC12123.github.io">BLOG</a>
+                            </li>
+                        
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            
+            
+                <div class="article-title">
+                    <h1 class="article-title-regular">Matlab</h1>
+                </div>
+            
+                
+            
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/avatar_cgc.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">CGC</span>
+                            
+                                <span class="author-label">lol</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="pc">2023-03-14 21:26:05</span>
+        <span class="mobile">2023-03-14 21:26</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="pc">2023-03-14 21:26:10</span>
+            <span class="mobile">2023-03-14 21:26</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <h2 id="常用函数"><a href="#常用函数" class="headerlink" title="常用函数"></a>常用函数</h2><h3 id="三角函数"><a href="#三角函数" class="headerlink" title="三角函数"></a>三角函数</h3><div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sin</span> <span class="comment">% 正弦函数</span></span><br><span class="line"><span class="built_in">cos</span> <span class="comment">% 余弦</span></span><br><span class="line"><span class="built_in">tan</span> <span class="comment">% 正切</span></span><br><span class="line"><span class="built_in">sinh</span> <span class="comment">% 双曲正弦</span></span><br><span class="line"><span class="built_in">cosh</span> <span class="comment">% 双曲余弦</span></span><br><span class="line"><span class="built_in">tanh</span> <span class="comment">% 双曲正切</span></span><br><span class="line"><span class="built_in">asin</span> <span class="comment">% 反正弦</span></span><br><span class="line"><span class="built_in">acos</span> <span class="comment">% 反余弦</span></span><br><span class="line"><span class="built_in">atan</span> <span class="comment">% 反正切</span></span><br><span class="line"><span class="built_in">asinh</span> <span class="comment">% 反双曲正弦</span></span><br><span class="line"><span class="built_in">acosh</span> <span class="comment">% 反双曲余弦</span></span><br><span class="line"><span class="built_in">atanh</span> <span class="comment">% 反双曲正切</span></span><br></pre></td></tr></table></figure></div>
+<h3 id="指数与对数函数"><a href="#指数与对数函数" class="headerlink" title="指数与对数函数"></a>指数与对数函数</h3><div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exp</span> <span class="comment">% 指数</span></span><br><span class="line"><span class="built_in">log</span> <span class="comment">% e为底的对数</span></span><br><span class="line"><span class="built_in">log10</span> <span class="comment">% lg</span></span><br><span class="line"><span class="built_in">sqrt</span> <span class="comment">% 平方根</span></span><br></pre></td></tr></table></figure></div>
+<h3 id="与复数有关的函数"><a href="#与复数有关的函数" class="headerlink" title="与复数有关的函数"></a>与复数有关的函数</h3><div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">abs</span> <span class="comment">% 模</span></span><br><span class="line"><span class="built_in">angle</span> <span class="comment">% 幅角</span></span><br><span class="line"><span class="built_in">conj</span> <span class="comment">% 复共轭</span></span><br><span class="line"><span class="built_in">imag</span> <span class="comment">% 虚部</span></span><br><span class="line"><span class="built_in">real</span> <span class="comment">% 实部</span></span><br></pre></td></tr></table></figure></div>
+<h3 id="舍入函数与其他数值函数"><a href="#舍入函数与其他数值函数" class="headerlink" title="舍入函数与其他数值函数"></a>舍入函数与其他数值函数</h3><div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">fix</span> <span class="comment">% 向0舍入</span></span><br><span class="line"><span class="built_in">floor</span> <span class="comment">% 向负无穷舍入</span></span><br><span class="line"><span class="built_in">ceil</span> <span class="comment">% 向正无穷舍入</span></span><br><span class="line"><span class="built_in">round</span> <span class="comment">% 四舍五入</span></span><br><span class="line"><span class="built_in">rem</span>(a, b) <span class="comment">% 计算a/b余数</span></span><br></pre></td></tr></table></figure></div>
+<h3 id="有关向量的函数"><a href="#有关向量的函数" class="headerlink" title="有关向量的函数"></a>有关向量的函数</h3><div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">min</span>(x) <span class="comment">% 向量x的元素最小值</span></span><br><span class="line"><span class="built_in">max</span>(x) <span class="comment">% 向量x的元素最大值</span></span><br><span class="line"><span class="built_in">mean</span>(x) <span class="comment">% 向量x的元素平均值</span></span><br><span class="line">median(x) <span class="comment">% 向量x的元素中位数</span></span><br><span class="line">std(x) <span class="comment">% 向量x的元素标准差</span></span><br><span class="line">diff(x) <span class="comment">% 向量x的相邻元素差</span></span><br><span class="line"><span class="built_in">sort</span>(x) <span class="comment">% 对向量x进行排序</span></span><br><span class="line"><span class="built_in">length</span>(x) <span class="comment">% 向量x的元素个数</span></span><br><span class="line">norm(x) <span class="comment">% 向量x的Euclidean长度</span></span><br><span class="line">sum(x) <span class="comment">% 向量x的元素和</span></span><br><span class="line">prod(x) <span class="comment">% 向量x的元素连乘积</span></span><br><span class="line">cunsum(x) <span class="comment">% 向量x的累计元素总和</span></span><br><span class="line"><span class="built_in">dot</span>(x) <span class="comment">% 向量x的内积</span></span><br><span class="line"><span class="built_in">cross</span>(x) <span class="comment">% 向量x的外积</span></span><br><span class="line">cumprod(x) <span class="comment">% 向量x的累计元素总乘积</span></span><br></pre></td></tr></table></figure></div>
+<h3 id="关于矩阵"><a href="#关于矩阵" class="headerlink" title="关于矩阵"></a>关于矩阵</h3><h4 id="矩阵的表示"><a href="#矩阵的表示" class="headerlink" title="矩阵的表示"></a>矩阵的表示</h4><p>如</p>
+<div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>; <span class="number">2</span>, <span class="number">4</span>, <span class="number">2</span>; <span class="number">5</span>, <span class="number">3</span>, <span class="number">1</span>]</span><br></pre></td></tr></table></figure></div>
+<h4 id="矩阵转置"><a href="#矩阵转置" class="headerlink" title="矩阵转置"></a>矩阵转置</h4><p>使用<code>&#39;</code>来表示<br>如</p>
+<div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">B = A&#x27;</span><br></pre></td></tr></table></figure></div>
+<h4 id="矩阵加减"><a href="#矩阵加减" class="headerlink" title="矩阵加减"></a>矩阵加减</h4><p><code>+</code>,<code>-</code></p>
+<h4 id="矩阵乘法"><a href="#矩阵乘法" class="headerlink" title="矩阵乘法"></a>矩阵乘法</h4><p><code>*</code></p>
+<h4 id="求行列式"><a href="#求行列式" class="headerlink" title="求行列式"></a>求行列式</h4><p><code>det(A)</code></p>
+<h4 id="矩阵求逆"><a href="#矩阵求逆" class="headerlink" title="矩阵求逆"></a>矩阵求逆</h4><p><code>inv(A)</code></p>
+<h4 id="“除法”"><a href="#“除法”" class="headerlink" title="“除法”"></a>“除法”</h4><p>如<code>AX = b</code><br>可用<code>X = A \ b</code>求解<br>同时<code>X = A \ b</code>可用于解矛盾方程组</p>
+<h4 id="矩阵特征值"><a href="#矩阵特征值" class="headerlink" title="矩阵特征值"></a>矩阵特征值</h4><p><code>eig(A)</code></p>
+<h2 id="函数作图"><a href="#函数作图" class="headerlink" title="函数作图"></a>函数作图</h2><h3 id="二维平面曲线作图"><a href="#二维平面曲线作图" class="headerlink" title="二维平面曲线作图"></a>二维平面曲线作图</h3><div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">plot</span>(x, y, s) <span class="comment">% x、y为长度相同的向量，s表示线型及颜色</span></span><br></pre></td></tr></table></figure></div>
+
+<p>若作多曲线在同一图上，则用函数</p>
+<div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">plot</span>(x1, x2, s1, x2, y2, s2,.., xn, yn, sn)</span><br></pre></td></tr></table></figure></div>
+
+<p>取某一区间为<br><code>x = 0:0.1:2*pi</code> 表示取[0, 2Π] 间隔为0.1</p>
+<h3 id="多窗口作图"><a href="#多窗口作图" class="headerlink" title="多窗口作图"></a>多窗口作图</h3><p>将屏幕分为多个窗口分别作图</p>
+<div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">subplot(m, n, k) <span class="comment">% 将窗口分为m*n个，当前图在第k个</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="直方图作图"><a href="#直方图作图" class="headerlink" title="直方图作图"></a>直方图作图</h3><div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">count = hist(x) <span class="comment">% 将向量x中的元素放入等距10条形中，且返回每个条形中的元素个数</span></span><br><span class="line">count = hist(x, center) <span class="comment">% 参量x为向量，将x中元素放到m(m = length(center))个由center中元素指定的位置为中心的直方图中</span></span><br><span class="line">count = hist(x, number) <span class="comment">% 参量number为标量，用于指定条形数目</span></span><br><span class="line"></span><br><span class="line">[count, center] = hist(x) <span class="comment">% 返回向量x中包含频率计数的count与条形的位置向量center，可以用</span></span><br><span class="line">bar(center, count) <span class="comment">% 对center, count画出条形直方图 条之间有间隔</span></span><br><span class="line">hist(x) <span class="comment">% 直接对传入的x进行作图</span></span><br></pre></td></tr></table></figure></div>
+<p><code>x = normrnd(10, 5, 1000, 1)</code> 表示传入均值为10 标准差为5的正态分布曲线 产生一千行一列的数据</p>
+<h3 id="二维图形注释"><a href="#二维图形注释" class="headerlink" title="二维图形注释"></a>二维图形注释</h3><p><code>grid</code><br>功能：给图形坐标面增加分割线 但会对当前坐标轴的属性有影响</p>
+<div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">grid on <span class="comment">% 给当前坐标轴增加分隔线</span></span><br><span class="line">grid off <span class="comment">% 从当前坐标轴去掉分隔线</span></span><br><span class="line">grid <span class="comment">% 转换分割线的显示与否状态</span></span><br><span class="line">grid(axes_handle, on|off) <span class="comment">% 对指定坐标轴axes_handle更改显示分割线状态</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="空间曲线作图"><a href="#空间曲线作图" class="headerlink" title="空间曲线作图"></a>空间曲线作图</h3><h4 id="三维曲线作图"><a href="#三维曲线作图" class="headerlink" title="三维曲线作图"></a>三维曲线作图</h4><div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">plot3</span>(x, y, z, s) <span class="comment">% x、y、z为长度相同的向量，s表示线型及颜色</span></span><br></pre></td></tr></table></figure></div>
+<p>如 做空间螺旋线</p>
+<div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">t = <span class="number">0</span>:<span class="number">0.01</span>:<span class="number">8</span>*<span class="built_in">pi</span>;</span><br><span class="line">x = <span class="built_in">cos</span>(t);</span><br><span class="line">y = <span class="built_in">sin</span>(t);</span><br><span class="line">z = t;</span><br><span class="line"><span class="built_in">plot3</span>(x, y, z, <span class="string">&#x27;r&#x27;</span>);</span><br></pre></td></tr></table></figure></div>
+<h4 id="三维曲面作图"><a href="#三维曲面作图" class="headerlink" title="三维曲面作图"></a>三维曲面作图</h4><div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">mesh(x, y, z) <span class="comment">% 生成由x, y, z指定的网线面</span></span><br><span class="line">surf(x, y, z) <span class="comment">% 在矩形区域内显示三维带阴影曲面图</span></span><br></pre></td></tr></table></figure></div>
+<p>如</p>
+<div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 作z = cosx.*siny曲面图</span></span><br><span class="line">[x, y] = <span class="built_in">meshgrid</span>(<span class="number">-3</span>:<span class="number">0.1</span>:<span class="number">3</span>, <span class="number">-4</span>:<span class="number">0.1</span>:<span class="number">4</span>);</span><br><span class="line">z = <span class="built_in">cos</span>(x) .* <span class="built_in">sin</span>(y);</span><br><span class="line"></span><br><span class="line">mesh(x, y, z); <span class="comment">% 网线面</span></span><br><span class="line">xlabel(<span class="string">&#x27;x&#x27;</span>);</span><br><span class="line">ylabel(<span class="string">&#x27;y&#x27;</span>);</span><br><span class="line">zlabel(<span class="string">&#x27;z&#x27;</span>);</span><br><span class="line"></span><br><span class="line">surf(x, y, z) <span class="comment">% 带阴影曲面图</span></span><br><span class="line">xlabel(<span class="string">&#x27;x&#x27;</span>);</span><br><span class="line">ylabel(<span class="string">&#x27;y&#x27;</span>);</span><br><span class="line">zlabel(<span class="string">&#x27;z&#x27;</span>);</span><br></pre></td></tr></table></figure></div>
+
+<h3 id="基本语句"><a href="#基本语句" class="headerlink" title="基本语句"></a>基本语句</h3><h4 id="for"><a href="#for" class="headerlink" title="for"></a><code>for</code></h4><div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> x = a:d:b <span class="comment">% a为起始点 b为终止点 d为区间间隔</span></span><br><span class="line">    (command) <span class="comment">% 循环体</span></span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></div>
+<p>如</p>
+<div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">% 求100以内奇数相加和</span></span><br><span class="line"><span class="keyword">for</span> <span class="built_in">i</span> <span class="number">1</span>:<span class="number">2</span>:<span class="number">99</span></span><br><span class="line">    s = s + <span class="built_in">i</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">s <span class="comment">% 输出结果</span></span><br></pre></td></tr></table></figure></div>
+<h4 id="while"><a href="#while" class="headerlink" title="while"></a><code>while</code></h4><div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> expression</span><br><span class="line">    (command)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></div>
+<h4 id="if-else-end"><a href="#if-else-end" class="headerlink" title="if-else-end"></a><code>if-else-end</code></h4><div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> expression</span><br><span class="line">    (command)</span><br><span class="line"><span class="keyword">elseif</span> expression</span><br><span class="line">    (command)</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">    (command)</span><br><span class="line"><span class="keyword">end</span></span><br></pre></td></tr></table></figure></div>
+
+<h3 id="脚本文件与函数文件"><a href="#脚本文件与函数文件" class="headerlink" title="脚本文件与函数文件"></a>脚本文件与函数文件</h3><p>函数文件开头需为例如</p>
+<div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">z</span> = <span class="title">fun</span><span class="params">(x)</span></span></span><br></pre></td></tr></table></figure></div>
+<p>以方便脚本文件调用<br>在命令窗口输入例如</p>
+<div class="highlight-container" data-rel="Matlab"><figure class="iseeu highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">x = [<span class="number">1</span>, <span class="number">2</span>]</span><br><span class="line">z = fun(x)</span><br></pre></td></tr></table></figure></div>
+<p>即可调用</p>
+<h2 id="状态转移模型"><a href="#状态转移模型" class="headerlink" title="状态转移模型"></a>状态转移模型</h2>
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：Matlab</li>
+        <li>Post author：CGC</li>
+        <li>Create time：2023-03-14 21:26:05</li>
+        <li>
+            Post link：https://redefine.ohevan.com/2023/03/14/Matlab/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+                </div>
+            
+
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                            rel="prev"
+                            href="/2023/03/14/Lingo/"
+                            >
+                                <span class="left arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">Lingo</span>
+                                    <span class="post-nav-item">Prev posts</span>
+                                </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/2023/03/14/Machine-Learning-Sklearn/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">Machine-Learning-Sklearn</span>
+                                    <span class="post-nav-item">Next posts</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">Matlab</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="nav-text">常用函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0"><span class="nav-text">三角函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%87%E6%95%B0%E4%B8%8E%E5%AF%B9%E6%95%B0%E5%87%BD%E6%95%B0"><span class="nav-text">指数与对数函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8E%E5%A4%8D%E6%95%B0%E6%9C%89%E5%85%B3%E7%9A%84%E5%87%BD%E6%95%B0"><span class="nav-text">与复数有关的函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%88%8D%E5%85%A5%E5%87%BD%E6%95%B0%E4%B8%8E%E5%85%B6%E4%BB%96%E6%95%B0%E5%80%BC%E5%87%BD%E6%95%B0"><span class="nav-text">舍入函数与其他数值函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%89%E5%85%B3%E5%90%91%E9%87%8F%E7%9A%84%E5%87%BD%E6%95%B0"><span class="nav-text">有关向量的函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E7%9F%A9%E9%98%B5"><span class="nav-text">关于矩阵</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9A%84%E8%A1%A8%E7%A4%BA"><span class="nav-text">矩阵的表示</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E8%BD%AC%E7%BD%AE"><span class="nav-text">矩阵转置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E5%8A%A0%E5%87%8F"><span class="nav-text">矩阵加减</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95"><span class="nav-text">矩阵乘法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B1%82%E8%A1%8C%E5%88%97%E5%BC%8F"><span class="nav-text">求行列式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E6%B1%82%E9%80%86"><span class="nav-text">矩阵求逆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E2%80%9C%E9%99%A4%E6%B3%95%E2%80%9D"><span class="nav-text">“除法”</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%89%B9%E5%BE%81%E5%80%BC"><span class="nav-text">矩阵特征值</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E4%BD%9C%E5%9B%BE"><span class="nav-text">函数作图</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4%E5%B9%B3%E9%9D%A2%E6%9B%B2%E7%BA%BF%E4%BD%9C%E5%9B%BE"><span class="nav-text">二维平面曲线作图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E7%AA%97%E5%8F%A3%E4%BD%9C%E5%9B%BE"><span class="nav-text">多窗口作图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%B4%E6%96%B9%E5%9B%BE%E4%BD%9C%E5%9B%BE"><span class="nav-text">直方图作图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E7%BB%B4%E5%9B%BE%E5%BD%A2%E6%B3%A8%E9%87%8A"><span class="nav-text">二维图形注释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A9%BA%E9%97%B4%E6%9B%B2%E7%BA%BF%E4%BD%9C%E5%9B%BE"><span class="nav-text">空间曲线作图</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89%E7%BB%B4%E6%9B%B2%E7%BA%BF%E4%BD%9C%E5%9B%BE"><span class="nav-text">三维曲线作图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%89%E7%BB%B4%E6%9B%B2%E9%9D%A2%E4%BD%9C%E5%9B%BE"><span class="nav-text">三维曲面作图</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E8%AF%AD%E5%8F%A5"><span class="nav-text">基本语句</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#for"><span class="nav-text">for</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#while"><span class="nav-text">while</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#if-else-end"><span class="nav-text">if-else-end</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%84%9A%E6%9C%AC%E6%96%87%E4%BB%B6%E4%B8%8E%E5%87%BD%E6%95%B0%E6%96%87%E4%BB%B6"><span class="nav-text">脚本文件与函数文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%8A%B6%E6%80%81%E8%BD%AC%E7%A7%BB%E6%A8%A1%E5%9E%8B"><span class="nav-text">状态转移模型</span></a></li></ol>
+
+    </div>
+</div>
+            </div>
+        
+    </div>
+</div>
+
+
+                
+
+            </div>
+
+
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">CGC</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">
+                        VISITOR COUNT&nbsp;<span id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">
+                        TOTAL PAGE VIEWS&nbsp;<span id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            <span class="powered-by-container">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" href="https://hexo.io">Hexo</a></span>
+                <br> 
+            <span class="theme-version-container">THEME&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v1.2.1</a>
+        </div>
+        
+        
+        
+            <div id="start_time_div" style="display:none">
+                2022/8/17 11:45:14
+            </div>
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+        
+            <script async data-pjax>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="unfolded-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-expand-width flex-center">
+            <i class="fa-regular fa-expand"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex-center">
+                <i class="fa-regular fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="folded-tools-list">
+        <li class="right-bottom-tools tool-toggle-show flex-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/layouts/menu-shrink.js"></script>
+
+<script src="/js/tools/go-top-bottom.js"></script>
+
+<script src="/js/tools/dark-light-toggle.js"></script>
+
+
+
+
+
+    
+<script src="/js/tools/code-block.js"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/layouts/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js"></script>
+
+
+
+
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/tools/toc-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/layouts/toc.js"></script>
+
+<script src="/js/plugins/tabs.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            REDEFINE.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            REDEFINE.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            REDEFINE.refresh();
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>
