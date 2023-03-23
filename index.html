@@ -46,7 +46,7 @@
     <script id="hexo-configurations">
     let REDEFINE = window.REDEFINE || {};
     REDEFINE.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"};
-    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"/images/avatar_cgc.svg","favicon":"/images/favicon_cgc.svg","og_image":{"enable":false,"image_url":null},"article_img_align":"center","right_side_width":"210px","content_max_width":"1000px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title_color":{"light":"#fff","dark":"#d1d1b6"},"font_sizes":{"title":"2.8rem","subtitle":"1.5rem"},"line_height":1.2,"title":"Theme Redefine","subtitle":{"enable":true,"list":["是我还是我","不一样的花火"]},"custom_font":{"enable":false,"font_family":null,"font_url":null}},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_block":{"copy":true,"style":"mac","custom_font":{"enable":false,"font_family":null,"font_url":null}},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"1.2.1","friend_links":{"columns":2},"home_article":{"date_format":"auto","category":{"enable":true,"limit":3},"tag":{"enable":true,"limit":3}},"plugins":{"aplayer":{"enable":false,"audio":[{"name":null,"artist":null,"url":null,"cover":null},{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}}};
+    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"/images/avatar_cgc.svg","favicon":"/images/favicon_cgc.svg","og_image":{"enable":false,"image_url":null},"article_img_align":"center","right_side_width":"210px","content_max_width":"1000px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title_color":{"light":"#fff","dark":"#d1d1b6"},"font_sizes":{"title":"2.8rem","subtitle":"1.5rem"},"line_height":1.2,"title":null,"subtitle":{"enable":true,"list":["是我还是我","不一样的花火"]},"custom_font":{"enable":false,"font_family":null,"font_url":null}},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_block":{"copy":true,"style":"mac","custom_font":{"enable":false,"font_family":null,"font_url":null}},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"1.2.1","friend_links":{"columns":2},"home_article":{"date_format":"auto","category":{"enable":true,"limit":3},"tag":{"enable":true,"limit":3}},"plugins":{"aplayer":{"enable":false,"audio":[{"name":null,"artist":null,"url":null,"cover":null},{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}}};
     REDEFINE.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
   </script>
     
@@ -90,7 +90,7 @@
         <div class="first-screen-container flex-center">
     <div class="content flex-center">
         <div class="description fade-in-down-animation" >
-          Theme Redefine 
+           
           
             <p><i id="subtitle"></i></p>
           
@@ -187,12 +187,10 @@
                             <li class="menu-item">
                                 <!-- Menu -->
                                 <a class="" 
-                                    target="_blank" rel="noopener" href="https://status.evanluo.top/"  >
+                                    href="/tags"  >
                                     
                                         
-                                            <i class="fa-regular fa-chart-bar"></i>
-                                        
-                                        STATUS
+                                        TAGS
                                     
                                 </a>
                                 <!-- Submenu -->
@@ -202,35 +200,30 @@
                         
                             <li class="menu-item">
                                 <!-- Menu -->
-                                <a class="has-dropdown" 
-                                    href="#" onClick="return false;">
+                                <a class="" 
+                                    href="/categories"  >
                                     
                                         
-                                            <i class="fa-regular fa-user"></i>
-                                        
-                                        ABOUT&nbsp;<i class="fa-solid fa-chevron-down"></i>
+                                        CATEGORIES
                                     
                                 </a>
                                 <!-- Submenu -->
                                 
-                                    <ul class="sub-menu">
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/about"  >
                                     
-                                        <li>
-                                        <a href="/about">ME
-                                        </a>
-                                        </li>
+                                        
+                                            <i class="fa-regular fa-user"></i>
+                                        
+                                        ABOUT
                                     
-                                        <li>
-                                        <a target="_blank" rel="noopener" href="https://github.com/CGC12123">GITHUB
-                                        </a>
-                                        </li>
-                                    
-                                        <li>
-                                        <a target="_blank" rel="noopener" href="https://CGC12123.github.io">BLOG
-                                        </a>
-                                        </li>
-                                    
-                                    </ul>
+                                </a>
+                                <!-- Submenu -->
                                 
                             </li>
                     
@@ -290,12 +283,10 @@
                 
                     <li class="drawer-menu-item flex-center">
                         <a class="" 
-                        target="_blank" rel="noopener" href="https://status.evanluo.top/"  >
+                        href="/tags"  >
                              
                                 
-                                    <i class="fa-regular fa-chart-bar"></i>
-                                
-                                STATUS
+                                TAGS
                             
                         </a>
                     </li>
@@ -304,31 +295,30 @@
             
                 
                     <li class="drawer-menu-item flex-center">
-                        <a class="has-dropdown" 
-                        href="#" onClick="return false;">
-                            
+                        <a class="" 
+                        href="/categories"  >
+                             
                                 
-                                    <i class="fa-regular fa-user"></i>
-                                
-                                ABOUT&nbsp;<i class="fa-solid fa-chevron-down"></i>
+                                CATEGORIES
                             
                         </a>
                     </li>
                     <!-- Submenu -->
-                              
-                        
-                            <li class="dropdown-item flex-center">
-                                <a class="dropdown-item" href="/about">ME</a>
-                            </li>
-                        
-                            <li class="dropdown-item flex-center">
-                                <a class="dropdown-item" target="_blank" rel="noopener" href="https://github.com/CGC12123">GITHUB</a>
-                            </li>
-                        
-                            <li class="dropdown-item flex-center">
-                                <a class="dropdown-item" target="_blank" rel="noopener" href="https://CGC12123.github.io">BLOG</a>
-                            </li>
-                        
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/about"  >
+                             
+                                
+                                    <i class="fa-regular fa-user"></i>
+                                
+                                ABOUT
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
                     
             
 
@@ -352,6 +342,8 @@
         
             <li class="home-article-item">
 
+                
+                    <i class="fa-solid fa-thumbtack fa-thumbtack top-icon"></i>
                 
 
                 
@@ -418,6 +410,217 @@
             <li class="home-article-item">
 
                 
+                    <i class="fa-solid fa-thumbtack fa-thumbtack top-icon"></i>
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/03/14/Deep-Learning-Pytorch/">
+                        Deep-Learning-Pytorch
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        有关深度学习及Pytorch基础知识
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Mar 14 2023 21:29:53 GMT+0800">
+                
+                    2023-03-14
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">计算机视觉</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/Pytorch/">Pytorch</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2023/03/14/Deep-Learning-Pytorch/">Read more<span class="seo-reader-text">Deep-Learning-Pytorch</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+                    <i class="fa-solid fa-thumbtack fa-thumbtack top-icon"></i>
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/03/14/Machine-Learning-Sklearn/">
+                        Machine-Learning-Sklearn
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        机器学习中基于Sklearn库的部分算法实现
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Mar 14 2023 21:20:50 GMT+0800">
+                
+                    2023-03-14
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/Sklearn/">Sklearn</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2023/03/14/Machine-Learning-Sklearn/">Read more<span class="seo-reader-text">Machine-Learning-Sklearn</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
+                    <i class="fa-solid fa-thumbtack fa-thumbtack top-icon"></i>
+                
+
+                
+
+                <h3 class="home-article-title">
+                    <a href="/2023/03/14/Opencv-python/">
+                        Opencv-python
+                    </a>
+                </h3>
+
+                <div class="home-article-content markdown-body">
+                    
+                        Opencv-Python常用api
+                    
+                </div>
+
+                <div class="home-article-meta-info-container">
+    <div class="home-article-meta-info">
+        <span><i class="fa-solid fa-calendars"></i>&nbsp;
+            <span class="home-article-date" data-date="Tue Mar 14 2023 21:14:11 GMT+0800">
+                
+                    2023-03-14
+                
+            </span>
+        </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">计算机视觉</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/Opencv/">Opencv</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
+        
+    </div>
+
+    <a href="/2023/03/14/Opencv-python/">Read more<span class="seo-reader-text">Opencv-python</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
+</div>
+
+            </li>
+        
+            <li class="home-article-item">
+
+                
 
                 
 
@@ -442,6 +645,18 @@
                 
             </span>
         </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E5%8F%8A%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7/">环境配置及相关工具</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
         
         
             <span class="home-article-tag">
@@ -490,6 +705,18 @@
                 
             </span>
         </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E5%8F%8A%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7/">环境配置及相关工具</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
         
         
             <span class="home-article-tag">
@@ -544,6 +771,18 @@
             </span>
         </span>
         
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
         
             <span class="home-article-tag">
                 <i class="fa-solid fa-tags"></i>&nbsp;
@@ -560,64 +799,6 @@
     </div>
 
     <a href="/2023/03/14/LanQiao/">Read more<span class="seo-reader-text">LanQiao</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2023/03/14/Deep-Learning-Pytorch/">
-                        Deep-Learning-Pytorch
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        有关深度学习及Pytorch基础知识
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Tue Mar 14 2023 21:29:53 GMT+0800">
-                
-                    2023-03-14
-                
-            </span>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">计算机视觉</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/Pytorch/">Pytorch</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2023/03/14/Deep-Learning-Pytorch/">Read more<span class="seo-reader-text">Deep-Learning-Pytorch</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
@@ -649,6 +830,18 @@
                 
             </span>
         </span>
+        
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
         
         
             <span class="home-article-tag">
@@ -689,7 +882,7 @@
 
                 <div class="home-article-content markdown-body">
                     
-                        数学建模,Matlab基础语法
+                        Matlab
                     
                 </div>
 
@@ -703,121 +896,39 @@
             </span>
         </span>
         
+            <span class="home-article-category"><i class="fa-solid fa-folders"></i></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>&nbsp;
+                        </li>
+                    
+                    
+                </ul>
+            </span>
+        
+        
+            <span class="home-article-tag">
+                <i class="fa-solid fa-tags"></i>&nbsp;
+                <ul>
+                    
+                        <li>
+                            
+                            <a href="/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/">数学建模</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/Matlab/">Matlab</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            </span>
         
     </div>
 
     <a href="/2023/03/14/Matlab/">Read more<span class="seo-reader-text">Matlab</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2023/03/14/Machine-Learning-Sklearn/">
-                        Machine-Learning-Sklearn
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        机器学习中基于Sklearn库的部分算法实现
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Tue Mar 14 2023 21:20:50 GMT+0800">
-                
-                    2023-03-14
-                
-            </span>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/">机器学习</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/Sklearn/">Sklearn</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2023/03/14/Machine-Learning-Sklearn/">Read more<span class="seo-reader-text">Machine-Learning-Sklearn</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
-</div>
-
-            </li>
-        
-            <li class="home-article-item">
-
-                
-
-                
-
-                <h3 class="home-article-title">
-                    <a href="/2023/03/14/Opencv-python/">
-                        Opencv-python
-                    </a>
-                </h3>
-
-                <div class="home-article-content markdown-body">
-                    
-                        Opencv-Python常用api
-                    
-                </div>
-
-                <div class="home-article-meta-info-container">
-    <div class="home-article-meta-info">
-        <span><i class="fa-solid fa-calendars"></i>&nbsp;
-            <span class="home-article-date" data-date="Tue Mar 14 2023 21:14:11 GMT+0800">
-                
-                    2023-03-14
-                
-            </span>
-        </span>
-        
-        
-            <span class="home-article-tag">
-                <i class="fa-solid fa-tags"></i>&nbsp;
-                <ul>
-                    
-                        <li>
-                            
-                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">计算机视觉</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
-                            <a href="/tags/Opencv/">Opencv</a>&nbsp;
-                        </li>
-                    
-                </ul>
-            </span>
-        
-    </div>
-
-    <a href="/2023/03/14/Opencv-python/">Read more<span class="seo-reader-text">Opencv-python</span>&nbsp;<i class="fa-solid fa-angle-right"></i></a>
 </div>
 
             </li>
