@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    <meta name="description" content="Hexo Theme Redefine">
+    <meta name="author" content="CGC">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png">
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2023/03/26/使用mmyolo快速搭建yolo网络/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    <meta property="og:type" content="article">
+    <meta property="og:title" content="使用mmyolo快速搭建yolo网络">
+    <meta property="og:description" content="Hexo Theme Redefine">
+    <meta property="og:url" content="http://example.com2023/03/26/使用mmyolo快速搭建yolo网络/">
+    
+    <meta property="og:site_name" content="CGC">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="使用mmyolo快速搭建yolo网络">
+    <meta name="twitter:description" content="Hexo Theme Redefine">
+    <meta name="twitter:image" content="/images/favicon_cgc.svg">
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/favicon_cgc.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon_cgc.svg">
+    <meta name="theme-color" content="#005080">
+    <link rel="shortcut icon" href="/images/favicon_cgc.svg">
+    
+    <title>
+        
+            使用mmyolo快速搭建yolo网络 -
+        
+        CGC
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/assets/fonts.css">
+
+    
+    
+    
+    <script id="hexo-configurations">
+    let REDEFINE = window.REDEFINE || {};
+    REDEFINE.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"};
+    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"/images/avatar_cgc.svg","favicon":"/images/favicon_cgc.svg","og_image":{"enable":false,"image_url":null},"article_img_align":"center","right_side_width":"210px","content_max_width":"1000px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title_color":{"light":"#fff","dark":"#d1d1b6"},"font_sizes":{"title":"2.8rem","subtitle":"1.5rem"},"line_height":1.2,"title":null,"subtitle":{"enable":true,"list":["是我还是我","不一样的花火"]},"custom_font":{"enable":false,"font_family":null,"font_url":null}},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_block":{"copy":true,"style":"mac","custom_font":{"enable":false,"font_family":null,"font_url":null}},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"1.2.1","friend_links":{"columns":2},"home_article":{"date_format":"auto","category":{"enable":true,"limit":3},"tag":{"enable":true,"limit":3}},"plugins":{"aplayer":{"enable":false,"audio":[{"name":null,"artist":null,"url":null,"cover":null},{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}}};
+    REDEFINE.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+    
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="menu-wrapper">
+    
+    <div class="menu-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                CGC
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        HOME
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/archives"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        ARCHIVES
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/tags"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-tag"></i>
+                                        
+                                        TAGS
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="menu-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/categories"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-grid-2"></i>
+                                        
+                                        CATEGORIES
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="menu-drawer">
+        <ul class="drawer-menu-list">
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                HOME
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/archives"  >
+                             
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                ARCHIVES
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/tags"  >
+                             
+                                
+                                    <i class="fa-regular fa-tag"></i>
+                                
+                                TAGS
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-menu-item flex-center">
+                        <a class="" 
+                        href="/categories"  >
+                             
+                                
+                                    <i class="fa-regular fa-grid-2"></i>
+                                
+                                CATEGORIES
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            
+            
+                <div class="article-title">
+                    <h1 class="article-title-regular">使用mmyolo快速搭建yolo网络</h1>
+                </div>
+            
+                
+            
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/avatar_cgc.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">CGC</span>
+                            
+                                <span class="author-label">lol</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="pc">2023-03-26 14:43:05</span>
+        <span class="mobile">2023-03-26 14:43</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="pc">2023-03-26 16:17:08</span>
+            <span class="mobile">2023-03-26 16:17</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">计算机视觉</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/openmmlab/">openmmlab</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/yolo/">yolo</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <blockquote>
+<p>说明：此为根据实践搭建并从官方文档中整理而来，官方源码及文档如下<br><a class="link"   target="_blank" rel="noopener" href="https://github.com/open-mmlab/mmyolo" >官方开源项目源码 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://mmyolo.readthedocs.io/zh_CN/latest/get_started/15_minutes_object_detection.html#id1" >官方使用文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</blockquote>
+<h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><h2 id="使用conda创建新环境并安装pytorch"><a href="#使用conda创建新环境并安装pytorch" class="headerlink" title="使用conda创建新环境并安装pytorch"></a>使用conda创建新环境并安装pytorch</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">conda create -n mmyolo python=3.8 -y</span><br><span class="line">conda activate mmyolo</span><br><span class="line"># 如果你有 GPU</span><br><span class="line">conda install pytorch torchvision -c pytorch</span><br><span class="line"># 如果你是 CPU</span><br><span class="line"># conda install pytorch torchvision cpuonly -c pytorch</span><br></pre></td></tr></table></figure></div>
+<h2 id="安装-MMYOLO-和依赖库"><a href="#安装-MMYOLO-和依赖库" class="headerlink" title="安装 MMYOLO 和依赖库"></a>安装 MMYOLO 和依赖库</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/open-mmlab/mmyolo.git</span><br><span class="line">cd mmyolo</span><br><span class="line">pip install -U openmim</span><br><span class="line">mim install -r requirements/mminstall.txt</span><br><span class="line"># Install albumentations</span><br><span class="line">mim install -r requirements/albu.txt</span><br><span class="line"># Install MMYOLO</span><br><span class="line">mim install -v -e .</span><br><span class="line"># &quot;-v&quot; 指详细说明，或更多的输出</span><br><span class="line"># &quot;-e&quot; 表示在可编辑模式下安装项目，因此对代码所做的任何本地修改都会生效，从而无需重新安装。</span><br></pre></td></tr></table></figure></div>
+
+<h1 id="准备数据集"><a href="#准备数据集" class="headerlink" title="准备数据集"></a>准备数据集</h1><p>此处数据集为官方文档中演示所用的Cat 数据集，为包括144张图片的单类别数据集<br>在上一步中克隆的mmyolo源码中，使用如下命令即可自动下载目标数据集</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python tools/misc/download_dataset.py --dataset-name cat --save-dir ./data/cat --unzip --delete</span><br></pre></td></tr></table></figure></div>
+<blockquote>
+<p><code>data/cat/annotations</code> 中存放的是 COCO 格式的标注，<code>data/cat/images</code> 中存放的是所有图片</p>
+</blockquote>
+<h1 id="文件配置"><a href="#文件配置" class="headerlink" title="文件配置"></a>文件配置</h1><p>官方源码中已经为我们提供了yolov5等的配置文件，位于<code>configs</code>中，我们只需要继承这些配置文件，并按照需求进行相应修改即可<br>官方所给的配置案例为</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 基于该配置进行继承并重写部分配置</span></span><br><span class="line">_base_ = <span class="string">&#x27;./configs/yolov5/yolov5_s-v61_syncbn_fast_8xb16-300e_coco.py&#x27;</span></span><br><span class="line"></span><br><span class="line">data_root = <span class="string">&#x27;./data/cat/&#x27;</span> <span class="comment"># 数据集根路径</span></span><br><span class="line">class_name = (<span class="string">&#x27;cat&#x27;</span>, ) <span class="comment"># 数据集类别名称</span></span><br><span class="line">num_classes = <span class="built_in">len</span>(class_name) <span class="comment"># 数据集类别数</span></span><br><span class="line"><span class="comment"># metainfo 必须要传给后面的 dataloader 配置，否则无效</span></span><br><span class="line"><span class="comment"># palette 是可视化时候对应类别的显示颜色</span></span><br><span class="line"><span class="comment"># palette 长度必须大于或等于 classes 长度</span></span><br><span class="line">metainfo = <span class="built_in">dict</span>(classes=class_name, palette=[(<span class="number">20</span>, <span class="number">220</span>, <span class="number">60</span>)])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 基于 tools/analysis_tools/optimize_anchors.py 自适应计算的 anchor</span></span><br><span class="line">anchors = [</span><br><span class="line">    [(<span class="number">68</span>, <span class="number">69</span>), (<span class="number">154</span>, <span class="number">91</span>), (<span class="number">143</span>, <span class="number">162</span>)],  <span class="comment"># P3/8</span></span><br><span class="line">    [(<span class="number">242</span>, <span class="number">160</span>), (<span class="number">189</span>, <span class="number">287</span>), (<span class="number">391</span>, <span class="number">207</span>)],  <span class="comment"># P4/16</span></span><br><span class="line">    [(<span class="number">353</span>, <span class="number">337</span>), (<span class="number">539</span>, <span class="number">341</span>), (<span class="number">443</span>, <span class="number">432</span>)]  <span class="comment"># P5/32</span></span><br><span class="line">]</span><br><span class="line"><span class="comment"># 最大训练 40 epoch</span></span><br><span class="line">max_epochs = <span class="number">40</span></span><br><span class="line"><span class="comment"># bs 为 12</span></span><br><span class="line">train_batch_size_per_gpu = <span class="number">12</span></span><br><span class="line"><span class="comment"># dataloader 加载进程数</span></span><br><span class="line">train_num_workers = <span class="number">4</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 加载 COCO 预训练权重</span></span><br><span class="line">load_from = <span class="string">&#x27;https://download.openmmlab.com/mmyolo/v0/yolov5/yolov5_s-v61_syncbn_fast_8xb16-300e_coco/yolov5_s-v61_syncbn_fast_8xb16-300e_coco_20220918_084700-86e02187.pth&#x27;</span>  <span class="comment"># noqa</span></span><br><span class="line"></span><br><span class="line">model = <span class="built_in">dict</span>(</span><br><span class="line">    <span class="comment"># 固定整个 backbone 权重，不进行训练</span></span><br><span class="line">    backbone=<span class="built_in">dict</span>(frozen_stages=<span class="number">4</span>),</span><br><span class="line">    bbox_head=<span class="built_in">dict</span>(</span><br><span class="line">        head_module=<span class="built_in">dict</span>(num_classes=num_classes),</span><br><span class="line">        prior_generator=<span class="built_in">dict</span>(base_sizes=anchors)</span><br><span class="line">    ))</span><br><span class="line"></span><br><span class="line">train_dataloader = <span class="built_in">dict</span>(</span><br><span class="line">    batch_size=train_batch_size_per_gpu,</span><br><span class="line">    num_workers=train_num_workers,</span><br><span class="line">    dataset=<span class="built_in">dict</span>(</span><br><span class="line">        data_root=data_root,</span><br><span class="line">        metainfo=metainfo,</span><br><span class="line">        <span class="comment"># 数据集标注文件 json 路径</span></span><br><span class="line">        ann_file=<span class="string">&#x27;annotations/trainval.json&#x27;</span>,</span><br><span class="line">        <span class="comment"># 数据集前缀</span></span><br><span class="line">        data_prefix=<span class="built_in">dict</span>(img=<span class="string">&#x27;images/&#x27;</span>)))</span><br><span class="line"></span><br><span class="line">val_dataloader = <span class="built_in">dict</span>(</span><br><span class="line">    dataset=<span class="built_in">dict</span>(</span><br><span class="line">        metainfo=metainfo,</span><br><span class="line">        data_root=data_root,</span><br><span class="line">        ann_file=<span class="string">&#x27;annotations/test.json&#x27;</span>,</span><br><span class="line">        data_prefix=<span class="built_in">dict</span>(img=<span class="string">&#x27;images/&#x27;</span>)))</span><br><span class="line"></span><br><span class="line">test_dataloader = val_dataloader</span><br><span class="line"></span><br><span class="line">_base_.optim_wrapper.optimizer.batch_size_per_gpu = train_batch_size_per_gpu</span><br><span class="line"></span><br><span class="line">val_evaluator = <span class="built_in">dict</span>(ann_file=data_root + <span class="string">&#x27;annotations/test.json&#x27;</span>)</span><br><span class="line">test_evaluator = val_evaluator</span><br><span class="line"></span><br><span class="line">default_hooks = <span class="built_in">dict</span>(</span><br><span class="line">    <span class="comment"># 每隔 10 个 epoch 保存一次权重，并且最多保存 2 个权重</span></span><br><span class="line">    <span class="comment"># 模型评估时候自动保存最佳模型</span></span><br><span class="line">    checkpoint=<span class="built_in">dict</span>(interval=<span class="number">10</span>, max_keep_ckpts=<span class="number">2</span>, save_best=<span class="string">&#x27;auto&#x27;</span>),</span><br><span class="line">    <span class="comment"># warmup_mim_iter 参数非常关键，因为 cat 数据集非常小，默认的最小 warmup_mim_iter 是 1000，导致训练过程学习率偏小</span></span><br><span class="line">    param_scheduler=<span class="built_in">dict</span>(max_epochs=max_epochs, warmup_mim_iter=<span class="number">10</span>),</span><br><span class="line">    <span class="comment"># 日志打印间隔为 5</span></span><br><span class="line">    logger=<span class="built_in">dict</span>(<span class="built_in">type</span>=<span class="string">&#x27;LoggerHook&#x27;</span>, interval=<span class="number">5</span>))</span><br><span class="line"><span class="comment"># 评估间隔为 10</span></span><br><span class="line">train_cfg = <span class="built_in">dict</span>(max_epochs=max_epochs, val_interval=<span class="number">10</span>)</span><br></pre></td></tr></table></figure></div>
+<p>可以直接复制使用，也可以进行进一步修改</p>
+<blockquote>
+<p>其中 <code>_base_ = &#39;yolov5_s-v61_syncbn_fast_8xb16-300e_coco.py&#39;</code> 修改所继承的配置文件，从 <code>configs</code> 中选取</p>
+</blockquote>
+<p>将如上继承后的文件另行保存至任意位置即可（需记下路径）</p>
+<h1 id="模型训练"><a href="#模型训练" class="headerlink" title="模型训练"></a>模型训练</h1><h2 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h2><p>在命令行中使用指令运行如</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python tools/train.py configs/yolov5/yolov5_s-v61_fast_1xb12-40e_cat.py</span><br></pre></td></tr></table></figure></div>
+<blockquote>
+<p><code>tools/train.py</code> 为训练脚本<br><code>configs/yolov5/yolov5_s-v61_fast_1xb12-40e_cat.py</code> 为上一步中所说的配置文件，可直接使用官方所给，也可以使用自己所集成修改的，将此参数改为上一步中继承后的文件的路径即可</p>
+</blockquote>
+<blockquote>
+<p>运行以上训练命令 <code>work_dirs/yolov5_s-v61_fast_1xb12-40e_cat</code> 文件夹会被自动生成，权重文件以及此次的训练配置文件将会保存在此文件夹中。</p>
+</blockquote>
+<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="注意事项"></a>注意事项</h2><p>在训练过程中会打印如下两个关键警告：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">You are using YOLOv5Head with num_classes == 1. The loss_cls will be 0. This is a normal phenomenon.\</span><br><span class="line">The model and loaded state dict do not match exactly</span><br></pre></td></tr></table></figure></div>
+<p>这两个警告都不会对性能有任何影响。第一个警告是说明由于当前训练的类别数是 1，根据 YOLOv5 算法的社区， 分类分支的 loss 始终是 0，这是正常现象。第二个警告是因为目前是采用微调模式进行训练，我们加载了 COCO 80 个类的预训练权重， 这会导致最后的 Head 模块卷积通道数不对应，从而导致这部分权重无法加载，这也是正常现象。</p>
+<h2 id="训练中断后恢复训练"><a href="#训练中断后恢复训练" class="headerlink" title="训练中断后恢复训练"></a>训练中断后恢复训练</h2><p>如果训练中途停止，可以在训练命令最后加上 <code>--resume</code> ,程序会自动从 <code>work_dirs</code> 中加载最新的权重文件恢复训练。<br>例如</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python tools/train.py configs/yolov5/yolov5_s-v61_fast_1xb12-40e_cat.py --resume</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="节约显存策略"><a href="#节约显存策略" class="headerlink" title="节约显存策略"></a>节约显存策略</h2><p>如果显存不够，可以考虑开启混合精度训练<code>--amp</code></p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python tools/train.py configs/yolov5/yolov5_s-v61_fast_1xb12-40e_cat.py --amp</span><br></pre></td></tr></table></figure></div>
+
+<h2 id="训练可视化"><a href="#训练可视化" class="headerlink" title="训练可视化"></a>训练可视化</h2><p>官方文档中展示了多种可视化方案，在此处我们使用<code>tensorboard</code><br>在先前我们已经配置好的配置文件中的最后加入</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">visualizer = dict(vis_backends=[dict(type=&#x27;LocalVisBackend&#x27;), dict(type=&#x27;TensorboardVisBackend&#x27;)])</span><br></pre></td></tr></table></figure></div>
+<p>重新运行训练命令后，Tensorboard 文件会生成在可视化文件夹 <code>work_dirs/yolov5_s-v61_fast_1xb12-40e_cat.py/&#123;timestamp&#125;/vis_data</code> 下， 运行下面的命令便可以在网页链接使用 Tensorboard 查看 loss、学习率和 coco&#x2F;bbox_mAP 等可视化数据了：</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tensorboard --logdir=work_dirs/yolov5_s-v61_fast_1xb12-40e_cat.py</span><br></pre></td></tr></table></figure></div>
+<blockquote>
+<p>其中最后一个.py文件参数为配置文件</p>
+</blockquote>
+<h1 id="模型测试及预测"><a href="#模型测试及预测" class="headerlink" title="模型测试及预测"></a>模型测试及预测</h1><h2 id="模型测试"><a href="#模型测试" class="headerlink" title="模型测试"></a>模型测试</h2><p>运行如下</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">python tools/test.py configs/yolov5/yolov5_s-v61_fast_1xb12-40e_cat.py \</span><br><span class="line">                     work_dirs/yolov5_s-v61_fast_1xb12-40e_cat/epoch_40.pth \</span><br><span class="line">                     --show-dir show_results</span><br></pre></td></tr></table></figure></div>
+<blockquote>
+<p>两个文件参数分别为配置文件、权重文件</p>
+</blockquote>
+<p>运行以上测试命令， 不仅可以得到模型训练部分所打印的 AP 性能，还可以将推理结果图片自动保存至 <code>work_dirs/yolov5_s-v61_fast_1xb12-40e_cat/&#123;timestamp&#125;/show_results</code> 文件夹中。</p>
+<p>如果使用了 <code>WandbVisBackend</code> 或者 <code>TensorboardVisBackend</code>，则还可以在浏览器窗口可视化模型推理结果。</p>
+
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：使用mmyolo快速搭建yolo网络</li>
+        <li>Post author：CGC</li>
+        <li>Create time：2023-03-26 14:43:05</li>
+        <li>
+            Post link：https://redefine.ohevan.com/2023/03/26/使用mmyolo快速搭建yolo网络/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+                </div>
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/">#计算机视觉</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/openmmlab/">#openmmlab</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">#人工智能</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/yolo/">#yolo</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/2023/03/22/%E4%BD%BF%E7%94%A8mmdet%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E8%AF%86%E5%88%AB%E6%A8%A1%E5%9E%8B%E7%BD%91%E7%BB%9C/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">使用mmdet快速搭建识别模型网络</span>
+                                    <span class="post-nav-item">Next posts</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">使用mmyolo快速搭建yolo网络</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%8E%AF%E5%A2%83%E6%90%AD%E5%BB%BA"><span class="nav-text">环境搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8conda%E5%88%9B%E5%BB%BA%E6%96%B0%E7%8E%AF%E5%A2%83%E5%B9%B6%E5%AE%89%E8%A3%85pytorch"><span class="nav-text">使用conda创建新环境并安装pytorch</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-MMYOLO-%E5%92%8C%E4%BE%9D%E8%B5%96%E5%BA%93"><span class="nav-text">安装 MMYOLO 和依赖库</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%87%86%E5%A4%87%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-text">准备数据集</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E9%85%8D%E7%BD%AE"><span class="nav-text">文件配置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83"><span class="nav-text">模型训练</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%AD%E7%BB%83"><span class="nav-text">训练</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="nav-text">注意事项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%AD%E7%BB%83%E4%B8%AD%E6%96%AD%E5%90%8E%E6%81%A2%E5%A4%8D%E8%AE%AD%E7%BB%83"><span class="nav-text">训练中断后恢复训练</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8A%82%E7%BA%A6%E6%98%BE%E5%AD%98%E7%AD%96%E7%95%A5"><span class="nav-text">节约显存策略</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%AD%E7%BB%83%E5%8F%AF%E8%A7%86%E5%8C%96"><span class="nav-text">训练可视化</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%95%E5%8F%8A%E9%A2%84%E6%B5%8B"><span class="nav-text">模型测试及预测</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E6%B5%8B%E8%AF%95"><span class="nav-text">模型测试</span></a></li></ol></li></ol>
+
+    </div>
+</div>
+            </div>
+        
+    </div>
+</div>
+
+
+                
+
+            </div>
+
+
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">CGC</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">
+                        VISITOR COUNT&nbsp;<span id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">
+                        TOTAL PAGE VIEWS&nbsp;<span id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            <span class="powered-by-container">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" href="https://hexo.io">Hexo</a></span>
+                <br> 
+            <span class="theme-version-container">THEME&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v1.2.1</a>
+        </div>
+        
+        
+        
+            <div id="start_time_div" style="display:none">
+                2022/8/17 11:45:14
+            </div>
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+        
+            <script async data-pjax>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="unfolded-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-expand-width flex-center">
+            <i class="fa-regular fa-expand"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex-center">
+                <i class="fa-regular fa-arrow-up"></i>
+            </li>
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="folded-tools-list">
+        <li class="right-bottom-tools tool-toggle-show flex-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/layouts/menu-shrink.js"></script>
+
+<script src="/js/tools/go-top-bottom.js"></script>
+
+<script src="/js/tools/dark-light-toggle.js"></script>
+
+
+
+    
+<script src="/js/tools/local-search.js"></script>
+
+
+
+
+    
+<script src="/js/tools/code-block.js"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/layouts/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js"></script>
+
+
+
+
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/tools/toc-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/layouts/toc.js"></script>
+
+<script src="/js/plugins/tabs.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            REDEFINE.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            REDEFINE.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            REDEFINE.refresh();
+        });
+    });
+</script>
+
+
+
+
+
+<!-- 雪花特效 -->
+<script type="text/javascript" src="\js\snow.js"></script>
+
+</body>
+</html>
