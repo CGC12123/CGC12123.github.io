@@ -278,9 +278,10 @@
         <div class="article-content-container">
 
             
-            
-                <div class="article-title">
-                    <h1 class="article-title-regular">使用mmyolo快速搭建yolo网络</h1>
+             
+                <div class="article-title">         
+                    <img src="/../images/openmmlab/mmyolo_logo.png" alt="使用mmyolo快速搭建yolo网络" />
+                    <h1 class="article-title-cover">使用mmyolo快速搭建yolo网络</h1>
                 </div>
             
                 
@@ -309,12 +310,23 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2023-03-26 16:17:08</span>
-            <span class="mobile">2023-03-26 16:17</span>
+            <span class="pc">2023-03-26 18:43:02</span>
+            <span class="mobile">2023-03-26 18:43</span>
             <span class="hover-info">Updated</span>
         </span>
     
 
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B/">深度学习模型</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
     
     
         <span class="article-tags article-meta-item">
@@ -327,6 +339,10 @@
                 
                     <li>
                         | <a href="/tags/openmmlab/">openmmlab</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a>&nbsp;
                     </li>
                 
                     <li>
@@ -358,7 +374,7 @@
 
             <div class="article-content markdown-body">
                 <blockquote>
-<p>说明：此为根据实践搭建并从官方文档中整理而来，官方源码及文档如下<br><a class="link"   target="_blank" rel="noopener" href="https://github.com/open-mmlab/mmyolo" >官方开源项目源码 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://mmyolo.readthedocs.io/zh_CN/latest/get_started/15_minutes_object_detection.html#id1" >官方使用文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+<p>说明：<br>此为根据实践搭建并从官方文档中整理而来，官方源码及文档如下<br><a class="link"   target="_blank" rel="noopener" href="https://github.com/open-mmlab/mmyolo" >官方开源项目源码 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://mmyolo.readthedocs.io/zh_CN/latest/get_started/15_minutes_object_detection.html#id1" >官方使用文档 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 </blockquote>
 <h1 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h1><h2 id="使用conda创建新环境并安装pytorch"><a href="#使用conda创建新环境并安装pytorch" class="headerlink" title="使用conda创建新环境并安装pytorch"></a>使用conda创建新环境并安装pytorch</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">conda create -n mmyolo python=3.8 -y</span><br><span class="line">conda activate mmyolo</span><br><span class="line"># 如果你有 GPU</span><br><span class="line">conda install pytorch torchvision -c pytorch</span><br><span class="line"># 如果你是 CPU</span><br><span class="line"># conda install pytorch torchvision cpuonly -c pytorch</span><br></pre></td></tr></table></figure></div>
 <h2 id="安装-MMYOLO-和依赖库"><a href="#安装-MMYOLO-和依赖库" class="headerlink" title="安装 MMYOLO 和依赖库"></a>安装 MMYOLO 和依赖库</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/open-mmlab/mmyolo.git</span><br><span class="line">cd mmyolo</span><br><span class="line">pip install -U openmim</span><br><span class="line">mim install -r requirements/mminstall.txt</span><br><span class="line"># Install albumentations</span><br><span class="line">mim install -r requirements/albu.txt</span><br><span class="line"># Install MMYOLO</span><br><span class="line">mim install -v -e .</span><br><span class="line"># &quot;-v&quot; 指详细说明，或更多的输出</span><br><span class="line"># &quot;-e&quot; 表示在可编辑模式下安装项目，因此对代码所做的任何本地修改都会生效，从而无需重新安装。</span><br></pre></td></tr></table></figure></div>
@@ -437,6 +453,10 @@
                     
                         <li class="tag-item">
                             <a href="/tags/openmmlab/">#openmmlab</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">#深度学习</a>&nbsp;
                         </li>
                     
                         <li class="tag-item">
