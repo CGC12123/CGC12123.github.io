@@ -309,8 +309,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2023-03-23 21:36:42</span>
-            <span class="mobile">2023-03-23 21:36</span>
+            <span class="pc">2023-04-09 10:51:53</span>
+            <span class="mobile">2023-04-09 10:51</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -360,7 +360,7 @@
             
 
             <div class="article-content markdown-body">
-                <h1 id="lingo"><a href="#lingo" class="headerlink" title="lingo"></a>lingo</h1><h2 id="lingo编写格式"><a href="#lingo编写格式" class="headerlink" title="lingo编写格式"></a>lingo编写格式</h2><h3 id="集合部分-SETS"><a href="#集合部分-SETS" class="headerlink" title="集合部分(SETS)"></a>集合部分(SETS)</h3><p>以<code>SETS</code>开始，以<code>ENDSETS</code>结束<br>用于定义必要变量<br>有两类集合</p>
+                <h1 id="lingo编写格式"><a href="#lingo编写格式" class="headerlink" title="lingo编写格式"></a>lingo编写格式</h1><h2 id="集合部分-SETS"><a href="#集合部分-SETS" class="headerlink" title="集合部分(SETS)"></a>集合部分(SETS)</h2><p>以<code>SETS</code>开始，以<code>ENDSETS</code>结束<br>用于定义必要变量<br>有两类集合</p>
 <p>**原始集合:**<br>其定义格式为:</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SETENME/member list(or 1..n)/: attribute, attribute, etc.</span><br></pre></td></tr></table></figure></div>
 <p><strong>导出集合</strong><br>引用其他集合定义的集合 其定义格式为:</p>
@@ -368,17 +368,17 @@
 
 <p>若要在程序中使用数组，则必须在该部分定义<br>如</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Person/1..10/:A;</span><br><span class="line">Task/1..12/:B;</span><br><span class="line">Link(Person, Task):X;</span><br></pre></td></tr></table></figure></div>
-<h3 id="目标与约束"><a href="#目标与约束" class="headerlink" title="目标与约束"></a>目标与约束</h3><p>定义目标函数、约束条件等</p>
-<h3 id="数据部分-DATA"><a href="#数据部分-DATA" class="headerlink" title="数据部分(DATA)"></a>数据部分(DATA)</h3><p>以<code>DATA: </code>开始，以<code>END DATA</code>结束<br>用于数据的输入<br>格式为：</p>
+<h2 id="目标与约束"><a href="#目标与约束" class="headerlink" title="目标与约束"></a>目标与约束</h2><p>定义目标函数、约束条件等</p>
+<h2 id="数据部分-DATA"><a href="#数据部分-DATA" class="headerlink" title="数据部分(DATA)"></a>数据部分(DATA)</h2><p>以<code>DATA: </code>开始，以<code>END DATA</code>结束<br>用于数据的输入<br>格式为：</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">attribute = value_list</span><br></pre></td></tr></table></figure></div>
 
-<h3 id="初始化部分-INIT"><a href="#初始化部分-INIT" class="headerlink" title="初始化部分(INIT)"></a>初始化部分(INIT)</h3><p>以<code>INIT: </code>开始，以<code>END INIT</code>结束<br>用于对集合属性（数组）定义初值<br>格式为</p>
+<h2 id="初始化部分-INIT"><a href="#初始化部分-INIT" class="headerlink" title="初始化部分(INIT)"></a>初始化部分(INIT)</h2><p>以<code>INIT: </code>开始，以<code>END INIT</code>结束<br>用于对集合属性（数组）定义初值<br>格式为</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">attribute=value_list</span><br></pre></td></tr></table></figure></div>
 
-<h2 id="内部函数"><a href="#内部函数" class="headerlink" title="内部函数"></a>内部函数</h2><p>以<code>@</code>开头\</p>
-<h3 id="数学函数"><a href="#数学函数" class="headerlink" title="数学函数"></a>数学函数</h3><p>常用<strong>数学函数</strong>如下</p>
+<h1 id="内部函数"><a href="#内部函数" class="headerlink" title="内部函数"></a>内部函数</h1><p>以<code>@</code>开头\</p>
+<h2 id="数学函数"><a href="#数学函数" class="headerlink" title="数学函数"></a>数学函数</h2><p>常用<strong>数学函数</strong>如下</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@ABS(X) 返回绝对值</span><br><span class="line">@COS(X) 返回余弦值</span><br><span class="line">@EXP(X) 返回e指数值</span><br><span class="line">@FLOOR(X) 返回靠近0的整数部分</span><br><span class="line">@LGM(X) 返回Γ函数自然对数值</span><br><span class="line">@LOG(X) 返回x自然对数值</span><br><span class="line">@SIGN(X) 返回符号值 负数为-1 正数为1</span><br><span class="line">@SIN(X)  返回正弦 x为弧度制</span><br><span class="line">@SMAX(X1, X2···, Xn) 返回最大值</span><br><span class="line">@SMIN(X) (X1, X2···, Xn) 返回最小值</span><br><span class="line">@TAN(X) 返回正切值</span><br></pre></td></tr></table></figure></div>
-<h3 id="集合函数"><a href="#集合函数" class="headerlink" title="集合函数"></a>集合函数</h3><p><strong>集合函数格式</strong>如下</p>
+<h2 id="集合函数"><a href="#集合函数" class="headerlink" title="集合函数"></a>集合函数</h2><p><strong>集合函数格式</strong>如下</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set_operator(set_name|condition:expression)</span><br></pre></td></tr></table></figure></div>
 <p>其中<code>set_operator</code>为集合函数名<br><code>set_name</code>为数据集合名<br> <code>condition</code>为表达式<br><code>|expression</code>为条件，用逻辑表达式描述（无条件可省略）</p>
 <p>逻辑表达式中 有如下运算符</p>
@@ -386,7 +386,7 @@
 <p>常见<code>集合函数</code>如下：</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@FOR(set_name: constraint) 对集合set_name的每个元素独立生成约束 由约束表达式constraint描述</span><br><span class="line">@MAX(set_name: exoression) 返回集合上最大值</span><br><span class="line">@MIN(set_name: exoression) 返回集合上最小值</span><br><span class="line">@SUN(set_name: exoression) 返回集合上的表达式exoression的和</span><br><span class="line">@SIZE(set_name) 返回元素个数</span><br><span class="line">@IN(set_name, set_element) 若set_name中包含set_element则返回1，反之返回0</span><br></pre></td></tr></table></figure></div>
 
-<h3 id="变量界定函数"><a href="#变量界定函数" class="headerlink" title="变量界定函数"></a>变量界定函数</h3><p>变量函数对变量的取值范围的附加限制 由如下四种</p>
+<h2 id="变量界定函数"><a href="#变量界定函数" class="headerlink" title="变量界定函数"></a>变量界定函数</h2><p>变量函数对变量的取值范围的附加限制 由如下四种</p>
 <div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@BND(L, X, U)限制L≤X≤U</span><br><span class="line">@BIN(X) 限制x为1或0</span><br><span class="line">@FREE(X) 取消对x的符号限制(可取任意实数)</span><br><span class="line">@GIN(X) 限制x为整数值</span><br></pre></td></tr></table></figure></div>
             </div>
 
@@ -472,7 +472,7 @@
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">Lingo</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lingo"><span class="nav-text">lingo</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#lingo%E7%BC%96%E5%86%99%E6%A0%BC%E5%BC%8F"><span class="nav-text">lingo编写格式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E9%83%A8%E5%88%86-SETS"><span class="nav-text">集合部分(SETS)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87%E4%B8%8E%E7%BA%A6%E6%9D%9F"><span class="nav-text">目标与约束</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%83%A8%E5%88%86-DATA"><span class="nav-text">数据部分(DATA)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E9%83%A8%E5%88%86-INIT"><span class="nav-text">初始化部分(INIT)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%86%85%E9%83%A8%E5%87%BD%E6%95%B0"><span class="nav-text">内部函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0"><span class="nav-text">数学函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E5%87%BD%E6%95%B0"><span class="nav-text">集合函数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E7%95%8C%E5%AE%9A%E5%87%BD%E6%95%B0"><span class="nav-text">变量界定函数</span></a></li></ol></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#lingo%E7%BC%96%E5%86%99%E6%A0%BC%E5%BC%8F"><span class="nav-text">lingo编写格式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E9%83%A8%E5%88%86-SETS"><span class="nav-text">集合部分(SETS)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87%E4%B8%8E%E7%BA%A6%E6%9D%9F"><span class="nav-text">目标与约束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%83%A8%E5%88%86-DATA"><span class="nav-text">数据部分(DATA)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9D%E5%A7%8B%E5%8C%96%E9%83%A8%E5%88%86-INIT"><span class="nav-text">初始化部分(INIT)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%86%85%E9%83%A8%E5%87%BD%E6%95%B0"><span class="nav-text">内部函数</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0"><span class="nav-text">数学函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9B%86%E5%90%88%E5%87%BD%E6%95%B0"><span class="nav-text">集合函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F%E7%95%8C%E5%AE%9A%E5%87%BD%E6%95%B0"><span class="nav-text">变量界定函数</span></a></li></ol></li></ol>
 
     </div>
 </div>
