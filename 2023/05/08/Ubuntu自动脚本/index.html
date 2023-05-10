@@ -10,18 +10,18 @@
     
     <!--- Seo Part-->
     
-    <link rel="canonical" href="http://example.com/categories/"/>
+    <link rel="canonical" href="http://example.com/2023/05/08/ubuntu自动脚本/"/>
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     <meta property="og:type" content="article">
-    <meta property="og:title" content="categories">
+    <meta property="og:title" content="Ubuntu自启动脚本">
     <meta property="og:description" content="Hexo Theme Redefine">
-    <meta property="og:url" content="http://example.comcategories/index.html">
+    <meta property="og:url" content="http://example.com2023/05/08/Ubuntu自动脚本/">
     
     <meta property="og:site_name" content="CGC">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="categories">
+    <meta name="twitter:title" content="Ubuntu自启动脚本">
     <meta name="twitter:description" content="Hexo Theme Redefine">
     <meta name="twitter:image" content="/images/favicon_cgc.svg">
     <!--- Icon Part-->
@@ -32,7 +32,7 @@
     
     <title>
         
-            Categories -
+            Ubuntu自启动脚本 -
         
         CGC
     </title>
@@ -161,7 +161,7 @@
                         
                             <li class="menu-item">
                                 <!-- Menu -->
-                                <a class="active" 
+                                <a class="" 
                                     href="/categories"  >
                                     
                                         
@@ -244,7 +244,7 @@
             
                 
                     <li class="drawer-menu-item flex-center">
-                        <a class="active" 
+                        <a class="" 
                         href="/categories"  >
                              
                                 
@@ -274,16 +274,198 @@
 
                 
                     <div class="fade-in-down-animation">
-    <div class="category-list-container">
-        <div class="tagcloud-header">
-            <h1 style="margin: 15px 0px; margin-bottom: 30px;">Categories</h1>
-        </div>
-        <div class="category-list-content">
-            <ul class="all-category-list"><li class="all-category-list-item"><a class="all-category-list-link" href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a><span class="all-category-list-count">6</span></li><li class="all-category-list-item"><a class="all-category-list-link" href="/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B/">深度学习模型</a><span class="all-category-list-count">3</span></li><li class="all-category-list-item"><a class="all-category-list-link" href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E5%8F%8A%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7/">环境配置及相关工具</a><span class="all-category-list-count">7</span></li></ul>
-        </div>
-        <div class="category-comments">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            
+            
+                <div class="article-title">
+                    <h1 class="article-title-regular">Ubuntu自启动脚本</h1>
+                </div>
+            
+                
+            
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="/images/avatar_cgc.svg">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">CGC</span>
+                            
+                                <span class="author-label">lol</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="pc">2023-05-08 18:16:30</span>
+        <span class="mobile">2023-05-08 18:16</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="pc">2023-05-10 22:41:21</span>
+            <span class="mobile">2023-05-10 22:41</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E5%8F%8A%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7/">环境配置及相关工具</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Ubuntu/">Ubuntu</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Jetson-Orin-Nano/">Jetson Orin Nano</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <h1 id="任务背景"><a href="#任务背景" class="headerlink" title="任务背景"></a>任务背景</h1><p>任务背景为在Jetson Orin Nano上使用t265时，需要同时按序开启并执行三个不同终端<br>如下</p>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">roslaunch realsense2_camera rs_t265.launch</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">添加权限</span><br><span class="line">sudo chmod 777 /dev/ttyAMA0</span><br><span class="line">roslaunch mavros acfly.launch fcu_url:=/dev/ttyUSB0:57600</span><br></pre></td></tr></table></figure></div>
+<div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">打开t265文件夹，打开终端</span><br><span class="line">source devel/setup.bash</span><br><span class="line">roslaunch vision_to_mavros t265_tf_to_mavros.launch</span><br></pre></td></tr></table></figure></div>
+<h1 id="脚本的写法"><a href="#脚本的写法" class="headerlink" title="脚本的写法"></a>脚本的写法</h1><p>使用</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sh1 = <span class="string">&quot;/home/c/Library/Cv_for_Orinnano/utils/bash/T265_Start_1.sh&quot;</span></span><br><span class="line">subprocess.Popen([<span class="string">&#x27;gnome-terminal&#x27;</span>, <span class="string">&#x27;--&#x27;</span>, <span class="string">&#x27;bash&#x27;</span>, <span class="string">&#x27;-c&#x27;</span>, sh1, <span class="string">&#x27;--hold&#x27;</span>], </span><br><span class="line">                stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)</span><br><span class="line"><span class="comment"># sh1为需要在该终端执行的命令</span></span><br></pre></td></tr></table></figure></div>
+<p>其中sh1为事先写好的bash脚本，例如</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"> </span><br><span class="line">roslaunch realsense2_camera rs_t265.launch</span><br></pre></td></tr></table></figure></div>
+<p>若有若干命令需要在同一终端中执行，则为</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sh2s = [<span class="string">&quot;echo 123456 | sudo -S chmod +x /home/c/Library/Cv_for_Orinnano/utils/bash/T265_Start_2.sh&quot;</span>,</span><br><span class="line">        <span class="string">&quot;sudo chmod 777 /dev/ttyUSB0&quot;</span>, </span><br><span class="line">        <span class="string">&quot;/home/c/Library/Cv_for_Orinnano/utils/bash/T265_Start_2.sh&quot;</span>]</span><br><span class="line">sh2 = <span class="string">&quot;bash -c &#x27;&#123;&#125;&#x27;&quot;</span>.<span class="built_in">format</span>(<span class="string">&quot;; &quot;</span>.join(sh2s))</span><br><span class="line">subprocess.Popen([<span class="string">&#x27;gnome-terminal&#x27;</span>, <span class="string">&#x27;--&#x27;</span>, <span class="string">&#x27;bash&#x27;</span>, <span class="string">&#x27;-c&#x27;</span>, sh2, <span class="string">&#x27;--hold&#x27;</span>], </span><br><span class="line">                stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)</span><br></pre></td></tr></table></figure></div>
+<blockquote>
+<p>需要注意的是：<br>在一个终端中执行的需要放在同一个中，不能使用 <code>os.system</code> ，使用  <code>os.system</code> 则会回到最初始的终端中执行<br><code>subprocess.Popen</code> 创建的终端，若终端执行结束或出现报错，则该终端会被杀死消失，可使用 <code>--hold</code> 使其保持开启</p>
+</blockquote>
+<p>所以我的最终启动脚本为</p>
+<div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">T265_Start</span>():</span><br><span class="line">    sh1 = <span class="string">&quot;/home/c/Library/Cv_for_Orinnano/utils/bash/T265_Start_1.sh&quot;</span></span><br><span class="line">    sh2s = [<span class="string">&quot;echo 123456 | sudo -S chmod +x /home/c/Library/Cv_for_Orinnano/utils/bash/T265_Start_2.sh&quot;</span>,</span><br><span class="line">            <span class="string">&quot;sudo chmod 777 /dev/ttyUSB0&quot;</span>, </span><br><span class="line">            <span class="string">&quot;/home/c/Library/Cv_for_Orinnano/utils/bash/T265_Start_2.sh&quot;</span>]</span><br><span class="line">    sh2 = <span class="string">&quot;bash -c &#x27;&#123;&#125;&#x27;&quot;</span>.<span class="built_in">format</span>(<span class="string">&quot;; &quot;</span>.join(sh2s))</span><br><span class="line">    sh3 = <span class="string">&quot;/home/c/Library/Cv_for_Orinnano/utils/bash/T265_Start_3.sh&quot;</span></span><br><span class="line"></span><br><span class="line">    subprocess.Popen([<span class="string">&#x27;gnome-terminal&#x27;</span>, <span class="string">&#x27;--&#x27;</span>, <span class="string">&#x27;bash&#x27;</span>, <span class="string">&#x27;-c&#x27;</span>, sh1, <span class="string">&#x27;--hold&#x27;</span>], </span><br><span class="line">                    stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)</span><br><span class="line">    time.sleep(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">    subprocess.Popen([<span class="string">&#x27;gnome-terminal&#x27;</span>, <span class="string">&#x27;--&#x27;</span>, <span class="string">&#x27;bash&#x27;</span>, <span class="string">&#x27;-c&#x27;</span>, sh2, <span class="string">&#x27;--hold&#x27;</span>], </span><br><span class="line">                    stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)</span><br><span class="line">    time.sleep(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">    subprocess.Popen([<span class="string">&#x27;gnome-terminal&#x27;</span>, <span class="string">&#x27;--&#x27;</span>, <span class="string">&#x27;bash&#x27;</span>, <span class="string">&#x27;-c&#x27;</span>, sh3, <span class="string">&#x27;--hold&#x27;</span>], </span><br><span class="line">                    stdin=subprocess.PIPE, stdout=subprocess.PIPE, stderr=subprocess.PIPE)</span><br><span class="line">    time.sleep(<span class="number">5</span>)</span><br></pre></td></tr></table></figure></div>
+<h1 id="自启动的设置"><a href="#自启动的设置" class="headerlink" title="自启动的设置"></a>自启动的设置</h1>
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：Ubuntu自启动脚本</li>
+        <li>Post author：CGC</li>
+        <li>Create time：2023-05-08 18:16:30</li>
+        <li>
+            Post link：https://redefine.ohevan.com/2023/05/08/Ubuntu自动脚本/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+                </div>
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/Ubuntu/">#Ubuntu</a>&nbsp;
+                        </li>
+                    
+                        <li class="tag-item">
+                            <a href="/tags/Jetson-Orin-Nano/">#Jetson Orin Nano</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                        <div class="article-prev">
+                            <a class="prev"
+                            rel="prev"
+                            href="/2023/05/10/vnc%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5jetson/"
+                            >
+                                <span class="left arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">vnc远程连接jetson</span>
+                                    <span class="post-nav-item">Prev posts</span>
+                                </span>
+                            </a>
+                        </div>
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/2023/04/10/git%E7%9A%84%E5%AE%89%E8%A3%85%E9%85%8D%E7%BD%AE/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">git的安装配置</span>
+                                    <span class="post-nav-item">Next posts</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+
             
         </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">Ubuntu自启动脚本</div>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%BB%E5%8A%A1%E8%83%8C%E6%99%AF"><span class="nav-text">任务背景</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%84%9A%E6%9C%AC%E7%9A%84%E5%86%99%E6%B3%95"><span class="nav-text">脚本的写法</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%87%AA%E5%90%AF%E5%8A%A8%E7%9A%84%E8%AE%BE%E7%BD%AE"><span class="nav-text">自启动的设置</span></a></li></ol>
+
+    </div>
+</div>
+            </div>
+        
     </div>
 </div>
 
@@ -362,6 +544,23 @@
         </div>
     </div>
 
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
     
 
     <div class="right-bottom-side-tools">
@@ -504,6 +703,16 @@
 
 
 <div class="post-scripts pjax">
+    
+        
+<script src="/js/tools/toc-toggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/layouts/toc.js"></script>
+
+<script src="/js/plugins/tabs.js"></script>
+
     
 </div>
 
