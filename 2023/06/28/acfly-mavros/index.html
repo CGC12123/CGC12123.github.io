@@ -309,8 +309,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="pc">2023-06-28 14:12:52</span>
-            <span class="mobile">2023-06-28 14:12</span>
+            <span class="pc">2023-06-28 14:18:28</span>
+            <span class="mobile">2023-06-28 14:18</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -384,6 +384,9 @@
 
 <h1 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h1><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 第一个终端</span><br><span class="line"># 打开t265</span><br><span class="line">roslaunch realsense2_camera rs_t265.launch</span><br><span class="line"></span><br><span class="line"># 第二个终端</span><br><span class="line"># 添加权限</span><br><span class="line">sudo chmod 777 /dev/ttyAMA0</span><br><span class="line">roslaunch mavros acfly.launch fcu_url:=/dev/ttyUSB0:57600</span><br><span class="line"></span><br><span class="line"># 第三个终端</span><br><span class="line"># 此处需要先source前一步安装mavros工作空间中的setup.bash</span><br><span class="line">source devel/setup.bash</span><br><span class="line">roslaunch vision_to_mavros t265_tf_to_mavros.launch</span><br></pre></td></tr></table></figure></div>
 
+<h1 id="其他-使用指南"><a href="#其他-使用指南" class="headerlink" title="其他 使用指南"></a>其他 使用指南</h1><blockquote>
+<p>acfly-mavros 作者提供了使用指南及二次开发指南<br><a class="link"   target="_blank" rel="noopener" href="https://github.com/LauZanMo/acfly-mavros/blob/acfly-develop/acfly-mavros%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.md" >使用指南 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>  <a class="link"   target="_blank" rel="noopener" href="https://github.com/LauZanMo/acfly-mavros/blob/acfly-develop/acfly-mavros%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97.md" >二次开发指南 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
+</blockquote>
 <h1 id="关于自启动"><a href="#关于自启动" class="headerlink" title="关于自启动"></a>关于自启动</h1><!-- > 自启动可查询[这篇](/Ubuntu自动脚本.html) -->
 <a href="/2023/05/08/Ubuntu%E8%87%AA%E5%8A%A8%E8%84%9A%E6%9C%AC/" title="Ubuntu自启动脚本">自启动可看这篇</a>
             </div>
@@ -463,7 +466,7 @@
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">acfly-mavros</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ROS-Wrapper"><span class="nav-text">ROS Wrapper</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-ROS"><span class="nav-text">安装 ROS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85realsense2-camera"><span class="nav-text">安装realsense2_camera</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85mavros"><span class="nav-text">安装mavros</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-text">使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E8%87%AA%E5%90%AF%E5%8A%A8"><span class="nav-text">关于自启动</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ROS-Wrapper"><span class="nav-text">ROS Wrapper</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-ROS"><span class="nav-text">安装 ROS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%89%E8%A3%85realsense2-camera"><span class="nav-text">安装realsense2_camera</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%89%E8%A3%85mavros"><span class="nav-text">安装mavros</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-text">使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B6%E4%BB%96-%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97"><span class="nav-text">其他 使用指南</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E8%87%AA%E5%90%AF%E5%8A%A8"><span class="nav-text">关于自启动</span></a></li></ol>
 
     </div>
 </div>
