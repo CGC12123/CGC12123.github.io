@@ -4,9 +4,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="keywords" content="Hexo Theme Redefine">
-    <meta name="description" content="Hexo Theme Redefine">
+    
     <meta name="author" content="CGC">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-redefine.png">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
     
     <!--- Seo Part-->
     
@@ -14,21 +17,22 @@
     <meta name="robots" content="index,follow">
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
-    <meta property="og:type" content="article">
-    <meta property="og:title" content="Hexo">
-    <meta property="og:description" content="Hexo Theme Redefine">
-    <meta property="og:url" content="http://example.comindex.html">
     
-    <meta property="og:site_name" content="CGC">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Hexo">
-    <meta name="twitter:description" content="Hexo Theme Redefine">
-    <meta name="twitter:image" content="/images/favicon_cgc.svg">
+        <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:locale" content="en_US">
+<meta property="article:author" content="John Doe">
+<meta name="twitter:card" content="summary">
+    
+    
     <!--- Icon Part-->
     <link rel="icon" type="image/png" href="/images/favicon_cgc.svg" sizes="192x192">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon_cgc.svg">
-    <meta name="theme-color" content="#005080">
+    <meta name="theme-color" content="#A31F34">
     <link rel="shortcut icon" href="/images/favicon_cgc.svg">
+    <!--- Page Info-->
     
     <title>
         
@@ -38,18 +42,31 @@
 <link rel="stylesheet" href="/css/style.css">
 
     
-<link rel="stylesheet" href="/assets/fonts.css">
+<link rel="stylesheet" href="/fonts/fonts.css">
 
     
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
     
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    <!--- Inject Part-->
     
     <script id="hexo-configurations">
-    let REDEFINE = window.REDEFINE || {};
-    REDEFINE.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"};
-    REDEFINE.theme_config = {"toc":{"enable":true,"number":false,"expand_all":true,"init_open":true},"style":{"primary_color":"#005080","avatar":"/images/avatar_cgc.svg","favicon":"/images/favicon_cgc.svg","og_image":{"enable":false,"image_url":null},"article_img_align":"center","right_side_width":"210px","content_max_width":"1000px","nav_color":{"left":"#f78736","right":"#367df7","transparency":35},"hover":{"shadow":true,"scale":false},"first_screen":{"enable":true,"background_image":{"light":"/images/wallhaven-wqery6-light.webp","dark":"/images/wallhaven-wqery6-dark.webp"},"title_color":{"light":"#fff","dark":"#d1d1b6"},"font_sizes":{"title":"2.8rem","subtitle":"1.5rem"},"line_height":1.2,"title":null,"subtitle":{"enable":true,"list":["是我还是我","不一样的花火"]},"custom_font":{"enable":false,"font_family":null,"font_url":null}},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":false}}},"local_search":{"enable":true,"preload":true},"code_block":{"copy":true,"style":"mac","custom_font":{"enable":false,"font_family":null,"font_url":null}},"pjax":{"enable":true},"lazyload":{"enable":true},"version":"1.2.1","friend_links":{"columns":2},"home_article":{"date_format":"auto","category":{"enable":true,"limit":3},"tag":{"enable":true,"limit":3}},"plugins":{"aplayer":{"enable":false,"audio":[{"name":null,"artist":null,"url":null,"cover":null},{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}}};
-    REDEFINE.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    let Global = window.Global || {};
+    Global.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"};
+    Global.theme_config = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/wallhaven-wqery6-light.webp","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":false},"scroll_progress":{"bar":false,"percentage":true},"busuanzi_counter":{"enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"pjax":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/background/bg1.jpg","dark":"/images/background/bg2.jpg"},"title":"This is 小蔡同学","subtitle":{"text":["是我还是我","不一样的花火"],"hitokoto":{"enable":true,"api":"https://v1.hitokoto.cn/?c=d&c=e&c=h"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":1500,"loop":true,"smart_backspace":true},"text_color":{"light":"#fff","dark":"#d1d1b6"},"text_style":{"title_size":"2.2rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"links":{"github":"https://github.com/CGC12123","instagram":null,"zhihu":null,"twitter":null,"email":"caiguoci@126.com"}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.2.1","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tag"},"Categories":{"path":"/categories","icon":"fa-regular fa-grid-2"},"Links":{"icon":"fa-solid fa-link","path":"/links"},"Navbar":{"icon":"fa-solid fa-image","path":"/masonry"}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":2,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"right","first_item":"info","announcement":null,"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tag"},"Categories":{"path":"/categories","icon":"fa-regular fa-grid-2"},"Links":{"icon":"fa-solid fa-link","path":"/links"}}},"article_date_format":"YYYY-MM-DD","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/3/17 11:45:14"};
+    Global.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    Global.data_config = {"masonry":false};
   </script>
     
+    <!--- Fontawesome Part-->
     
 <link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
 
@@ -66,13 +83,12 @@
     
     
     
-<meta name="generator" content="Hexo 6.3.0"></head>
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
 
 
 <body>
 <div class="progress-bar-container">
-    
-        <span class="scroll-progress-bar"></span>
     
 
     
@@ -87,10 +103,43 @@
 <main class="page-container">
 
     
-        <div class="first-screen-container flex-center">
+        
+    <style>
+        .home-banner-container {
+            background: transparent !important;
+        }
+        .home-article-item,
+        .sidebar-links,
+        .sidebar-content,
+        a.page-number,
+        a.extend,
+        .sidebar-links .links:hover,
+        .right-bottom-tools,
+        footer.footer {
+            background-color: var(--background-color-transparent-80) !important;
+        }
+        .right-bottom-tools:hover,
+        a.page-number:hover,
+        a.extend:hover {
+            background-color: var(--primary-color) !important;
+        }
+        .site-info,
+        .home-article-sticky-label {
+            background-color: var(--background-color-transparent-15) !important;
+        }
+        .home-article-sticky-label {
+            backdrop-filter: none !important;
+        }
+    </style>
+
+    <div class="home-banner-background">
+    </div>
+
+
+<div class="home-banner-container flex-center">
     <div class="content flex-center">
         <div class="description fade-in-down-animation" >
-           
+          This is 小蔡同学 
           
             <p><i id="subtitle"></i></p>
           
@@ -129,15 +178,21 @@
     </div>
 </div>
 
+
+
     
 
-    <div class="page-main-content">
+    <div class="main-content-container">
 
-        <div class="page-main-content-top">
-            <header class="menu-wrapper">
+        <div class="main-content-header">
+            <header class="navbar-container">
     
-    <div class="menu-content has-first-screen">
+    <div class="navbar-content has-home-banner">
         <div class="left">
+            
+                <a class="logo-image" href="/">
+                    <img src="/images/favicon_cgc.svg">
+                </a>
             
             <a class="logo-title" href="/">
                 <h1>
@@ -148,11 +203,11 @@
 
         <div class="right">
             <!-- PC -->
-            <div class="pc">
-                <ul class="menu-list">
+            <div class="desktop">
+                <ul class="navbar-list">
                     
                         
-                            <li class="menu-item">
+                            <li class="navbar-item">
                                 <!-- Menu -->
                                 <a class="active" 
                                     href="/"  >
@@ -168,7 +223,7 @@
                             </li>
                     
                         
-                            <li class="menu-item">
+                            <li class="navbar-item">
                                 <!-- Menu -->
                                 <a class="" 
                                     href="/archives"  >
@@ -184,7 +239,7 @@
                             </li>
                     
                         
-                            <li class="menu-item">
+                            <li class="navbar-item">
                                 <!-- Menu -->
                                 <a class="" 
                                     href="/tags"  >
@@ -200,7 +255,7 @@
                             </li>
                     
                         
-                            <li class="menu-item">
+                            <li class="navbar-item">
                                 <!-- Menu -->
                                 <a class="" 
                                     href="/categories"  >
@@ -215,8 +270,40 @@
                                 
                             </li>
                     
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/links"  >
+                                    
+                                        
+                                            <i class="fa-solid fa-link"></i>
+                                        
+                                        LINKS
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
                     
-                        <li class="menu-item search search-popup-trigger">
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/masonry"  >
+                                    
+                                        
+                                            <i class="fa-solid fa-image"></i>
+                                        
+                                        NAVBAR
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </li>
                     
@@ -227,19 +314,19 @@
                 
                     <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
                 
-                <div class="icon-item menu-bar">
-                    <div class="menu-bar-middle"></div>
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Mobile drawer -->
-    <div class="menu-drawer">
-        <ul class="drawer-menu-list">
+    <div class="navbar-drawer">
+        <ul class="drawer-navbar-list">
             
                 
-                    <li class="drawer-menu-item flex-center">
+                    <li class="drawer-navbar-item flex-center">
                         <a class="active" 
                         href="/"  >
                              
@@ -254,7 +341,7 @@
                     
             
                 
-                    <li class="drawer-menu-item flex-center">
+                    <li class="drawer-navbar-item flex-center">
                         <a class="" 
                         href="/archives"  >
                              
@@ -269,7 +356,7 @@
                     
             
                 
-                    <li class="drawer-menu-item flex-center">
+                    <li class="drawer-navbar-item flex-center">
                         <a class="" 
                         href="/tags"  >
                              
@@ -284,7 +371,7 @@
                     
             
                 
-                    <li class="drawer-menu-item flex-center">
+                    <li class="drawer-navbar-item flex-center">
                         <a class="" 
                         href="/categories"  >
                              
@@ -292,6 +379,36 @@
                                     <i class="fa-regular fa-grid-2"></i>
                                 
                                 CATEGORIES
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="" 
+                        href="/links"  >
+                             
+                                
+                                    <i class="fa-solid fa-link"></i>
+                                
+                                LINKS
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="" 
+                        href="/masonry"  >
+                             
+                                
+                                    <i class="fa-solid fa-image"></i>
+                                
+                                NAVBAR
                             
                         </a>
                     </li>
@@ -309,7 +426,9 @@
 
         </div>
 
-        <div class="page-main-content-middle">
+        <div class="main-content-body">
+
+            
 
             <div class="main-content">
 
@@ -322,12 +441,6 @@
                 
 
                 
-                    <div class="home-article-thumbnail">
-                        <a href="/2023/06/30/rplidarA1-gmapping/">
-                            <img src="/../images/slam/slam.jpg" alt="rplidarA1-gmapping" />
-                        </a>
-                    </div>
-                
 
                 <h3 class="home-article-title">
                     <a href="/2023/06/30/rplidarA1-gmapping/">
@@ -337,7 +450,8 @@
 
                 <div class="home-article-content markdown-body">
                     
-                        基于Jetson平台，使用思岚A1激光雷达运行gmapping进行建图
+                        <p>基于Jetson平台，使用思岚A1激光雷达运行gmapping进行建图</p>
+
                     
                 </div>
 
@@ -370,17 +484,17 @@
                     
                         <li>
                             
-                            <a href="/tags/Ros/">Ros</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
                             <a href="/tags/Jetson/">Jetson</a>&nbsp;
                         </li>
                     
                         <li>
                             | 
-                            <a href="/tags/Slam/">Slam</a>&nbsp;
+                            <a href="/tags/Ros/">Ros</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/rplidarA1/">rplidarA1</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -407,7 +521,8 @@
 
                 <div class="home-article-content markdown-body">
                     
-                        基于Jetson平台，使用Intel T265为acfly飞控提供定位
+                        <p>基于Jetson平台，使用Intel T265为acfly飞控提供定位</p>
+
                     
                 </div>
 
@@ -440,17 +555,17 @@
                     
                         <li>
                             
-                            <a href="/tags/Ros/">Ros</a>&nbsp;
-                        </li>
-                    
-                        <li>
-                            | 
                             <a href="/tags/%E6%97%A0%E4%BA%BA%E6%9C%BA/">无人机</a>&nbsp;
                         </li>
                     
                         <li>
                             | 
                             <a href="/tags/%E5%8F%8C%E7%9B%AE%E7%9B%B8%E6%9C%BA/">双目相机</a>&nbsp;
+                        </li>
+                    
+                        <li>
+                            | 
+                            <a href="/tags/T265/">T265</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -477,7 +592,8 @@
 
                 <div class="home-article-content markdown-body">
                     
-                        使用VNC远程连接JetsonOrin Nano
+                        <p>使用VNC远程连接JetsonOrin Nano</p>
+
                     
                 </div>
 
@@ -547,7 +663,8 @@
 
                 <div class="home-article-content markdown-body">
                     
-                        在Jetson Orin Nano - Ubuntu20.04中设置开启开机自启动，且该脚本适用于开启多终端任务场景
+                        <p>在Jetson Orin Nano - Ubuntu20.04中设置开启开机自启动，且该脚本适用于开启多终端任务场景</p>
+
                     
                 </div>
 
@@ -612,7 +729,8 @@
 
                 <div class="home-article-content markdown-body">
                     
-                        git的安装配置及github账号的注册
+                        <p>git的安装配置及github账号的注册</p>
+
                     
                 </div>
 
@@ -672,7 +790,8 @@
 
                 <div class="home-article-content markdown-body">
                     
-                        启动virtualbox虚拟机显示Attempted to kill the idle task错误
+                        <p>启动virtualbox虚拟机显示Attempted to kill the idle task错误</p>
+
                     
                 </div>
 
@@ -710,12 +829,12 @@
                     
                         <li>
                             | 
-                            <a href="/tags/Ubuntu22-04/">Ubuntu22.04</a>&nbsp;
+                            <a href="/tags/Ubuntu/">Ubuntu</a>&nbsp;
                         </li>
                     
                         <li>
                             | 
-                            <a href="/tags/Ubuntu/">Ubuntu</a>&nbsp;
+                            <a href="/tags/Ubuntu22-04/">Ubuntu22.04</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -742,7 +861,8 @@
 
                 <div class="home-article-content markdown-body">
                     
-                        Ubuntu22.04更换国内源，提高速度
+                        <p>Ubuntu22.04更换国内源，提高速度</p>
+
                     
                 </div>
 
@@ -763,12 +883,12 @@
                     
                         <li>
                             
-                            <a href="/tags/Ubuntu22-04/">Ubuntu22.04</a>&nbsp;
+                            <a href="/tags/Ubuntu/">Ubuntu</a>&nbsp;
                         </li>
                     
                         <li>
                             | 
-                            <a href="/tags/Ubuntu/">Ubuntu</a>&nbsp;
+                            <a href="/tags/Ubuntu22-04/">Ubuntu22.04</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -786,12 +906,6 @@
                 
 
                 
-                    <div class="home-article-thumbnail">
-                        <a href="/2023/04/09/%E5%9C%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E4%B8%8A%E5%AE%89%E8%A3%85Ros/">
-                            <img src="/../images/ros/ros.jpg" alt="在树莓派上安装Ros" />
-                        </a>
-                    </div>
-                
 
                 <h3 class="home-article-title">
                     <a href="/2023/04/09/%E5%9C%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E4%B8%8A%E5%AE%89%E8%A3%85Ros/">
@@ -801,7 +915,8 @@
 
                 <div class="home-article-content markdown-body">
                     
-                        在树莓派上进行Ros安装
+                        <p>在树莓派上进行Ros安装</p>
+
                     
                 </div>
 
@@ -834,12 +949,12 @@
                     
                         <li>
                             
-                            <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a>&nbsp;
+                            <a href="/tags/Ros/">Ros</a>&nbsp;
                         </li>
                     
                         <li>
                             | 
-                            <a href="/tags/Ros/">Ros</a>&nbsp;
+                            <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/">树莓派</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -911,7 +1026,7 @@ Ultralytics YOLOv8 是由 Ultralytics 开发的一个前沿的 SOTA 模型。它
                     
                         <li>
                             | 
-                            <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a>&nbsp;
+                            <a href="/tags/yolo/">yolo</a>&nbsp;
                         </li>
                     
                         <li>
@@ -990,12 +1105,12 @@ Ultralytics YOLOv8 是由 Ultralytics 开发的一个前沿的 SOTA 模型。它
                     
                         <li>
                             | 
-                            <a href="/tags/openmmlab/">openmmlab</a>&nbsp;
+                            <a href="/tags/yolo/">yolo</a>&nbsp;
                         </li>
                     
                         <li>
                             | 
-                            <a href="/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/">深度学习</a>&nbsp;
+                            <a href="/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/">人工智能</a>&nbsp;
                         </li>
                     
                 </ul>
@@ -1012,28 +1127,111 @@ Ultralytics YOLOv8 是由 Ultralytics 开发的一个前沿的 SOTA 模型。它
 
     <div class="home-paginator">
         <div class="paginator">
-    
-
-    
-        <a class="next btn"
-           href="/page/2/"
-        >Next</a>
-    
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa-regular fa-angle-right"></i></a>
 </div>
 
     </div>
 </div>
 
-
                 
 
             </div>
+            
+            
+                <div class="home-sidebar-container fade-in-down-animation">
+    <div class="sticky-container">
+        
+            <div class="sidebar-content">
+                <div class="avatar">
+                    <img src="https://avatars.githubusercontent.com/u/93080289?v=4">
+                </div>
+                <div class="author">
+                    <div class="name">CGC</div>
+                    
+                        <div class="label">Lv3</div>
+                    
+                </div>
+                <div class="statistics">
+                    <a class="item" href="/tags">
+                        <div class="number">33</div>
+                        <div class="label">Tags</div>
+                    </a>
+                    <a class="item" href="/categories">
+                        <div class="number">4</div>
+                        <div class="label">Categories</div>
+                    </a>
+                    <a class="item" href="/archives">
+                        <div class="number">19</div>
+                        <div class="label">Posts</div>
+                    </a>
+                </div>
+            </div>
+            
+                <div class="sidebar-links"   marginTop >
+                    <div class="site-info">
+                        <div class="site-name">CGC</div>
+                        
+                    </div>
+                    
+                        
+                            
+                                <a class="links" href="/">
+                                    
+                                        <i class="fa-regular fa-house icon-space"></i>
+                                    
+                                    <span class="link-name">Home</span>
+                                </a>
+                            
+                        
+                            
+                                <a class="links" href="/archives">
+                                    
+                                        <i class="fa-regular fa-archive icon-space"></i>
+                                    
+                                    <span class="link-name">Archives</span>
+                                </a>
+                            
+                        
+                            
+                                <a class="links" href="/tags">
+                                    
+                                        <i class="fa-regular fa-tag icon-space"></i>
+                                    
+                                    <span class="link-name">Tags</span>
+                                </a>
+                            
+                        
+                            
+                                <a class="links" href="/categories">
+                                    
+                                        <i class="fa-regular fa-grid-2 icon-space"></i>
+                                    
+                                    <span class="link-name">Categories</span>
+                                </a>
+                            
+                        
+                            
+                                <a class="links" href="/links">
+                                    
+                                        <i class="fa-solid fa-link icon-space"></i>
+                                    
+                                    <span class="link-name">Links</span>
+                                </a>
+                            
+                        
+                    
+                </div>
+            
+        
 
+    </div>
+</div>
 
+            
 
         </div>
 
-        <div class="page-main-content-bottom">
+        <div class="main-content-footer">
             <footer class="footer">
     <div class="info-container">
         <div class="copyright-info">
@@ -1061,15 +1259,12 @@ Ultralytics YOLOv8 是由 Ultralytics 开发的一个前沿的 SOTA 模型。它
         
         <div class="theme-info info-item">
             <span class="powered-by-container">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" href="https://hexo.io">Hexo</a></span>
-                <br> 
-            <span class="theme-version-container">THEME&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v1.2.1</a>
+                <br>
+            <span class="theme-version-container">THEME&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.2.1</a>
         </div>
         
         
         
-            <div id="start_time_div" style="display:none">
-                2022/8/17 11:45:14
-            </div>
             <div>
                 Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
             </div>
@@ -1101,9 +1296,9 @@ Ultralytics YOLOv8 是由 Ultralytics 开发的一个前沿的 SOTA 模型。它
 
     
 
-    <div class="right-bottom-side-tools">
+    <div class="right-side-tools-container">
         <div class="side-tools-container">
-    <ul class="unfolded-tools-list">
+    <ul class="hidden-tools-list">
         <li class="right-bottom-tools tool-font-adjust-plus flex-center">
             <i class="fa-regular fa-magnifying-glass-plus"></i>
         </li>
@@ -1124,20 +1319,22 @@ Ultralytics YOLOv8 是由 Ultralytics 开发的一个前沿的 SOTA 模型。它
         
 
         
-            <li class="right-bottom-tools tool-scroll-to-top flex-center">
-                <i class="fa-regular fa-arrow-up"></i>
-            </li>
-        
 
         <li class="right-bottom-tools tool-scroll-to-bottom flex-center">
             <i class="fa-regular fa-arrow-down"></i>
         </li>
     </ul>
 
-    <ul class="folded-tools-list">
-        <li class="right-bottom-tools tool-toggle-show flex-center">
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center">
             <i class="fa-regular fa-cog fa-spin"></i>
         </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
         
     </ul>
 </div>
@@ -1186,34 +1383,27 @@ Ultralytics YOLOv8 是由 Ultralytics 开发的一个前沿的 SOTA 模型。它
 
 
 
-<!-- 雪花特效 -->
-<script type="text/javascript"
-src="https://libs.baidu.com/jquery/1.8.3/jquery.js"></script>
-<script type="text/javascript"
-src="https://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
-<script type="text/javascript" src="/js/snow.js"></script>
-
 
 <script src="/js/utils.js"></script>
 
 <script src="/js/main.js"></script>
 
-<script src="/js/layouts/menu-shrink.js"></script>
+<script src="/js/layouts/navbarShrink.js"></script>
 
-<script src="/js/tools/go-top-bottom.js"></script>
+<script src="/js/tools/scrollTopBottom.js"></script>
 
-<script src="/js/tools/dark-light-toggle.js"></script>
-
-
-
-    
-<script src="/js/tools/local-search.js"></script>
-
+<script src="/js/tools/lightDarkSwitch.js"></script>
 
 
 
     
-<script src="/js/tools/code-block.js"></script>
+<script src="/js/tools/localSearch.js"></script>
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js"></script>
 
 
 
@@ -1228,7 +1418,7 @@ src="https://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
 <script src="/js/tools/runtime.js"></script>
 
     
-<script src="/js/layouts/odometer.min.js"></script>
+<script src="/js/libs/odometer.min.js"></script>
 
     
 <link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
@@ -1262,7 +1452,7 @@ src="https://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
             selectors: [
                 'head title',
                 '.page-container',
-                '.pjax'
+                '.pjax',
             ],
             history: true,
             debug: false,
@@ -1275,23 +1465,19 @@ src="https://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
         });
 
         document.addEventListener('pjax:send', () => {
-            REDEFINE.utils.pjaxProgressBarStart();
+            Global.utils.pjaxProgressBarStart();
         });
 
         document.addEventListener('pjax:complete', () => {
-            REDEFINE.utils.pjaxProgressBarEnd();
+            Global.utils.pjaxProgressBarEnd();
             window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
-            REDEFINE.refresh();
+            Global.refresh();
         });
     });
 </script>
 
 
 
-
-
-<!-- 雪花特效 -->
-<script type="text/javascript" src="\js\snow.js"></script>
 
 </body>
 </html>

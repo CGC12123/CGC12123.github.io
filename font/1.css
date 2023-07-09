@@ -1,0 +1,10 @@
+/* 导入华文新魏字体 */
+@font-face {
+    font-family: '华文新魏';
+    src: url('path/to/HuawenXinwei.ttf') format('truetype');
+  }
+  
+  /* 设置华文新魏字体 */
+  body {
+    font-family: '华文新魏', serif;
+  }
