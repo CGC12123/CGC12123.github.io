@@ -11,9 +11,9 @@
   </url>
   
   <url>
-    <loc>http://example.com/2023/07/19/2023RAICOM/</loc>
+    <loc>http://example.com/2023/03/14/%E5%85%B3%E4%BA%8E%E8%93%9D%E6%A1%A5%E6%9D%AF/</loc>
     
-    <lastmod>2023-07-19</lastmod>
+    <lastmod>2023-07-20</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -185,15 +185,6 @@
     <loc>http://example.com/2023/03/14/Lingo/</loc>
     
     <lastmod>2023-04-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/2023/03/14/%E5%85%B3%E4%BA%8E%E8%93%9D%E6%A1%A5%E6%9D%AF/</loc>
-    
-    <lastmod>2023-04-08</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -486,13 +477,6 @@
   
   <url>
     <loc>http://example.com/tags/TensorRT/</loc>
-    <lastmod>2023-07-20</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://example.com/tags/%E8%B5%9B%E4%BA%8B/</loc>
     <lastmod>2023-07-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
