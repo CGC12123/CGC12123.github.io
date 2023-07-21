@@ -18,15 +18,15 @@
     <meta name="googlebot" content="index,follow">
     <meta name="revisit-after" content="1 days">
     
-        <meta name="description" content="使用TensorRT加速Yolov5模型使用版本为TensorRT-Yolov5-v7.0 , Yolov5 v7.0    以yolov5s.pt为例，进行目标检测  下载工程源码123# 按照版本进行项目克隆 yolo与tensorrt的版本需一致git clone -b v7.0 https:&#x2F;&#x2F;github.com&#x2F;ultralytics&#x2F;yolov5.gitgit clone -b y">
+        <meta name="description" content="使用TensorRT加速Yolov5模型">
 <meta property="og:type" content="article">
 <meta property="og:title" content="使用TensorRT加速Yolo">
 <meta property="og:url" content="http://example.com/2023/07/20/%E4%BD%BF%E7%94%A8TensorRT%E5%8A%A0%E9%80%9FYolo/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="使用TensorRT加速Yolov5模型使用版本为TensorRT-Yolov5-v7.0 , Yolov5 v7.0    以yolov5s.pt为例，进行目标检测  下载工程源码123# 按照版本进行项目克隆 yolo与tensorrt的版本需一致git clone -b v7.0 https:&#x2F;&#x2F;github.com&#x2F;ultralytics&#x2F;yolov5.gitgit clone -b y">
+<meta property="og:description" content="使用TensorRT加速Yolov5模型">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-07-20T08:14:12.000Z">
-<meta property="article:modified_time" content="2023-07-20T13:30:59.625Z">
+<meta property="article:modified_time" content="2023-07-21T06:54:51.873Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="yolo">
 <meta property="article:tag" content="人工智能">
@@ -368,8 +368,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-07-20 21:30:59</span>
-            <span class="mobile">2023-07-20 21:30</span>
+            <span class="desktop">2023-07-21 14:54:51</span>
+            <span class="mobile">2023-07-21 14:54</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -454,6 +454,12 @@
 <p>也可以只用python进行调用</p>
 <div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 需要下载python-tensorrt, pycuda, etc.</span></span><br><span class="line">python yolov5_det_trt.py</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或使用CUDA-python代替pycuda</span></span><br><span class="line">python yolov5_det_trt_cuda_python.py</span><br></pre></td></tr></table></figure></div>
 
+<h1 id="小捷径"><a href="#小捷径" class="headerlink" title="小捷径"></a>小捷径</h1><p>如果不使用c++进行推理，而只用tensorrt对python项目进行加速，是可以直接在yolo项目中使用 <code>export.py</code> 将 <code>pt</code> 直接转为 <code>engine</code>，程序会直接调用tensorrt的包进行转换，具体使用例子如</p>
+<div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python export.py --include engine --weights yolov5s.pt --device 0 --half</span><br></pre></td></tr></table></figure></div>
+<blockquote>
+<p>其中我指定了几个常用参数<br><code>--include engine</code> 为要转换的目标模型，tensorrt的目标为engine<br><code>--weights yolov5s.pt</code> 为被转换的模型文件，这里我们欲将yolov5s.pt进行转换<br><code>--device 0</code> 为指定设备为cuda: 0，由于tensorrt限制，这里必须使用gpu进行export，可根据gpu设备号修改数字<br><code>--half</code> 表示半精度推理<br>除了以上，还有非常多参数可以根据需求选择，具体可查看yolo项目 <code>export.py</code> 中的参数</p>
+</blockquote>
+<h1 id="TensorRT的使用"><a href="#TensorRT的使用" class="headerlink" title="TensorRT的使用"></a>TensorRT的使用</h1><p>只需要在使用模型推理时，指定模型权重文件为对应的 <code>.engine</code> 即可</p>
 <h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><blockquote>
 <p>如分类、分割等与其类似，可以参考<a class="link"   target="_blank" rel="noopener" href="https://github.com/wang-xinyu/tensorrtx/tree/yolov5-v7.0/yolov5" >官方介绍 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>进行操作</p>
 </blockquote>
@@ -469,7 +475,7 @@
         <li><strong>Created at:</strong> 2023-07-20 16:14:12</li>
         
             <li>
-                <strong>Updated at:</strong> 2023-07-20 21:30:59
+                <strong>Updated at:</strong> 2023-07-21 14:54:51
             </li>
         
         <li>
@@ -511,6 +517,21 @@
             
                 <div class="article-nav">
                     
+                        <div class="article-prev">
+                            <a class="prev"
+                            rel="prev"
+                            href="/2023/07/21/%E5%9C%A8jetson%E7%9A%84conda%E8%99%9A%E6%8B%9F%E7%8E%AF%E5%A2%83%E4%B8%AD%E5%AE%89%E8%A3%85tensorrt/"
+                            >
+                                <span class="left arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-left"></i>
+                                </span>
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">在jetson的conda虚拟环境中安装tensorrt</span>
+                                    <span class="post-nav-item">Prev posts</span>
+                                </span>
+                            </a>
+                        </div>
+                    
                     
                         <div class="article-next">
                             <a class="next"
@@ -540,7 +561,7 @@
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">使用TensorRT加速Yolo</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81"><span class="nav-text">下载工程源码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96-wts-%E6%96%87%E4%BB%B6"><span class="nav-text">获取 wts 文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%96%E8%AF%91tensorrt%E5%B7%A5%E7%A8%8B"><span class="nav-text">编译tensorrt工程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BD%AC%E6%8D%A2-wts-%E4%B8%BA-engine-%E6%96%87%E4%BB%B6"><span class="nav-text">转换 wts 为 engine 文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9B%E8%A1%8C%E9%A2%84%E6%B5%8B"><span class="nav-text">进行预测</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-text">其他</span></a></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E5%B7%A5%E7%A8%8B%E6%BA%90%E7%A0%81"><span class="nav-text">下载工程源码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96-wts-%E6%96%87%E4%BB%B6"><span class="nav-text">获取 wts 文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%BC%96%E8%AF%91tensorrt%E5%B7%A5%E7%A8%8B"><span class="nav-text">编译tensorrt工程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BD%AC%E6%8D%A2-wts-%E4%B8%BA-engine-%E6%96%87%E4%BB%B6"><span class="nav-text">转换 wts 为 engine 文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%9B%E8%A1%8C%E9%A2%84%E6%B5%8B"><span class="nav-text">进行预测</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%8F%E6%8D%B7%E5%BE%84"><span class="nav-text">小捷径</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#TensorRT%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-text">TensorRT的使用</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-text">其他</span></a></li></ol>
 
     </div>
 </div>
