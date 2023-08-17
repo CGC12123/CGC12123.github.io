@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-08-16T10:26:33.927Z</updated>
+  <updated>2023-08-17T14:18:06.509Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Powershell配置及工具</title>
+    <link href="http://example.com/2023/08/17/Powershell%E9%85%8D%E7%BD%AE%E5%8F%8A%E7%BE%8E%E5%8C%96/"/>
+    <id>http://example.com/2023/08/17/Powershell%E9%85%8D%E7%BD%AE%E5%8F%8A%E7%BE%8E%E5%8C%96/</id>
+    <published>2023-08-17T10:50:25.000Z</published>
+    <updated>2023-08-17T14:18:06.509Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Powershell中的配置及工具"><a href="#Powershell中的配置及工具" class="headerlink" title="Powershell中的配置及工具"></a>Powershell中的配置及工具</h1><h2 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h2><p>可以使用如下命令创建Powershell的自启动配置文件</p><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">New-Item -ItemType file -Path $PROFILE  -Force</span><br></pre></td></tr></table></figure></div><p>此后，可使用</p><div class="highlight-container" data-rel="Shell"><figure class="iseeu highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">$</span><span class="language-bash">PROFILE</span></span><br></pre></td></tr></table></figure></div><p>查看该配置文件的位置 如我的是</p><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; $PROFILE</span><br><span class="line">&gt; C:\Users\CGC\Documents\WindowsPowerShell\Microsoft.PowerShell_profile.ps1</span><br></pre></td></tr></table></figure></div><blockquote><p>我的理解是 <code>PROFILE</code> 性质和 linux下的 <code>.bashrc</code> 差不多，会在开启终端时自己执行，依次可以实现很多需要自启动的功能</p></blockquote><!-- # Powershell美化> 基于 Windows terminal## Windows terminalWindows terminal是一个终端应用程序，相对于古老的cmd大黑框和power shell的大蓝框，它是一款更新更强大的终端应用程序，继承了多种命令行shell，同时也提供了更多个性化定制空间## Windows terminal的setting.json进入终端后在上方打开设置，在设置的左下角有一个 `打开JSON文件`，此为我们用来配置各个功能的文件，打开该json文件，进行相关配置\以下配置主要是对美观上的配置，位于 `"profiles"` 中，可使用 `ctrl + f` 寻找 `"profiles"`，然后找到其中的 `defaults` ，打开其中的大括号，往里面进行代码的填充<div class="highlight-container" data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;profiles&quot;</span><span class="punctuation">:</span> </span><br><span class="line">    <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;defaults&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">            </span><br><span class="line">        <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br></pre></td></tr></table></figure></div><h3 id="亚克力效果"><a href="#亚克力效果" class="headerlink" title="亚克力效果"></a>亚克力效果</h3><div class="highlight-container" data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">&quot;useAcrylic&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br></pre></td></tr></table></figure></div><h3 id="不透明度设置"><a href="#不透明度设置" class="headerlink" title="不透明度设置"></a>不透明度设置</h3><div class="highlight-container" data-rel="Json"><figure class="iseeu highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 例如设置为百分之四十</span></span><br><span class="line"><span class="attr">&quot;opacity&quot;</span><span class="punctuation">:</span> <span class="number">40</span></span><br></pre></td></tr></table></figure></div><h3 id="自定义背景图片"><a href="#自定义背景图片" class="headerlink" title="自定义背景图片"></a>自定义背景图片</h3><p><code>json &quot;background&quot;: &quot;img.jpg&quot; </code> –&gt;</p>]]></content>
+    
+    
+    <summary type="html">一些Windows Powershell中的配置工具</summary>
+    
+    
+    
+    <category term="环境配置及相关工具" scheme="http://example.com/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E5%8F%8A%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7/"/>
+    
+    
+    <category term="Powershell" scheme="http://example.com/tags/Powershell/"/>
+    
+    <category term="Windows" scheme="http://example.com/tags/Windows/"/>
+    
+  </entry>
   
   <entry>
     <title>操作系统——进程管理</title>
@@ -499,29 +522,6 @@
     <category term="深度学习" scheme="http://example.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="Pytorch" scheme="http://example.com/tags/Pytorch/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Lingo</title>
-    <link href="http://example.com/2023/03/14/Lingo/"/>
-    <id>http://example.com/2023/03/14/Lingo/</id>
-    <published>2023-03-14T13:26:36.000Z</published>
-    <updated>2023-04-09T02:51:53.059Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="lingo编写格式"><a href="#lingo编写格式" class="headerlink" title="lingo编写格式"></a>lingo编写格式</h1><h2 id="集合部分-SETS"><a href="#集合部分-SETS" class="headerlink" title="集合部分(SETS)"></a>集合部分(SETS)</h2><p>以<code>SETS</code>开始，以<code>ENDSETS</code>结束<br>用于定义必要变量<br>有两类集合</p><p>**原始集合:**<br>其定义格式为:</p><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SETENME/member list(or 1..n)/: attribute, attribute, etc.</span><br></pre></td></tr></table></figure></div><p><strong>导出集合</strong><br>引用其他集合定义的集合 其定义格式为:</p><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">SENTNAME(set1, set2, etc.): attribute, attribute, etc.</span><br></pre></td></tr></table></figure></div><p>若要在程序中使用数组，则必须在该部分定义<br>如</p><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Person/1..10/:A;</span><br><span class="line">Task/1..12/:B;</span><br><span class="line">Link(Person, Task):X;</span><br></pre></td></tr></table></figure></div><h2 id="目标与约束"><a href="#目标与约束" class="headerlink" title="目标与约束"></a>目标与约束</h2><p>定义目标函数、约束条件等</p><h2 id="数据部分-DATA"><a href="#数据部分-DATA" class="headerlink" title="数据部分(DATA)"></a>数据部分(DATA)</h2><p>以<code>DATA: </code>开始，以<code>END DATA</code>结束<br>用于数据的输入<br>格式为：</p><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">attribute = value_list</span><br></pre></td></tr></table></figure></div><h2 id="初始化部分-INIT"><a href="#初始化部分-INIT" class="headerlink" title="初始化部分(INIT)"></a>初始化部分(INIT)</h2><p>以<code>INIT: </code>开始，以<code>END INIT</code>结束<br>用于对集合属性（数组）定义初值<br>格式为</p><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">attribute=value_list</span><br></pre></td></tr></table></figure></div><h1 id="内部函数"><a href="#内部函数" class="headerlink" title="内部函数"></a>内部函数</h1><p>以<code>@</code>开头\</p><h2 id="数学函数"><a href="#数学函数" class="headerlink" title="数学函数"></a>数学函数</h2><p>常用<strong>数学函数</strong>如下</p><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">@ABS(X) 返回绝对值</span><br><span class="line">@COS(X) 返回余弦值</span><br><span class="line">@EXP(X) 返回e指数值</span><br><span class="line">@FLOOR(X) 返回靠近0的整数部分</span><br><span class="line">@LGM(X) 返回Γ函数自然对数值</span><br><span class="line">@LOG(X) 返回x自然对数值</span><br><span class="line">@SIGN(X) 返回符号值 负数为-1 正数为1</span><br><span class="line">@SIN(X)  返回正弦 x为弧度制</span><br><span class="line">@SMAX(X1, X2···, Xn) 返回最大值</span><br><span class="line">@SMIN(X) (X1, X2···, Xn) 返回最小值</span><br><span class="line">@TAN(X) 返回正切值</span><br></pre></td></tr></table></figure></div><h2 id="集合函数"><a href="#集合函数" class="headerlink" title="集合函数"></a>集合函数</h2><p><strong>集合函数格式</strong>如下</p><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set_operator(set_name|condition:expression)</span><br></pre></td></tr></table></figure></div><p>其中<code>set_operator</code>为集合函数名<br><code>set_name</code>为数据集合名<br> <code>condition</code>为表达式<br><code>|expression</code>为条件，用逻辑表达式描述（无条件可省略）</p><p>逻辑表达式中 有如下运算符</p><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">#AND# 与</span><br><span class="line">#OR# 或</span><br><span class="line">#NOT# 非</span><br><span class="line"></span><br><span class="line">#EQ# 等于</span><br><span class="line">#NE# 不等于</span><br><span class="line">#GT# 大于</span><br><span class="line">#GE# 大于等于</span><br><span class="line">#LT# 小于</span><br><span class="line">#LE# 小于等于</span><br></pre></td></tr></table></figure></div><p>常见<code>集合函数</code>如下：</p><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@FOR(set_name: constraint) 对集合set_name的每个元素独立生成约束 由约束表达式constraint描述</span><br><span class="line">@MAX(set_name: exoression) 返回集合上最大值</span><br><span class="line">@MIN(set_name: exoression) 返回集合上最小值</span><br><span class="line">@SUN(set_name: exoression) 返回集合上的表达式exoression的和</span><br><span class="line">@SIZE(set_name) 返回元素个数</span><br><span class="line">@IN(set_name, set_element) 若set_name中包含set_element则返回1，反之返回0</span><br></pre></td></tr></table></figure></div><h2 id="变量界定函数"><a href="#变量界定函数" class="headerlink" title="变量界定函数"></a>变量界定函数</h2><p>变量函数对变量的取值范围的附加限制 由如下四种</p><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">@BND(L, X, U)限制L≤X≤U</span><br><span class="line">@BIN(X) 限制x为1或0</span><br><span class="line">@FREE(X) 取消对x的符号限制(可取任意实数)</span><br><span class="line">@GIN(X) 限制x为整数值</span><br></pre></td></tr></table></figure></div>]]></content>
-    
-    
-    <summary type="html">Lingo基础语法</summary>
-    
-    
-    
-    <category term="学习笔记" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="数学建模" scheme="http://example.com/tags/%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1/"/>
-    
-    <category term="Lingo" scheme="http://example.com/tags/Lingo/"/>
     
   </entry>
   
