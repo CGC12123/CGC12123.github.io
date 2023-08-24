@@ -26,7 +26,7 @@
 <meta property="og:description" content="基于Jetson平台，使用思岚A1激光雷达运行gmapping进行建图">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-06-30T07:35:47.000Z">
-<meta property="article:modified_time" content="2023-07-09T09:36:20.403Z">
+<meta property="article:modified_time" content="2023-08-24T10:54:11.160Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="Jetson">
 <meta property="article:tag" content="Ros">
@@ -369,8 +369,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-07-09 17:36:20</span>
-            <span class="mobile">2023-07-09 17:36</span>
+            <span class="desktop">2023-08-24 18:54:11</span>
+            <span class="mobile">2023-08-24 18:54</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -435,7 +435,7 @@
                 <blockquote>
 <p>所参考的大佬教程如下 <br><a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43961980/article/details/118113609" >大佬1 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> <a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_46781669/article/details/107738966?utm_medium=distribute.pc_relevant.none-task-blog-baidujs_title-0&spm=1001.2101.3001.4242" >大佬2 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> <a class="link"   target="_blank" rel="noopener" href="https://blog.csdn.net/VampireWolf/article/details/90042517" >大佬3 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 </blockquote>
-<h1 id="前情介绍"><a href="#前情介绍" class="headerlink" title="前情介绍"></a>前情介绍</h1><blockquote>
+<h2 id="前情介绍"><a href="#前情介绍" class="headerlink" title="前情介绍"></a>前情介绍</h2><blockquote>
 <p>任务背景为：要使用思岚A1M8激光雷达实现建图及避障、导航等功能<br>本次为实现建图</p>
 </blockquote>
 <blockquote>
@@ -447,18 +447,18 @@
 <blockquote>
 <p>采用的方法就是使用 laser_scan_matcher 功能包，其为增量激光扫描配准工具。该软件包允许扫描连续的 sensor_msgs &#x2F; LaserScan 消息之间的匹配，并将估计的激光位置发布为 geometry_msgs &#x2F; Pose2D 或 tf 变换。该包可以在没有其他传感器提供的任何测距估计的情况下使用。因此，它可以作为独立的里程计算器估算器。</p>
 </blockquote>
-<h1 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h1><h2 id="创建工作空间"><a href="#创建工作空间" class="headerlink" title="创建工作空间"></a>创建工作空间</h2><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 根据自己习惯创建工作空间</span></span><br><span class="line"><span class="built_in">mkdir</span> -p ~/rplidar_ws/src &amp;&amp; <span class="built_in">cd</span> ~/rplidar_ws/src</span><br></pre></td></tr></table></figure></div>
+<h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h2><h3 id="创建工作空间"><a href="#创建工作空间" class="headerlink" title="创建工作空间"></a>创建工作空间</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 根据自己习惯创建工作空间</span></span><br><span class="line"><span class="built_in">mkdir</span> -p ~/rplidar_ws/src &amp;&amp; <span class="built_in">cd</span> ~/rplidar_ws/src</span><br></pre></td></tr></table></figure></div>
 
-<h2 id="下载所需的功能包"><a href="#下载所需的功能包" class="headerlink" title="下载所需的功能包"></a>下载所需的功能包</h2><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/Slamtec/rplidar_ros.git</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/CCNYRoboticsLab/scan_tools.git</span><br></pre></td></tr></table></figure></div>
+<h3 id="下载所需的功能包"><a href="#下载所需的功能包" class="headerlink" title="下载所需的功能包"></a>下载所需的功能包</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/Slamtec/rplidar_ros.git</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/CCNYRoboticsLab/scan_tools.git</span><br></pre></td></tr></table></figure></div>
 
-<h2 id="获取gmapping功能包"><a href="#获取gmapping功能包" class="headerlink" title="获取gmapping功能包"></a>获取gmapping功能包</h2><blockquote>
+<h3 id="获取gmapping功能包"><a href="#获取gmapping功能包" class="headerlink" title="获取gmapping功能包"></a>获取gmapping功能包</h3><blockquote>
 <p>网址为：<a class="link"   target="_blank" rel="noopener" href="https://github.com/CCNYRoboticsLab/scan_tools.git" >https://github.com/CCNYRoboticsLab/scan_tools.git <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> <br>下载或克隆仓库后将其中的gmapping文件夹复制到工作空间下的src中（比如我的就是<code>~/rplidar_ws/src</code>）</p>
 </blockquote>
-<h2 id="接着下载必要功能包"><a href="#接着下载必要功能包" class="headerlink" title="接着下载必要功能包"></a>接着下载必要功能包</h2><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将melodic替换为自己的ros版本</span></span><br><span class="line">sudo apt-get install ros-melodic-csm</span><br><span class="line">sudo apt-get install ros-melodic-gmapping</span><br></pre></td></tr></table></figure></div>
+<h3 id="接着下载必要功能包"><a href="#接着下载必要功能包" class="headerlink" title="接着下载必要功能包"></a>接着下载必要功能包</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 将melodic替换为自己的ros版本</span></span><br><span class="line">sudo apt-get install ros-melodic-csm</span><br><span class="line">sudo apt-get install ros-melodic-gmapping</span><br></pre></td></tr></table></figure></div>
 
-<h2 id="编译工作空间"><a href="#编译工作空间" class="headerlink" title="编译工作空间"></a>编译工作空间</h2><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入工作空间</span></span><br><span class="line"><span class="built_in">cd</span> ~/rplidar_ws</span><br><span class="line"><span class="comment"># 编译</span></span><br><span class="line">catkin_make</span><br></pre></td></tr></table></figure></div>
+<h3 id="编译工作空间"><a href="#编译工作空间" class="headerlink" title="编译工作空间"></a>编译工作空间</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入工作空间</span></span><br><span class="line"><span class="built_in">cd</span> ~/rplidar_ws</span><br><span class="line"><span class="comment"># 编译</span></span><br><span class="line">catkin_make</span><br></pre></td></tr></table></figure></div>
 
-<h2 id="修改启动launch文件"><a href="#修改启动launch文件" class="headerlink" title="修改启动launch文件"></a>修改启动launch文件</h2><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Library/rplidar_ws/src/scan_tools-indigo/laser_scan_matcher/demo</span><br></pre></td></tr></table></figure></div>
+<h3 id="修改启动launch文件"><a href="#修改启动launch文件" class="headerlink" title="修改启动launch文件"></a>修改启动launch文件</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/Library/rplidar_ws/src/scan_tools-indigo/laser_scan_matcher/demo</span><br></pre></td></tr></table></figure></div>
 <blockquote>
 <p>这里原先的<code>demo_gmapping.launch</code>文件则为启动launch文件，这里要做的就是修改它以实行自己的设备<br>这里提供我的launch文件</p>
 </blockquote>
@@ -468,15 +468,15 @@
 <blockquote>
 <p>第一行的<code>rplidarNode</code>及<code>rplidar_ros</code>需要按照自己的激光雷达启动节点而定<br>第三行的波特率数值需要根据雷达而定 如我的A1M8为115200</p>
 </blockquote>
-<h1 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h1><blockquote>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><blockquote>
 <p>以下需要在同一终端中进行</p>
 </blockquote>
-<h2 id="刷新环境变量"><a href="#刷新环境变量" class="headerlink" title="刷新环境变量"></a>刷新环境变量</h2><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/rplidar_ws/devel/setup.bash</span><br></pre></td></tr></table></figure></div>
-<h2 id="给串口权限"><a href="#给串口权限" class="headerlink" title="给串口权限"></a>给串口权限</h2><p>可以使用</p>
+<h3 id="刷新环境变量"><a href="#刷新环境变量" class="headerlink" title="刷新环境变量"></a>刷新环境变量</h3><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">source</span> ~/rplidar_ws/devel/setup.bash</span><br></pre></td></tr></table></figure></div>
+<h3 id="给串口权限"><a href="#给串口权限" class="headerlink" title="给串口权限"></a>给串口权限</h3><p>可以使用</p>
 <div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ls</span> /dev/*</span><br></pre></td></tr></table></figure></div>
 <p>进行查询，如我的是<code>ttyUSB0</code><br>则输入</p>
 <div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo <span class="built_in">chmod</span> 777 /dev/ttyUSB0</span><br></pre></td></tr></table></figure></div>
-<h2 id="运行launch文件"><a href="#运行launch文件" class="headerlink" title="运行launch文件"></a>运行launch文件</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">roslaunch  laser_scan_matcher demo_gmapping.launch</span><br></pre></td></tr></table></figure></div>
+<h3 id="运行launch文件"><a href="#运行launch文件" class="headerlink" title="运行launch文件"></a>运行launch文件</h3><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">roslaunch  laser_scan_matcher demo_gmapping.launch</span><br></pre></td></tr></table></figure></div>
 <blockquote>
 <p>其中<code>demo_gmapping.launch</code>可以根据自己修改的launch文件而修改</p>
 </blockquote>
@@ -492,7 +492,7 @@
         <li><strong>Created at:</strong> 2023-06-30 15:35:47</li>
         
             <li>
-                <strong>Updated at:</strong> 2023-07-09 17:36:20
+                <strong>Updated at:</strong> 2023-08-24 18:54:11
             </li>
         
         <li>
@@ -557,10 +557,10 @@
                         <div class="article-next">
                             <a class="next"
                             rel="next"
-                            href="/2023/06/28/acfly-mavros/"
+                            href="/2023/06/28/Acfly-Mavros/"
                             >
                                 <span class="title flex-center">
-                                    <span class="post-nav-title-item">acfly-mavros</span>
+                                    <span class="post-nav-title-item">Acfly-Mavros</span>
                                     <span class="post-nav-item">Next posts</span>
                                 </span>
                                 <span class="right arrow-icon flex-center">
@@ -582,7 +582,7 @@
     <div class="post-toc">
         <div class="toc-title">On this page</div>
         <div class="page-title">rplidarA1-gmapping</div>
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%89%8D%E6%83%85%E4%BB%8B%E7%BB%8D"><span class="nav-text">前情介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E6%AD%A5%E9%AA%A4"><span class="nav-text">具体步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4"><span class="nav-text">创建工作空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E6%89%80%E9%9C%80%E7%9A%84%E5%8A%9F%E8%83%BD%E5%8C%85"><span class="nav-text">下载所需的功能包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96gmapping%E5%8A%9F%E8%83%BD%E5%8C%85"><span class="nav-text">获取gmapping功能包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A5%E7%9D%80%E4%B8%8B%E8%BD%BD%E5%BF%85%E8%A6%81%E5%8A%9F%E8%83%BD%E5%8C%85"><span class="nav-text">接着下载必要功能包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4"><span class="nav-text">编译工作空间</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%90%AF%E5%8A%A8launch%E6%96%87%E4%BB%B6"><span class="nav-text">修改启动launch文件</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C"><span class="nav-text">运行</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%B7%E6%96%B0%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="nav-text">刷新环境变量</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%99%E4%B8%B2%E5%8F%A3%E6%9D%83%E9%99%90"><span class="nav-text">给串口权限</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8Claunch%E6%96%87%E4%BB%B6"><span class="nav-text">运行launch文件</span></a></li></ol></li></ol>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%8D%E6%83%85%E4%BB%8B%E7%BB%8D"><span class="nav-text">前情介绍</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E6%AD%A5%E9%AA%A4"><span class="nav-text">具体步骤</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4"><span class="nav-text">创建工作空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8B%E8%BD%BD%E6%89%80%E9%9C%80%E7%9A%84%E5%8A%9F%E8%83%BD%E5%8C%85"><span class="nav-text">下载所需的功能包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96gmapping%E5%8A%9F%E8%83%BD%E5%8C%85"><span class="nav-text">获取gmapping功能包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A5%E7%9D%80%E4%B8%8B%E8%BD%BD%E5%BF%85%E8%A6%81%E5%8A%9F%E8%83%BD%E5%8C%85"><span class="nav-text">接着下载必要功能包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%96%E8%AF%91%E5%B7%A5%E4%BD%9C%E7%A9%BA%E9%97%B4"><span class="nav-text">编译工作空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%90%AF%E5%8A%A8launch%E6%96%87%E4%BB%B6"><span class="nav-text">修改启动launch文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%90%E8%A1%8C"><span class="nav-text">运行</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%B7%E6%96%B0%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="nav-text">刷新环境变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%99%E4%B8%B2%E5%8F%A3%E6%9D%83%E9%99%90"><span class="nav-text">给串口权限</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%90%E8%A1%8Claunch%E6%96%87%E4%BB%B6"><span class="nav-text">运行launch文件</span></a></li></ol></li></ol>
 
     </div>
 </div>
