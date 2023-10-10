@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="Hexo Theme Redefine">
+    
+    <meta name="author" content="CGC">
+    <!-- preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    
+    <!--- Seo Part-->
+    
+    <link rel="canonical" href="http://example.com/2023/10/10/计算机网络——概述/"/>
+    <meta name="robots" content="index,follow">
+    <meta name="googlebot" content="index,follow">
+    <meta name="revisit-after" content="1 days">
+    
+        <meta name="description" content="计算机网络概述">
+<meta property="og:type" content="article">
+<meta property="og:title" content="计算机网络——概述">
+<meta property="og:url" content="http://example.com/2023/10/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E2%80%94%E2%80%94%E6%A6%82%E8%BF%B0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="计算机网络概述">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://example.com/images/net/wangluozucheng.jpg">
+<meta property="og:image" content="http://example.com/images/net/tongxin.jpg">
+<meta property="og:image" content="http://example.com/images/net/tongxin2.jpg">
+<meta property="og:image" content="http://example.com/images/net/tcpip.jpg">
+<meta property="og:image" content="http://example.com/images/net/diff1.jpg">
+<meta property="og:image" content="http://example.com/images/net/wuceng.jpg">
+<meta property="article:published_time" content="2023-10-10T05:01:35.000Z">
+<meta property="article:modified_time" content="2023-10-10T07:44:17.193Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="计算机网络">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/images/net/wangluozucheng.jpg">
+    
+    
+    <!--- Icon Part-->
+    <link rel="icon" type="image/png" href="/images/favicon_cgc.svg" sizes="192x192">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon_cgc.svg">
+    <meta name="theme-color" content="#A31F34">
+    <link rel="shortcut icon" href="/images/favicon_cgc.svg">
+    <!--- Page Info-->
+    
+    <title>
+        
+            计算机网络——概述 -
+        
+        CGC
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/fonts/fonts.css">
+
+    
+<link rel="stylesheet" href="/fonts/Satoshi/satoshi.css">
+
+    
+<link rel="stylesheet" href="/fonts/Chillax/chillax.css">
+
+    <!--- Font Part-->
+    
+    
+    
+    
+
+    <!--- Inject Part-->
+    
+    <script id="hexo-configurations">
+    let Global = window.Global || {};
+    Global.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"};
+    Global.theme_config = {"articles":{"style":{"font_size":"16px","line_height":1.5,"image_border_radius":"14px","image_alignment":"center","image_caption":false,"link_icon":true},"word_count":{"enable":true,"count":true,"min2read":true},"author_label":{"enable":true,"auto":false,"list":[]},"code_block":{"copy":true,"style":"mac","font":{"enable":false,"family":null,"url":null}},"toc":{"enable":true,"max_depth":3,"number":false,"expand":true,"init_open":true},"copyright":true,"lazyload":true,"recommendation":{"enable":false,"title":"推荐阅读","limit":3,"mobile_limit":2,"placeholder":"/images/background/bg1.jpg","skip_dirs":[]}},"colors":{"primary":"#A31F34","secondary":null},"global":{"fonts":{"chinese":{"enable":false,"family":null,"url":null},"english":{"enable":false,"family":null,"url":null}},"content_max_width":"1000px","sidebar_width":"210px","hover":{"shadow":true,"scale":true},"scroll_progress":{"bar":false,"percentage":true},"busuanzi_counter":{"enable":true,"site_pv":true,"site_uv":true,"post_pv":true},"pjax":true,"open_graph":true,"google_analytics":{"enable":false,"id":null}},"home_banner":{"enable":true,"style":"fixed","image":{"light":"/images/background/bg3.svg","dark":"/images/background/bg2.jpg"},"title":"CGC","subtitle":{"text":["是我还是我","不一样的花火"],"hitokoto":{"enable":true,"api":"https://v1.hitokoto.cn/?c=d&c=e&c=h"},"typing_speed":100,"backing_speed":80,"starting_delay":500,"backing_delay":150,"loop":true,"smart_backspace":true},"text_color":{"light":"#000017","dark":"#d1d1b6"},"text_style":{"title_size":"2.2rem","subtitle_size":"1.5rem","line_height":1.2},"custom_font":{"enable":false,"family":null,"url":null},"social_links":{"enable":true,"links":{"github":"https://github.com/CGC12123","instagram":null,"zhihu":null,"twitter":null,"email":"caiguoci@126.com"}}},"plugins":{"feed":{"enable":false},"aplayer":{"enable":false,"type":"fixed","audios":[{"name":null,"artist":null,"url":null,"cover":null}]},"mermaid":{"enable":false,"version":"9.3.0"}},"version":"2.2.1","navbar":{"auto_hide":false,"color":{"left":"#f78736","right":"#367df7","transparency":35},"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Article":{"path":"/categories","icon":"fa-regular fa-archive","submenus":{"Archives":"/archives","Tags":"/tags","Categories":"/categories"}},"Links":{"icon":"fa-solid fa-link","path":"/links"},"Photos":{"icon":"fa-solid fa-image","path":"/masonry"}},"search":{"enable":true,"preload":true}},"page_templates":{"friends_column":3,"tags_style":"blur"},"home":{"sidebar":{"enable":true,"position":"right","first_item":"info","announcement":null,"links":{"Home":{"path":"/","icon":"fa-regular fa-house"},"Archives":{"path":"/archives","icon":"fa-regular fa-archive"},"Tags":{"path":"/tags","icon":"fa-regular fa-tag"},"Categories":{"path":"/categories","icon":"fa-regular fa-grid-2"},"Links":{"icon":"fa-solid fa-link","path":"/links"},"Photos":{"icon":"fa-solid fa-image","path":"/masonry"}}},"article_date_format":"YYYY-MM-DD","categories":{"enable":true,"limit":3},"tags":{"enable":true,"limit":3}},"footerStart":"2022/3/17 11:45:14"};
+    Global.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    Global.data_config = {"masonry":true};
+  </script>
+    
+    <!--- Fontawesome Part-->
+    
+<link rel="stylesheet" href="/fontawesome/fontawesome.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/brands.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/solid.min.css">
+
+    
+<link rel="stylesheet" href="/fontawesome/regular.min.css">
+
+    
+    
+    
+    
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fa-solid fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="main-content-container">
+
+        <div class="main-content-header">
+            <header class="navbar-container">
+    
+    <div class="navbar-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                
+                CGC
+                
+            </a>
+        </div>
+
+        <div class="right">
+            <!-- PC -->
+            <div class="desktop">
+                <ul class="navbar-list">
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/"  >
+                                    
+                                        
+                                            <i class="fa-regular fa-house"></i>
+                                        
+                                        HOME
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="has-dropdown" 
+                                    href="#" onClick="return false;">
+                                    
+                                        
+                                            <i class="fa-regular fa-archive"></i>
+                                        
+                                        ARTICLE&nbsp;<i class="fa-solid fa-chevron-down"></i>
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                                    <ul class="sub-menu">
+                                    
+                                        <li>
+                                        <a href="/archives">ARCHIVES
+                                        </a>
+                                        </li>
+                                    
+                                        <li>
+                                        <a href="/tags">TAGS
+                                        </a>
+                                        </li>
+                                    
+                                        <li>
+                                        <a href="/categories">CATEGORIES
+                                        </a>
+                                        </li>
+                                    
+                                    </ul>
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/links"  >
+                                    
+                                        
+                                            <i class="fa-solid fa-link"></i>
+                                        
+                                        LINKS
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                        
+                            <li class="navbar-item">
+                                <!-- Menu -->
+                                <a class="" 
+                                    href="/masonry"  >
+                                    
+                                        
+                                            <i class="fa-solid fa-image"></i>
+                                        
+                                        PHOTOS
+                                    
+                                </a>
+                                <!-- Submenu -->
+                                
+                            </li>
+                    
+                    
+                        <li class="navbar-item search search-popup-trigger">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <!-- Mobile -->
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fa-solid fa-magnifying-glass"></i></div>
+                
+                <div class="icon-item navbar-bar">
+                    <div class="navbar-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mobile drawer -->
+    <div class="navbar-drawer">
+        <ul class="drawer-navbar-list">
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="" 
+                        href="/"  >
+                             
+                                
+                                    <i class="fa-regular fa-house"></i>
+                                
+                                HOME
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="has-dropdown" 
+                        href="#" onClick="return false;">
+                            
+                                
+                                    <i class="fa-regular fa-archive"></i>
+                                
+                                ARTICLE&nbsp;<i class="fa-solid fa-chevron-down"></i>
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                              
+                        
+                            <li class="dropdown-item flex-center">
+                                <a class="dropdown-item" href="/archives">ARCHIVES</a>
+                            </li>
+                        
+                            <li class="dropdown-item flex-center">
+                                <a class="dropdown-item" href="/tags">TAGS</a>
+                            </li>
+                        
+                            <li class="dropdown-item flex-center">
+                                <a class="dropdown-item" href="/categories">CATEGORIES</a>
+                            </li>
+                        
+                    
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="" 
+                        href="/links"  >
+                             
+                                
+                                    <i class="fa-solid fa-link"></i>
+                                
+                                LINKS
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+                
+                    <li class="drawer-navbar-item flex-center">
+                        <a class="" 
+                        href="/masonry"  >
+                             
+                                
+                                    <i class="fa-solid fa-image"></i>
+                                
+                                PHOTOS
+                            
+                        </a>
+                    </li>
+                    <!-- Submenu -->
+                    
+            
+
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="main-content-body">
+
+            
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="post-page-container">
+        <div class="article-content-container">
+
+            
+            
+                <div class="article-title">
+                    <h1 class="article-title-regular">计算机网络——概述</h1>
+                </div>
+            
+                
+            
+
+            
+                <div class="article-header">
+                    <div class="avatar">
+                        <img src="https://avatars.githubusercontent.com/u/93080289?v=4">
+                    </div>
+                    <div class="info">
+                        <div class="author">
+                            <span class="name">CGC</span>
+                            
+                                <span class="author-label">Lv3</span>
+                            
+                        </div>
+                        <div class="meta-info">
+                            <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fa-regular fa-pen-fancy"></i>&nbsp;
+        <span class="desktop">2023-10-10 13:01:35</span>
+        <span class="mobile">2023-10-10 13:01</span>
+        <span class="hover-info">Created</span>
+    </span>
+    
+        <span class="article-date article-meta-item">
+            <i class="fa-regular fa-wrench"></i>&nbsp;
+            <span class="desktop">2023-10-10 15:44:17</span>
+            <span class="mobile">2023-10-10 15:44</span>
+            <span class="hover-info">Updated</span>
+        </span>
+    
+
+    
+        <span class="article-categories article-meta-item">
+            <i class="fa-regular fa-folders"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fa-regular fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fa-regular fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                        </div>
+                    </div>
+                </div>
+            
+
+            <div class="article-content markdown-body">
+                <h2 id="计算机网络概念"><a href="#计算机网络概念" class="headerlink" title="计算机网络概念"></a>计算机网络概念</h2><p>计算机网络：是一个将分散的具有独立功能的计算机系统，通过通信设备与线路连接起来，由功能完善的软件实现<strong>资源共享</strong>和<strong>信息传递</strong>的系统</p>
+<ul>
+<li>计算机网络是互联的、自治的计算机集合</li>
+<li>互联-通过通信线路互联互通</li>
+<li>自治-无主从关</li>
+</ul>
+<h2 id="计算机网络功能"><a href="#计算机网络功能" class="headerlink" title="计算机网络功能"></a>计算机网络功能</h2><ol>
+<li>数据通信</li>
+<li>资源共享</li>
+<li>分布式处理</li>
+<li>提高可靠性</li>
+<li>负载均衡</li>
+</ol>
+<h2 id="计算机网络工作方式"><a href="#计算机网络工作方式" class="headerlink" title="计算机网络工作方式"></a>计算机网络工作方式</h2><h3 id="边缘部分"><a href="#边缘部分" class="headerlink" title="边缘部分"></a>边缘部分</h3><p>用户直接使用</p>
+<ul>
+<li>C&#x2F;S方式</li>
+<li>P2P方式 <em>peer-to-peer</em></li>
+</ul>
+<h3 id="核心部分"><a href="#核心部分" class="headerlink" title="核心部分"></a>核心部分</h3><p>为边缘部分服务</p>
+<h2 id="计算机网络功能组成"><a href="#计算机网络功能组成" class="headerlink" title="计算机网络功能组成"></a>计算机网络功能组成</h2><h3 id="通信子网"><a href="#通信子网" class="headerlink" title="通信子网"></a>通信子网</h3><p>实现数据通信</p>
+<h3 id="资源子网"><a href="#资源子网" class="headerlink" title="资源子网"></a>资源子网</h3><p>实现资源共享&#x2F;数据处理<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/net/wangluozucheng.jpg"
+                      alt="网络组成"
+                ></p>
+<h2 id="计算机网络分类"><a href="#计算机网络分类" class="headerlink" title="计算机网络分类"></a>计算机网络分类</h2><h3 id="按分布范围分"><a href="#按分布范围分" class="headerlink" title="按分布范围分"></a>按分布范围分</h3><ul>
+<li>广域网WAN <em>使用交换技术</em></li>
+<li>城域网MAN</li>
+<li>局域网LAN <em>使用广播技术</em></li>
+<li>个人区域网PAN</li>
+</ul>
+<h3 id="按使用者分"><a href="#按使用者分" class="headerlink" title="按使用者分"></a>按使用者分</h3><ul>
+<li>公用网</li>
+<li>专用网</li>
+</ul>
+<h3 id="按交换技术分"><a href="#按交换技术分" class="headerlink" title="按交换技术分"></a>按交换技术分</h3><ul>
+<li>电路交换</li>
+<li>报文交换</li>
+<li>分组交换</li>
+</ul>
+<h3 id="按照拓扑结构分"><a href="#按照拓扑结构分" class="headerlink" title="按照拓扑结构分"></a>按照拓扑结构分</h3><ul>
+<li>总线型</li>
+<li>星型</li>
+<li>环形</li>
+<li>网状型</li>
+</ul>
+<h3 id="按传输技术分"><a href="#按传输技术分" class="headerlink" title="按传输技术分"></a>按传输技术分</h3><ul>
+<li>广播式网络</li>
+<li>点对点网络</li>
+</ul>
+<h2 id="计算机网络性能指标"><a href="#计算机网络性能指标" class="headerlink" title="计算机网络性能指标"></a>计算机网络性能指标</h2><h3 id="速率"><a href="#速率" class="headerlink" title="速率"></a>速率</h3><p>数据率或称数据传输率或称比特率<br>不同单位之间的倍率是10</p>
+<h3 id="带宽"><a href="#带宽" class="headerlink" title="带宽"></a>带宽</h3><p>单位时间内从网络中的某一点到另一点所能通过的最高数据率 单位为 <em>比特每秒</em><br>网络设备所支持的 <strong>最高速度</strong><br>若链路带宽为2Mb&#x2F;s 则主机在1us内可向链路发2bit数据</p>
+<blockquote>
+<p>在链路中的移动速度是不变的 改变的是数据注入速度</p>
+</blockquote>
+<h3 id="吞吐量"><a href="#吞吐量" class="headerlink" title="吞吐量"></a>吞吐量</h3><p>在单位时间内通过某个网络（信道、接口）的数据量<br>吞吐量受网络带宽或网络的额定速率的限制</p>
+<h3 id="时延"><a href="#时延" class="headerlink" title="时延"></a>时延</h3><p>数据从网络或链路的一段传送到另一端所需的时间，也叫延迟或迟延</p>
+<ul>
+<li>发送时延：从发送分组的第一个比特算起，到该分组的最后一个比特发送完毕的时间 <code>数据长度/信道带宽（发送速率）</code></li>
+<li>传播时延：取决于电磁波的传播速度和链路长度 <code>信道长度/电磁波在信道上的传播速率</code></li>
+<li>排队时延：等待输出&#x2F;输入链路可用</li>
+<li>处理时延：检错 找出口</li>
+</ul>
+<h3 id="时延带宽积"><a href="#时延带宽积" class="headerlink" title="时延带宽积"></a>时延带宽积</h3><p><code>传播时延*带宽</code><br>又称为<strong>以比特位单位的链路长度</strong> 即<em>某段链路现在又多少比特</em></p>
+<h3 id="往返时延RTT"><a href="#往返时延RTT" class="headerlink" title="往返时延RTT"></a>往返时延RTT</h3><p>发送方发送数据开始，到发送方受到接收方的确认总共经历的时延</p>
+<blockquote>
+<p>RTT越大，在受到确认之前，可以发送的数据越多<br>RTT包括 <em>往返传播时延（传输时延*2）</em>、<em>末端处理时间（基本忽略不计）</em></p>
+</blockquote>
+<h3 id="利用率"><a href="#利用率" class="headerlink" title="利用率"></a>利用率</h3><ul>
+<li>信道利用率：<code>有数据通过的时间/（有/无）数据通过时间</code></li>
+<li>网络利用率：<code>信号利用率加权平均值</code><blockquote>
+<p>当网络利用率越高时，有更多的数据被发送和接收，这就意味着更多的数据需要在同一时间内在网络上传输。因此，在网络上的传输过程中可能会出现拥塞，这会导致数据在网络中的传输速度变慢，增加了时延。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="计算机网络分类结构"><a href="#计算机网络分类结构" class="headerlink" title="计算机网络分类结构"></a>计算机网络分类结构</h2><ul>
+<li>法定标准 7层OSI参考模型</li>
+<li>事实标准 4层TCP&#x2F;IP模型</li>
+</ul>
+<h3 id="ISO-x2F-OSI参考模型"><a href="#ISO-x2F-OSI参考模型" class="headerlink" title="ISO&#x2F;OSI参考模型"></a>ISO&#x2F;OSI参考模型</h3><blockquote>
+<p>国际标准化组织ISO于1984年提出的开放系统互连OSI参考模型</p>
+</blockquote>
+<p>从底至顶分别为 物理层 数据链路层 网络层 传输层 会话层 表示层 应用层<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/net/tongxin.jpg"
+                      alt="通信过程"
+                ><br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/net/tongxin2.jpg"
+                      alt="通信过程"
+                ></p>
+<h4 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h4><p>所有能和用户交互产生网络流量的程序 </p>
+<ul>
+<li>文件传输</li>
+<li>电子邮件</li>
+<li>万维网</li>
+</ul>
+<h4 id="表示层"><a href="#表示层" class="headerlink" title="表示层"></a>表示层</h4><p>处理在两个通信系统中交换信息的表示方式</p>
+<ul>
+<li>进行数据格式变换</li>
+<li>对数据进行加密和解密</li>
+<li>数据压缩和恢复</li>
+</ul>
+<h4 id="会话层"><a href="#会话层" class="headerlink" title="会话层"></a>会话层</h4><p>向表示层实体&#x2F;用户进程提供建立连接并在连接数有序地传输数据，即会话、建立同步(SYN)</p>
+<ul>
+<li>建立管理终止会话</li>
+<li>使用校验点可使会话在通信失效时从校验点&#x2F;同步点继续恢复通信，实现数据同步</li>
+</ul>
+<h4 id="传输层"><a href="#传输层" class="headerlink" title="传输层"></a>传输层</h4><p>负责主机中两个进程的通信即端到端的通信，传输单位为报文段或用户数据报</p>
+<ul>
+<li>可靠传输、不可靠传输</li>
+<li>差错控制 </li>
+<li>流量控制 </li>
+<li>复用分用</li>
+</ul>
+<h4 id="网络层"><a href="#网络层" class="headerlink" title="网络层"></a>网络层</h4><p>把分组从源端传到目的端，为分组交换网上的不同主机提供通信服务，传输单位是数据报</p>
+<ul>
+<li>路由控制：选择最佳路径</li>
+<li>流量控制</li>
+<li>差错控制</li>
+<li>拥塞控制</li>
+</ul>
+<h4 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h4><p>把网络层传下来的数据组装成帧，传输单位为帧</p>
+<ul>
+<li>成帧：定义帧的开始和结束</li>
+<li>差错控制：帧错、位错</li>
+<li>流量控制</li>
+<li>访问（接入）控制：控制对信道的访问</li>
+</ul>
+<h4 id="物理层"><a href="#物理层" class="headerlink" title="物理层"></a>物理层</h4><p>在物理媒体上实现比特流的透明传输，传输单位是比特</p>
+<ul>
+<li>定义接口特性</li>
+<li>定义传输模式：单工、半双工、双工</li>
+<li>定义传输速率</li>
+<li>比特同步</li>
+<li>比特编码</li>
+</ul>
+<h3 id="TCP-x2F-IP参考模型"><a href="#TCP-x2F-IP参考模型" class="headerlink" title="TCP&#x2F;IP参考模型"></a>TCP&#x2F;IP参考模型</h3><p>从底至顶分别为 网络接口层 网际层 传输层 应用层<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/net/tcpip.jpg"
+                      alt="tcpip"
+                ></p>
+<h4 id="OSI和TCP-x2F-IP参考模型的相同点"><a href="#OSI和TCP-x2F-IP参考模型的相同点" class="headerlink" title="OSI和TCP&#x2F;IP参考模型的相同点"></a>OSI和TCP&#x2F;IP参考模型的相同点</h4><ul>
+<li>分层</li>
+<li>基于独立的协议栈概念</li>
+<li>可以实现异构网络互联</li>
+</ul>
+<h4 id="OSI和TCP-x2F-IP参考模型的不同点"><a href="#OSI和TCP-x2F-IP参考模型的不同点" class="headerlink" title="OSI和TCP&#x2F;IP参考模型的不同点"></a>OSI和TCP&#x2F;IP参考模型的不同点</h4><ul>
+<li>OSI定义三点：服务、协议、接口</li>
+<li>OSI先出现，即参考模型先于协议发明而TCP&#x2F;IP先有协议</li>
+<li>TCP&#x2F;IP设计之初就考虑异构网互联问题，将IP作为重要层次</li>
+<li><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/net/diff1.jpg"
+                     
+                ></li>
+</ul>
+<h3 id="五层参考模型"><a href="#五层参考模型" class="headerlink" title="五层参考模型"></a>五层参考模型</h3><p>从下而上分别为 物理层 数据链路层 网络层 传输层 应用层<br><img  
+                     lazyload
+                     src="/images/loading.svg"
+                     data-src="/../images/net/wuceng.jpg"
+                     
+                ></p>
+<ul>
+<li>应用层：支持各种网络应用</li>
+<li>传输层：进程-进程的数据传输</li>
+<li>网络层：源主机到目的主机的数据分组路由与转发</li>
+<li>数据链路层：把网络层传下来的数据报组装成帧</li>
+<li>物理层：比特传输</li>
+</ul>
+
+            </div>
+
+            
+                <div class="post-copyright-info">
+                    <div class="article-copyright-info-container">
+    <ul>
+        <li><strong>Title:</strong> 计算机网络——概述</li>
+        <li><strong>Author:</strong> CGC</li>
+        <li><strong>Created at:</strong> 2023-10-10 13:01:35</li>
+        
+            <li>
+                <strong>Updated at:</strong> 2023-10-10 15:44:17
+            </li>
+        
+        <li>
+            <strong>Link:</strong> https://redefine.ohevan.com/2023/10/10/计算机网络——概述/
+        </li>
+        <li>
+            <strong>License:</strong> This work is licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0</a>.
+        </li>
+    </ul>
+</div>
+
+                </div>
+            
+
+            
+                <ul class="post-tags-box">
+                    
+                        <li class="tag-item">
+                            <a href="/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">#计算机网络</a>&nbsp;
+                        </li>
+                    
+                </ul>
+            
+
+            
+
+            
+                <div class="article-nav">
+                    
+                    
+                        <div class="article-next">
+                            <a class="next"
+                            rel="next"
+                            href="/2023/08/24/Acfly-UWB/"
+                            >
+                                <span class="title flex-center">
+                                    <span class="post-nav-title-item">Acfly-UWB</span>
+                                    <span class="post-nav-item">Next posts</span>
+                                </span>
+                                <span class="right arrow-icon flex-center">
+                                    <i class="fa-solid fa-chevron-right"></i>
+                                </span>
+                            </a>
+                        </div>
+                    
+                </div>
+            
+
+
+            
+        </div>
+
+        
+            <div class="toc-content-container">
+                <div class="post-toc-wrap">
+    <div class="post-toc">
+        <div class="toc-title">On this page</div>
+        <div class="page-title">计算机网络——概述</div>
+        <ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%A6%82%E5%BF%B5"><span class="nav-text">计算机网络概念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8A%9F%E8%83%BD"><span class="nav-text">计算机网络功能</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%B7%A5%E4%BD%9C%E6%96%B9%E5%BC%8F"><span class="nav-text">计算机网络工作方式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%B9%E7%BC%98%E9%83%A8%E5%88%86"><span class="nav-text">边缘部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%B8%E5%BF%83%E9%83%A8%E5%88%86"><span class="nav-text">核心部分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%8A%9F%E8%83%BD%E7%BB%84%E6%88%90"><span class="nav-text">计算机网络功能组成</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9A%E4%BF%A1%E5%AD%90%E7%BD%91"><span class="nav-text">通信子网</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%B5%84%E6%BA%90%E5%AD%90%E7%BD%91"><span class="nav-text">资源子网</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%88%86%E7%B1%BB"><span class="nav-text">计算机网络分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%89%E5%88%86%E5%B8%83%E8%8C%83%E5%9B%B4%E5%88%86"><span class="nav-text">按分布范围分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%89%E4%BD%BF%E7%94%A8%E8%80%85%E5%88%86"><span class="nav-text">按使用者分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%89%E4%BA%A4%E6%8D%A2%E6%8A%80%E6%9C%AF%E5%88%86"><span class="nav-text">按交换技术分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%89%E7%85%A7%E6%8B%93%E6%89%91%E7%BB%93%E6%9E%84%E5%88%86"><span class="nav-text">按照拓扑结构分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8C%89%E4%BC%A0%E8%BE%93%E6%8A%80%E6%9C%AF%E5%88%86"><span class="nav-text">按传输技术分</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="nav-text">计算机网络性能指标</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%9F%E7%8E%87"><span class="nav-text">速率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%A6%E5%AE%BD"><span class="nav-text">带宽</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%9E%E5%90%90%E9%87%8F"><span class="nav-text">吞吐量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E5%BB%B6"><span class="nav-text">时延</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%97%B6%E5%BB%B6%E5%B8%A6%E5%AE%BD%E7%A7%AF"><span class="nav-text">时延带宽积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%80%E8%BF%94%E6%97%B6%E5%BB%B6RTT"><span class="nav-text">往返时延RTT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%A9%E7%94%A8%E7%8E%87"><span class="nav-text">利用率</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E5%88%86%E7%B1%BB%E7%BB%93%E6%9E%84"><span class="nav-text">计算机网络分类结构</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ISO-x2F-OSI%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B"><span class="nav-text">ISO&#x2F;OSI参考模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-x2F-IP%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B"><span class="nav-text">TCP&#x2F;IP参考模型</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94%E5%B1%82%E5%8F%82%E8%80%83%E6%A8%A1%E5%9E%8B"><span class="nav-text">五层参考模型</span></a></li></ol></li></ol>
+
+    </div>
+</div>
+            </div>
+        
+    </div>
+</div>
+
+
+                
+
+            </div>
+            
+            
+
+        </div>
+
+        <div class="main-content-footer">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info">
+            &copy;
+            
+              <span>2022</span>
+              -
+            
+            2023&nbsp;&nbsp;<i class="fa-solid fa-heart fa-beat" style="--fa-animation-duration: 0.5s; color: #f54545"></i>&nbsp;&nbsp;<a href="/">CGC</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv" class="busuanzi_container_site_uv">
+                        VISITOR COUNT&nbsp;<span id="busuanzi_value_site_uv" class="busuanzi_value_site_uv"></span>
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv" class="busuanzi_container_site_pv">
+                        TOTAL PAGE VIEWS&nbsp;<span id="busuanzi_value_site_pv" class="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            <span class="powered-by-container">POWERED BY <?xml version="1.0" encoding="utf-8"?><!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd"><svg version="1.1" id="圖層_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="1rem" height="1rem" viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve"><path fill="#0E83CD" d="M256.4,25.8l-200,115.5L56,371.5l199.6,114.7l200-115.5l0.4-230.2L256.4,25.8z M349,354.6l-18.4,10.7l-18.6-11V275H200v79.6l-18.4,10.7l-18.6-11v-197l18.5-10.6l18.5,10.8V237h112v-79.6l18.5-10.6l18.5,10.8V354.6z"/></svg><a target="_blank" href="https://hexo.io">Hexo</a></span>
+                <br>
+            <span class="theme-version-container">THEME&nbsp;<a class="theme-version" target="_blank" href="https://github.com/EvanNotFound/hexo-theme-redefine">Redefine v2.2.1</a>
+        </div>
+        
+        
+        
+            <div>
+                Blog up for <span class="odometer" id="runtime_days" ></span> days <span class="odometer" id="runtime_hours"></span> hrs <span class="odometer" id="runtime_minutes"></span> Min <span class="odometer" id="runtime_seconds"></span> Sec
+            </div>
+        
+        
+        
+            <script async data-pjax>
+                try {
+                    function odometer_init() {
+                    const elements = document.querySelectorAll('.odometer');
+                    elements.forEach(el => {
+                        new Odometer({
+                            el,
+                            format: '( ddd).dd',
+                            duration: 200
+                        });
+                    });
+                    }
+                    odometer_init();
+                } catch (error) {}
+            </script>
+        
+        
+        
+    </div>  
+</footer>
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="article-tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="right-bottom-tools page-aside-toggle">
+                <i class="fa-regular fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-side-tools-container">
+        <div class="side-tools-container">
+    <ul class="hidden-tools-list">
+        <li class="right-bottom-tools tool-font-adjust-plus flex-center">
+            <i class="fa-regular fa-magnifying-glass-plus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-font-adjust-minus flex-center">
+            <i class="fa-regular fa-magnifying-glass-minus"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-expand-width flex-center">
+            <i class="fa-regular fa-expand"></i>
+        </li>
+
+        <li class="right-bottom-tools tool-dark-light-toggle flex-center">
+            <i class="fa-regular fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="right-bottom-tools tool-scroll-to-bottom flex-center">
+            <i class="fa-regular fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="visible-tools-list">
+        <li class="right-bottom-tools toggle-tools-list flex-center">
+            <i class="fa-regular fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="right-bottom-tools tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+        
+    </ul>
+</div>
+
+    </div>
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fa-solid fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fa-solid fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+
+</main>
+
+
+
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/main.js"></script>
+
+<script src="/js/layouts/navbarShrink.js"></script>
+
+<script src="/js/tools/scrollTopBottom.js"></script>
+
+<script src="/js/tools/lightDarkSwitch.js"></script>
+
+
+
+    
+<script src="/js/tools/localSearch.js"></script>
+
+
+
+
+    
+<script src="/js/tools/codeBlock.js"></script>
+
+
+
+
+    
+<script src="/js/layouts/lazyload.js"></script>
+
+
+
+
+    
+<script src="/js/tools/runtime.js"></script>
+
+    
+<script src="/js/libs/odometer.min.js"></script>
+
+    
+<link rel="stylesheet" href="/assets/odometer-theme-minimal.css">
+
+
+
+
+  
+<script src="/js/libs/Typed.min.js"></script>
+
+  
+<script src="/js/plugins/typed.js"></script>
+
+
+
+
+
+
+    
+<script src="/js/libs/minimasonry.min.js"></script>
+
+    
+<script src="/js/plugins/masonry.js"></script>
+
+
+
+<div class="post-scripts pjax">
+    
+        
+<script src="/js/tools/tocToggle.js"></script>
+
+<script src="/js/libs/anime.min.js"></script>
+
+<script src="/js/layouts/toc.js"></script>
+
+<script src="/js/plugins/tabs.js"></script>
+
+    
+</div>
+
+
+    
+<script src="/js/libs/pjax.min.js"></script>
+
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax',
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            Global.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            Global.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            Global.refresh();
+        });
+    });
+</script>
+
+
+
+
+</body>
+</html>
