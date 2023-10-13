@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-10-10T07:44:17.193Z</updated>
+  <updated>2023-10-13T08:24:38.557Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>计算机网络——物理层</title>
+    <link href="http://example.com/2023/10/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E2%80%94%E2%80%94%E7%89%A9%E7%90%86%E5%B1%82/"/>
+    <id>http://example.com/2023/10/10/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E2%80%94%E2%80%94%E7%89%A9%E7%90%86%E5%B1%82/</id>
+    <published>2023-10-10T12:59:55.000Z</published>
+    <updated>2023-10-13T08:24:38.557Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="物理层基本概念"><a href="#物理层基本概念" class="headerlink" title="物理层基本概念"></a>物理层基本概念</h2><p>解决在连接各种计算机的传输媒体上传输数据比特流<br>物理层主要任务：确定与传输媒体结构有关的特性——<strong>定义标准</strong></p><ul><li>机械特性：物理连接的特性，轨道物理连接时采用的规格、接口性质、引线数目、引脚数量和排列情况</li><li>电气特性：规定传输二进制位时线路上信号的电压范围、阻抗匹配、传输速率和距离限制等</li><li>功能特性：线上出现某一电平表示何种意义，接口部件的信号线的用途</li><li>规程特性：定义各条物理线路的工作规程和时序关系</li></ul><h2 id="数据通信基础"><a href="#数据通信基础" class="headerlink" title="数据通信基础"></a>数据通信基础</h2><h3 id="相关术语"><a href="#相关术语" class="headerlink" title="相关术语"></a>相关术语</h3><ul><li>数据data：传送信息的实体</li><li>信号：数据在传输过程中的存在形式</li><li>信源：产生和发送数据的源头</li><li>信宿：接收数据的终点</li><li>信道：信号的传输媒介</li></ul><h3 id="数据通信传输方式"><a href="#数据通信传输方式" class="headerlink" title="数据通信传输方式"></a>数据通信传输方式</h3><h4 id="通信方式"><a href="#通信方式" class="headerlink" title="通信方式"></a>通信方式</h4><ul><li>单工通信：只有一个方向的通信而没有反方向的交互 <strong>仅需要一条信道</strong></li><li>半双工通信&#x2F;双向交替通信：双方都可以发送或接收，但任何一方不能同时发送和接收 <strong>需要两条信道</strong></li><li>全双工通信&#x2F;双向同时通信：通信双方可以同时发送和接收信息 <strong>需要两条信道</strong></li></ul><h4 id="串行传输和并行传输"><a href="#串行传输和并行传输" class="headerlink" title="串行传输和并行传输"></a>串行传输和并行传输</h4><ul><li>串行传输：将一个字符的8位二进制数从低位到高位的顺序顺序依次发送 <strong>速度慢、费用低、适合远距离</strong></li><li>并行传输：将一个字符的8位二进制数同时通过8条信道发送 <strong>速度快、费用高、适合近距离</strong></li></ul><h4 id="同步传输和异步传输"><a href="#同步传输和异步传输" class="headerlink" title="同步传输和异步传输"></a>同步传输和异步传输</h4><ul><li>同步传输：数据传送是以数据区块为单位，又称为区块传输，在传输数据时需要先送出一个或多个同步字符，再送出整批数据</li><li>异步传输：将比特分成小组进行传输，小组可以是8位的1个字符或更长。发送方可以在任何时刻发送这些比特组，而接收方不知道他们会在什么时候到达。传送数据时，加一个字符起始位和一个字符终止位</li></ul><h3 id="相关术语2"><a href="#相关术语2" class="headerlink" title="相关术语2"></a>相关术语2</h3><h4 id="码元"><a href="#码元" class="headerlink" title="码元"></a>码元</h4><p>用一个固定市场的信号波形，代表不同离散数值的基本波形，是数字通信中数字信号的计量单位，这个时长内的信号称为k进制码元，该时长称为码元宽度。<br>码元的离散状态由M个时，码元称为M进制码元</p><h4 id="数据传输速率的两种表示方法"><a href="#数据传输速率的两种表示方法" class="headerlink" title="数据传输速率的两种表示方法"></a>数据传输速率的两种表示方法</h4><ul><li>码元传输速率：单位时间内数字信号系统所传输的码元个数 <em>（脉冲个数或信号变化次数）</em>，单位是 <strong>波特</strong> 1波特表示系统每秒传输一个码元</li><li>信息传输速率：单位时间内数字通信系统传输的二进制码元个数 <em>（比特数）</em>，单位是 <strong>比特&#x2F;秒（b&#x2F;s）</strong></li></ul><h4 id="带宽"><a href="#带宽" class="headerlink" title="带宽"></a>带宽</h4><p>模拟信号中：当输入信号频率高或低到一定程度，使得系统的输出功率成为输入功率的一般（-3dB）时，最高频率和最低频率之间的差值，单位为 <strong>赫兹（HZ）</strong><br>数字设备中：表示单位时间内从网络中某一点到另一点所能通过的 ‘最高数据率’&#x2F;单位时间内通过链路的数量，常用来表示网络的通信线路所能传输数据的能力 单位为 <strong>比特每秒（bps）</strong></p><h2 id="奈氏准则和香农定理"><a href="#奈氏准则和香农定理" class="headerlink" title="奈氏准则和香农定理"></a>奈氏准则和香农定理</h2><h3 id="奈氏准则-（奈奎斯特定理）"><a href="#奈氏准则-（奈奎斯特定理）" class="headerlink" title="奈氏准则 （奈奎斯特定理）"></a>奈氏准则 （<em>奈奎斯特定理</em>）</h3><p>在理想低通条件下，为了避免码间串扰，极限码元传输速率为 <strong>2W Baud</strong> W时信道带宽 <em>单位Hz</em><br>理想低通信道下的极限数据传输率为 $2W \log_2 V (b&#x2F;s)$<br>其中 W是带宽（Hz） V是码元的离散点评数目（几种码元）</p><blockquote><p>在任何信道中，<strong>码元传输的速率是有上限的</strong>。 若传输速率超过上限，就会出现严重的码间串扰问题，使接收端对码元的完全正确识别称为不可能<br>信道 <strong>频带越宽</strong> <em>即能通过的信号高频分量越多</em> 就可以用更高的速率进行码元的有效传输<br>奈氏准则给出了码元传输速率的限制，但并没有对信息传输速率给出限制<br>由于码元的传输速率受奈氏准则制约，所以要提高数据传输速率，就必须使每个码元能携带更多比特的信息量 <em>这就需要采用多元制的调制方法</em></p></blockquote><h3 id="香农定理"><a href="#香农定理" class="headerlink" title="香农定理"></a>香农定理</h3><p>在带宽受限且有噪声的信道中，为了不产生误差，信息的数据传输速率有上限值<br>信道的极限数据传输速率为 $W\log_2(1+S&#x2F;N)$ $(b&#x2F;s)$<br>其中， W为带宽 $S&#x2F;N$为信噪比 即信号平均功率&#x2F;噪声平均功率，用dB做度量单位 <strong>信噪比（dB）&#x3D;$10\lg(S&#x2F;N)$</strong></p><blockquote><p>信道的带宽或信噪比越大 极限传输速率就越高<br>只要信息传输速率低于极限传输速率，就一定能找到某种方法实现差错传输<br>该定理得出的为极限速率，但实际信道能达到的速率远低于它</p></blockquote>]]></content>
+    
+    
+    <summary type="html">计算机网络物理层</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="计算机网络" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>计算机网络——概述</title>
@@ -495,29 +516,6 @@
     <category term="Ubuntu20.04" scheme="http://example.com/tags/Ubuntu20-04/"/>
     
     <category term="Ubuntu" scheme="http://example.com/tags/Ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Conda-常用指令</title>
-    <link href="http://example.com/2023/03/22/Conda-%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/"/>
-    <id>http://example.com/2023/03/22/Conda-%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4/</id>
-    <published>2023-03-22T05:54:22.000Z</published>
-    <updated>2023-06-30T08:23:15.482Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="conda-环境管理"><a href="#conda-环境管理" class="headerlink" title="conda 环境管理"></a>conda 环境管理</h1><h2 id="创建环境"><a href="#创建环境" class="headerlink" title="创建环境"></a>创建环境</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n name python=3.x</span><br></pre></td></tr></table></figure></div><blockquote><p>name为环境名<br>3.x为指定python版本</p></blockquote><h2 id="删除环境"><a href="#删除环境" class="headerlink" title="删除环境"></a>删除环境</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda remove -n name --all</span><br></pre></td></tr></table></figure></div><h2 id="激活环境"><a href="#激活环境" class="headerlink" title="激活环境"></a>激活环境</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda activate name</span><br></pre></td></tr></table></figure></div><h2 id="关闭环境-返回默认环境"><a href="#关闭环境-返回默认环境" class="headerlink" title="关闭环境 返回默认环境"></a>关闭环境 返回默认环境</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda deactivate name</span><br></pre></td></tr></table></figure></div><h2 id="查看当前有哪些环境"><a href="#查看当前有哪些环境" class="headerlink" title="查看当前有哪些环境"></a>查看当前有哪些环境</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda info -e</span><br></pre></td></tr></table></figure></div><p><em>或</em></p><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda env list</span><br></pre></td></tr></table></figure></div><h1 id="conda包管理"><a href="#conda包管理" class="headerlink" title="conda包管理"></a>conda包管理</h1><h2 id="查看当前环境的包"><a href="#查看当前环境的包" class="headerlink" title="查看当前环境的包"></a>查看当前环境的包</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda list</span><br></pre></td></tr></table></figure></div><h2 id="安装指定package到当前环境"><a href="#安装指定package到当前环境" class="headerlink" title="安装指定package到当前环境"></a>安装指定package到当前环境</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install package</span><br></pre></td></tr></table></figure></div><blockquote><p>package 为所需包名字 可在后加入<code>==</code>指定版本或输入url指定安装源</p></blockquote><p><em>也可以使用pip等进行安装</em></p><h2 id="安装package到指定的环境"><a href="#安装package到指定的环境" class="headerlink" title="安装package到指定的环境"></a>安装package到指定的环境</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install -n name package</span><br></pre></td></tr></table></figure></div><h2 id="更新package"><a href="#更新package" class="headerlink" title="更新package"></a>更新package</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda update -n name package</span><br></pre></td></tr></table></figure></div><h2 id="移除package"><a href="#移除package" class="headerlink" title="移除package"></a>移除package</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda remove -n name package</span><br></pre></td></tr></table></figure></div><p><em>或</em></p><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda uninstall package</span><br></pre></td></tr></table></figure></div><h1 id="conda版本"><a href="#conda版本" class="headerlink" title="conda版本"></a>conda版本</h1><h2 id="更新conda版本"><a href="#更新conda版本" class="headerlink" title="更新conda版本"></a>更新conda版本</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda update conda</span><br></pre></td></tr></table></figure></div><h2 id="更新python版本"><a href="#更新python版本" class="headerlink" title="更新python版本"></a>更新python版本</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda update python</span><br></pre></td></tr></table></figure></div><blockquote><p>假设当前环境是python 3.6 执行命令后conda会将python升级为3.6.x系列的当前最新版本</p></blockquote>]]></content>
-    
-    
-    <summary type="html">conda环境管理及包管理等的常用指令</summary>
-    
-    
-    
-    <category term="环境配置及相关工具" scheme="http://example.com/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E5%8F%8A%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="Conda" scheme="http://example.com/tags/Conda/"/>
-    
-    <category term="Python" scheme="http://example.com/tags/Python/"/>
     
   </entry>
   
