@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-10-13T08:24:38.557Z</updated>
+  <updated>2023-10-13T09:15:40.989Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,54 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Acfly-T265</title>
+    <link href="http://example.com/2023/10/13/Acfly-T265/"/>
+    <id>http://example.com/2023/10/13/Acfly-T265/</id>
+    <published>2023-10-13T09:14:53.000Z</published>
+    <updated>2023-10-13T09:15:40.989Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>此为为Jetson配置Intel T265，以此为 Acfly-A9飞控提供定位<br>官方参考教程：<a class="link"   href="https://github.com/IntelRealSense/realsense-ros" >realsense-ros <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a>     <a class="link"   href="https://github.com/CGC12123/acfly-mavros" >acfly-mavros <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p></blockquote><h2 id="ROS-Wrapper"><a href="#ROS-Wrapper" class="headerlink" title="ROS Wrapper"></a>ROS Wrapper</h2><blockquote><p>T265使用所需的packages</p></blockquote><h3 id="安装-ROS"><a href="#安装-ROS" class="headerlink" title="安装 ROS"></a>安装 ROS</h3><blockquote><p>Install <a class="link"   href="http://wiki.ros.org/kinetic/Installation/Ubuntu" >ROS Kinetic <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> on Ubuntu 16.04, <a class="link"   href="http://wiki.ros.org/melodic/Installation/Ubuntu" >ROS Melodic <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> on Ubuntu 18.04, <a class="link"   href="http://wiki.ros.org/noetic/Installation/Ubuntu" >ROS Noetic <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a> on Ubuntu 20.04.<br><a class="link"   href="http://www.autolabor.com.cn/book/ROSTutorials/chapter1/12-roskai-fa-gong-ju-an-zhuang/124-an-zhuang-ros.html" >可参考autolabor的安装教程 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p></blockquote><h3 id="安装realsense2-camera"><a href="#安装realsense2-camera" class="headerlink" title="安装realsense2_camera"></a>安装realsense2_camera</h3><p>realsense2_camera 可作为 ROS 发行版的 debian 软件包使用</p><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install ros-$ROS_DISTRO-realsense2-camera</span><br></pre></td></tr></table></figure></div><h2 id="安装mavros"><a href="#安装mavros" class="headerlink" title="安装mavros"></a>安装mavros</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python-catkin-tools python-rosinstall-generator -y</span><br><span class="line"># 如果用的ROS版本是Noetic则使用</span><br><span class="line"># sudo apt install python3-catkin-tools python3-rosinstall-generator python3-osrf-pycommon -y</span><br><span class="line"></span><br><span class="line"># 需要替换你的ROS版本，且以下指令需要在同一个终端执行</span><br><span class="line">source /opt/ros/$&#123;你的ROS版本&#125;/setup.bash</span><br><span class="line"></span><br><span class="line"># 因为acfly增加了自定义mavlink信息，若之前有通过二进制安装过mavros则需要卸载，没有则跳过</span><br><span class="line">sudo apt purge ros-$&#123;ROS_DISTRO&#125;-mavlink ros-$&#123;ROS_DISTRO&#125;-mavros</span><br><span class="line"></span><br><span class="line"># 构建ROS工作空间，可以自行修改路径</span><br><span class="line">mkdir -p ~/acfly_ws/src &amp;&amp; cd ~/acfly_ws</span><br><span class="line">catkin init</span><br><span class="line"></span><br><span class="line"># 下载mavlink和acfly-mavros</span><br><span class="line">cd src</span><br><span class="line">git clone -b release/$&#123;ROS_DISTRO&#125;/mavlink/2022.1.5-1 https://gitee.com/LauZanMo/mavlink</span><br><span class="line">git clone -b acfly-develop https://gitee.com/LauZanMo/acfly-mavros</span><br><span class="line"></span><br><span class="line"># 安装依赖，如果rosdep update没执行则需要执行成功才能继续</span><br><span class="line">cd .. &amp;&amp; rosdep install --from-paths src --ignore-src -y</span><br><span class="line"></span><br><span class="line"># 安装GeographicLib:</span><br><span class="line">./src/acfly-mavros/mavros/scripts/install_geographiclib_datasets.sh</span><br><span class="line"># 注意此处可能会报需要root权限（不会标error）出现后在前方加sudo即可</span><br><span class="line"></span><br><span class="line"># 第一次编译请执行acfly提供的脚本</span><br><span class="line">./src/acfly-mavros/update_custom_msg.sh</span><br><span class="line"># 后续更改mavros源码只需要执行catkin build</span><br><span class="line"></span><br><span class="line"># 每一次开启终端都需要设置环境变量</span><br><span class="line">source devel/setup.bash</span><br></pre></td></tr></table></figure></div><h2 id="安装T265及相关包"><a href="#安装T265及相关包" class="headerlink" title="安装T265及相关包"></a>安装T265及相关包</h2><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/acfly_ws/src</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/thien94/vision_to_mavros.git</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/IntelRealSense/librealsense.git</span><br><span class="line"><span class="built_in">cd</span> ~/acfly_ws &amp;&amp; catkin build</span><br></pre></td></tr></table></figure></div><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 第一个终端</span><br><span class="line"># 打开t265</span><br><span class="line">roslaunch realsense2_camera rs_t265.launch</span><br><span class="line"></span><br><span class="line"># 第二个终端</span><br><span class="line"># 添加权限</span><br><span class="line">sudo chmod 777 /dev/ttyAMA0</span><br><span class="line">roslaunch mavros acfly.launch fcu_url:=/dev/ttyUSB0:57600</span><br><span class="line"></span><br><span class="line"># 第三个终端</span><br><span class="line"># 此处需要先source前一步安装mavros工作空间中的setup.bash</span><br><span class="line">source devel/setup.bash</span><br><span class="line">roslaunch vision_to_mavros t265_tf_to_mavros.launch</span><br></pre></td></tr></table></figure></div><p>或者单独写一个launch文件 <code>start_all.launch</code></p><div class="highlight-container" data-rel="Xml"><figure class="iseeu highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">launch</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">include</span> <span class="attr">file</span>=<span class="string">&quot;$(find realsense2_camera)/launch/rs_t265.launch&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">include</span> <span class="attr">file</span>=<span class="string">&quot;$(find mavros)/launch/acfly.launch&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">include</span> <span class="attr">file</span>=<span class="string">&quot;$(find vision_to_mavros)/launch/t265_tf_to_mavros.launch&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">launch</span>&gt;</span></span><br></pre></td></tr></table></figure></div><p>将文件放在新的ros包 <code>atart_all</code> 中 执行</p><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">roslaunch atart_all start_all.launch</span><br></pre></td></tr></table></figure></div><h2 id="其他-使用指南"><a href="#其他-使用指南" class="headerlink" title="其他 使用指南"></a>其他 使用指南</h2><blockquote><p>acfly-mavros 作者提供了使用指南及二次开发指南<br><a class="link"   href="https://github.com/LauZanMo/acfly-mavros/blob/acfly-develop/acfly-mavros%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.md" >使用指南 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   href="https://github.com/LauZanMo/acfly-mavros/blob/acfly-develop/acfly-mavros%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97.md" >二次开发指南 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p></blockquote>]]></content>
+    
+    
+    <summary type="html">基于Jetson平台，搭建Mavros，并配置T265为Acfly飞控提供定位</summary>
+    
+    
+    
+    <category term="无人机" scheme="http://example.com/categories/%E6%97%A0%E4%BA%BA%E6%9C%BA/"/>
+    
+    
+    <category term="无人机" scheme="http://example.com/tags/%E6%97%A0%E4%BA%BA%E6%9C%BA/"/>
+    
+    <category term="双目相机" scheme="http://example.com/tags/%E5%8F%8C%E7%9B%AE%E7%9B%B8%E6%9C%BA/"/>
+    
+    <category term="T265" scheme="http://example.com/tags/T265/"/>
+    
+    <category term="Jetson" scheme="http://example.com/tags/Jetson/"/>
+    
+    <category term="Ros" scheme="http://example.com/tags/Ros/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>计算机网络——数据链路层</title>
+    <link href="http://example.com/2023/10/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/"/>
+    <id>http://example.com/2023/10/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82/</id>
+    <published>2023-10-13T09:12:42.000Z</published>
+    <updated>2023-10-13T09:13:00.474Z</updated>
+    
+    
+    <summary type="html">计算机网络数据链路层</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="计算机网络" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+  </entry>
   
   <entry>
     <title>计算机网络——物理层</title>
@@ -463,59 +511,6 @@
     <category term="深度学习" scheme="http://example.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
     
     <category term="openmmlab" scheme="http://example.com/tags/openmmlab/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>使用mmdet快速搭建识别模型网络</title>
-    <link href="http://example.com/2023/03/22/%E4%BD%BF%E7%94%A8mmdet%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E8%AF%86%E5%88%AB%E6%A8%A1%E5%9E%8B%E7%BD%91%E7%BB%9C/"/>
-    <id>http://example.com/2023/03/22/%E4%BD%BF%E7%94%A8mmdet%E5%BF%AB%E9%80%9F%E6%90%AD%E5%BB%BA%E8%AF%86%E5%88%AB%E6%A8%A1%E5%9E%8B%E7%BD%91%E7%BB%9C/</id>
-    <published>2023-03-22T09:29:27.000Z</published>
-    <updated>2023-03-26T08:21:31.496Z</updated>
-    
-    <content type="html"><![CDATA[<p><a class="link"   href="https://github.com/open-mmlab/mmdetection/tree/master" >点击此处访问openmmdetection源码仓库 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><h1 id="选择模型"><a href="#选择模型" class="headerlink" title="选择模型"></a>选择模型</h1><p>使用命令行下载配置文件和模型权重文件</p><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mim download mmyolo --config yolov5_s-v61_syncbn_fast_8xb16-300e_coco --dest .</span><br></pre></td></tr></table></figure></div><h1 id="搭建识别网络"><a href="#搭建识别网络" class="headerlink" title="搭建识别网络"></a>搭建识别网络</h1><div class="highlight-container" data-rel="Python"><figure class="iseeu highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> mmdet.apis <span class="keyword">import</span> init_detector, inference_detector</span><br><span class="line"></span><br><span class="line">config_file = <span class="string">&#x27;configs/faster_rcnn/faster_rcnn_r50_fpn_1x_coco.py&#x27;</span></span><br><span class="line">checkpoint_file = <span class="string">&#x27;checkpoints/faster_rcnn_r50_fpn_1x_coco_20200130-047c8118.pth&#x27;</span></span><br><span class="line">device = <span class="string">&#x27;cuda:0&#x27;</span></span><br><span class="line"><span class="comment"># 初始化检测器</span></span><br><span class="line">model = init_detector(config_file, checkpoint_file, device=device)</span><br><span class="line"><span class="comment"># 推理演示图像</span></span><br><span class="line">inference_detector(model, <span class="string">&#x27;demo.jpg&#x27;</span>)</span><br></pre></td></tr></table></figure></div>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;&lt;a class=&quot;link&quot;   href=&quot;https://github.com/open-mmlab/mmdetection/tree/master&quot; &gt;点击此处访问openmmdetection源码仓库 &lt;i class=&quot;fa-regular fa-arrow-u</summary>
-      
-    
-    
-    
-    <category term="深度学习模型" scheme="http://example.com/categories/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E6%A8%A1%E5%9E%8B/"/>
-    
-    
-    <category term="计算机视觉" scheme="http://example.com/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%A7%86%E8%A7%89/"/>
-    
-    <category term="人工智能" scheme="http://example.com/tags/%E4%BA%BA%E5%B7%A5%E6%99%BA%E8%83%BD/"/>
-    
-    <category term="深度学习" scheme="http://example.com/tags/%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0/"/>
-    
-    <category term="openmmlab" scheme="http://example.com/tags/openmmlab/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu20.04换源</title>
-    <link href="http://example.com/2023/03/22/Ubuntu20.04%E6%8D%A2%E6%BA%90/"/>
-    <id>http://example.com/2023/03/22/Ubuntu20.04%E6%8D%A2%E6%BA%90/</id>
-    <published>2023-03-22T06:12:45.000Z</published>
-    <updated>2023-04-10T11:41:38.620Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="备份环境变量文件"><a href="#备份环境变量文件" class="headerlink" title="备份环境变量文件"></a>备份环境变量文件</h1><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak</span><br></pre></td></tr></table></figure></div><blockquote><p>sources.list 即储存环境变量的文件</p></blockquote><h1 id="更换源"><a href="#更换源" class="headerlink" title="更换源"></a>更换源</h1><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vim /etc/apt/sources.list</span><br></pre></td></tr></table></figure></div><blockquote><p>进入文件后按<code>i</code>或<code>insert</code>启动输入模式 删除原有内容</p></blockquote><blockquote><p>可在进入输入模式前在航首按<code>dd</code>删除当前行 或<code>dG</code>删除光标以后所有内容</p></blockquote><p>删除内容后使用新源进行替换</p><p><strong>阿里源</strong></p><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-proposed main restricted universe multiverse</span><br><span class="line">deb http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.aliyun.com/ubuntu/ focal-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure></div><p><strong>清华源</strong></p><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line">deb https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line">deb-src https://mirrors.tuna.tsinghua.edu.cn/ubuntu/ focal-security main restricted universe multiverse</span><br></pre></td></tr></table></figure></div><p><strong>中科大源</strong></p><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ focal main restricted universe multiverse</span><br><span class="line">deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal main restricted universe multiverse</span><br><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line">deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line">deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line">deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line">deb https://mirrors.ustc.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse</span><br><span class="line">deb-src https://mirrors.ustc.edu.cn/ubuntu/ focal-proposed main restricted universe multiverse</span><br></pre></td></tr></table></figure></div><p><strong>网易163源</strong></p><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">deb http://mirrors.163.com/ubuntu/ focal main restricted universe multiverse</span><br><span class="line">deb http://mirrors.163.com/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line">deb http://mirrors.163.com/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line">deb http://mirrors.163.com/ubuntu/ focal-proposed main restricted universe multiverse</span><br><span class="line">deb http://mirrors.163.com/ubuntu/ focal-backports main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.163.com/ubuntu/ focal main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.163.com/ubuntu/ focal-security main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.163.com/ubuntu/ focal-updates main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.163.com/ubuntu/ focal-proposed main restricted universe multiverse</span><br><span class="line">deb-src http://mirrors.163.com/ubuntu/ focal-backports main restricted universe multiverse</span><br></pre></td></tr></table></figure></div><p><strong>还源完成后</strong></p><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade</span><br></pre></td></tr></table></figure></div><p>让计算机根据源进行更新</p>]]></content>
-    
-    
-    <summary type="html">Ubuntu20.04更换国内源，提高速度</summary>
-    
-    
-    
-    <category term="环境配置及相关工具" scheme="http://example.com/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE%E5%8F%8A%E7%9B%B8%E5%85%B3%E5%B7%A5%E5%85%B7/"/>
-    
-    
-    <category term="Ubuntu20.04" scheme="http://example.com/tags/Ubuntu20-04/"/>
-    
-    <category term="Ubuntu" scheme="http://example.com/tags/Ubuntu/"/>
     
   </entry>
   
