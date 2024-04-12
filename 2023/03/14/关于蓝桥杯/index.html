@@ -36,7 +36,7 @@
 <meta property="og:image" content="http://example.com/images/lanqiao/RLSZJCQ.jpg">
 <meta property="og:image" content="http://example.com/images/lanqiao/RLSZJCQ.jpg">
 <meta property="article:published_time" content="2023-03-14T13:45:28.000Z">
-<meta property="article:modified_time" content="2024-04-11T08:41:52.496Z">
+<meta property="article:modified_time" content="2024-04-12T12:25:34.739Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="蓝桥杯">
 <meta name="twitter:card" content="summary">
@@ -376,8 +376,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2024-04-11 16:41:52</span>
-            <span class="mobile">2024-04-11 16:41</span>
+            <span class="desktop">2024-04-12 20:25:34</span>
+            <span class="mobile">2024-04-12 20:25</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -589,6 +589,13 @@
 <li><code>_nop()_</code> 对应头文件 <code>intrins.h</code></li>
 <li>温度先读取低八位再读高八位</li>
 <li>要用Crome浏览器开所有东西 包括pdf(摄像头读取可能有问题)</li>
+<li>矩阵键盘延时设置为100 </li>
+<li>延时函数形参为 <code>u16</code></li>
+<li>在等待按键松开的while中加入paper_show 避免按下按键黑屏</li>
+<li>数码管位选前先段选赋 0XFF 消隐</li>
+<li>写其他模块时 ne555跳帽拔掉！</li>
+<li>涉及led和蜂鸣器，使用完毕关闭锁存器</li>
+<li>P06为蜂鸣器</li>
 </ul>
 </blockquote>
 
@@ -603,7 +610,7 @@
         <li><strong>Created at:</strong> 2023-03-14 21:45:28</li>
         
             <li>
-                <strong>Updated at:</strong> 2024-04-11 16:41:52
+                <strong>Updated at:</strong> 2024-04-12 20:25:34
             </li>
         
         <li>
