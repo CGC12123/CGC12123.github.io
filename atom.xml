@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-06-30T07:35:22.818Z</updated>
+  <updated>2024-06-30T07:24:17.255Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,48 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>3D人体姿态估计简述——性能指标</title>
-    <link href="http://example.com/2024/03/30/3D%E4%BA%BA%E4%BD%93%E5%A7%BF%E6%80%81%E4%BC%B0%E8%AE%A1%E7%AE%80%E8%BF%B0%E2%80%94%E2%80%94%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87/"/>
-    <id>http://example.com/2024/03/30/3D%E4%BA%BA%E4%BD%93%E5%A7%BF%E6%80%81%E4%BC%B0%E8%AE%A1%E7%AE%80%E8%BF%B0%E2%80%94%E2%80%94%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87/</id>
-    <published>2024-03-30T07:26:46.000Z</published>
-    <updated>2024-06-30T07:35:22.818Z</updated>
-    
-    <content type="html"><![CDATA[<p><img                       lazyload                     src="/images/loading.svg"                     data-src="/../images/hpe/6.png"                      alt="image"                ></p><h4 id=""><a href="#" class="headerlink" title=""></a></h4><p>3D姿态估计：</p><p>3D error metric：测量预测位姿坐标与实际位姿坐标之间的平均距离</p><p><strong>MPJPE</strong>：<strong>平均每关节位置误差</strong> 在所有关节和所有姿势上平均的平均欧几里得误差，在对齐估计和地面真实3D姿势的人体根后计算</p><p><strong>PA-MPJAE</strong>（Procrustes Aligned MPJAE）：预测关节与真值关节刚性对齐后的<strong>MPJAE</strong>（平均每关节角误差）</p><p><strong>3DPCK</strong>：测量在一定距离阈值内正确估计关键点的百分比</p><p><strong>AUCrel</strong>：通过将 PCK 值与不同距离阈值绘制并积分曲线下的面积来计算的。该指标值越高，表明算法性能越好。</p><p>mesh估计：</p><p><strong>MPVE：</strong> 用于计算计算类似SMPL这种带有shape的人体的顶点（Vertex）误差</p>]]></content>
-    
-    
-    <summary type="html">3D人体姿态估计性能指标</summary>
-    
-    
-    
-    <category term="学习笔记" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="人体姿态估计" scheme="http://example.com/tags/%E4%BA%BA%E4%BD%93%E5%A7%BF%E6%80%81%E4%BC%B0%E8%AE%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>3D人体姿态估计简述——数据集</title>
-    <link href="http://example.com/2024/03/01/3D%E4%BA%BA%E4%BD%93%E5%A7%BF%E6%80%81%E4%BC%B0%E8%AE%A1%E7%AE%80%E8%BF%B0%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
-    <id>http://example.com/2024/03/01/3D%E4%BA%BA%E4%BD%93%E5%A7%BF%E6%80%81%E4%BC%B0%E8%AE%A1%E7%AE%80%E8%BF%B0%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E9%9B%86/</id>
-    <published>2024-03-01T07:25:05.000Z</published>
-    <updated>2024-06-30T07:26:18.873Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="Human3-6M"><a href="#Human3-6M" class="headerlink" title="Human3.6M"></a>Human3.6M</h3><p>由高速动作捕捉系统捕获的360万个人体姿势和相应的图像组成。有 4 个高分辨率逐行扫描摄像头以 50 Hz 采集视频数据。该数据集包含11位专业演员在讨论、吸烟、拍照、打电话等17个场景中的活动，并提供准确的3D关节位置和高分辨率视频。</p><p><strong>大小约为 200G</strong></p><p><strong>单人 单目摄像头 多视角（提供摄像头参数）</strong></p><h3 id="H3WB"><a href="#H3WB" class="headerlink" title="H3WB"></a>H3WB</h3><p>从Human3.6M中的视频编译成图像，允许在图像和注释之间建立正确的对应关系</p><h3 id="AGORA-2021"><a href="#AGORA-2021" class="headerlink" title="AGORA 2021"></a>AGORA 2021</h3><p>AGORA 是一个合成的人类数据集，具有高度的真实感和准确的地面真实性。它由大约 14K 训练和 3K 测试图像组成，通过使用基于图像的照明或渲染的 3D 环境渲染每张图像 5 到 15 人，注意使图像在物理上合理且逼真。AGORA 总共包含 173K 个个体作物。 AGORA 为图像中的每个主体提供 （1） SMPL&#x2F;SMPL-X 参数和 （2） 分割掩码。</p><p><strong>多人 单目摄像头 单视角</strong></p><h3 id="3DOH50K-2020"><a href="#3DOH50K-2020" class="headerlink" title="3DOH50K 2020"></a>3DOH50K 2020</h3><p><a class="link"   href="https://www.yangangwang.com/papers/ZHANG-OOH-2020-03.html" >Object-Occluded Human Shape and Pose Estimation from a Single Color Image (yangangwang.com) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><p>3DOH50K是第一个真正的3D人体数据集，用于遮挡场景中的人体重建和姿态估计问题。它包含 51600 张具有精确的 2D 姿态和 3D 姿态、SMPL 参数和二进制掩码的图像。</p><p><strong>针对人体遮挡</strong></p><p><strong>大小约为 13G</strong></p><p><strong>单人 单目 单视角</strong></p><h3 id="3DPW-2018"><a href="#3DPW-2018" class="headerlink" title="3DPW 2018"></a>3DPW 2018</h3><p><a class="link"   href="https://virtualhumans.mpi-inf.mpg.de/3DPW/evaluation.html" >3DPW系列 |真实的虚拟人 (mpg.de) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><p><strong>野外 3D</strong> 姿势数据集是第一个具有精确 3D 姿势进行评估的野外数据集。虽然户外存在其他数据集，但它们都仅限于较小的记录量。3DPW 是第一个包含从移动手机摄像头拍摄的视频片段的。</p><p><strong>大小约为 5G</strong></p><p><strong>多人 单目 单视角</strong></p><h3 id="MPI-INF-3DHP-2017"><a href="#MPI-INF-3DHP-2017" class="headerlink" title="MPI-INF-3DHP 2017"></a>MPI-INF-3DHP 2017</h3><p><a class="link"   href="https://vcai.mpi-inf.mpg.de/3dhp-dataset/" >Monocular 3D Human Pose Estimation In The Wild Using Improved CNN Supervision, 3DV 2017 (mpg.de) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><p><strong>MPI-INF-3DHP 是一个 3D</strong> 人体姿态估计数据集，由受约束的室内场景和复杂的室外场景组成。它记录了 8 名演员从 14 个摄像机视图执行 8 项活动。它由从 14 个摄像头捕获的 &gt;1.3M 帧组成。</p><p><strong>约30g</strong></p><p><strong>单人 单目 单视角</strong></p><h3 id="EMDB-2023"><a href="#EMDB-2023" class="headerlink" title="EMDB 2023"></a>EMDB 2023</h3><p><a class="link"   href="https://eth-ait.github.io/emdb/" >EMDB: The Electromagnetic Database of Global 3D Human Pose and Shape in the Wild (eth-ait.github.io) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><p>EMDB 包含使用手持 iPhone 录制的人类活动的野外视频。它具有参考 SMPL 身体姿势和形状参数，以及全局身体根部和相机轨迹。参考 3D 姿势是通过将 SMPL 联合拟合到 12 个可穿戴电磁传感器和图像数据中获得的。对于后者，我们拟合了一个神经隐式头像模型，以允许一个密集的像素级拟合目标。</p><p><strong>数据集需要申请 暂时没找到网盘资源</strong></p><p><strong>单人 单目 单视角</strong></p><h3 id="Panoptic-CMU-Panoptic-Studio-2016"><a href="#Panoptic-CMU-Panoptic-Studio-2016" class="headerlink" title="Panoptic (CMU Panoptic Studio) 2016"></a>Panoptic (CMU Panoptic Studio) 2016</h3><p><a class="link"   href="http://domedb.perception.cs.cmu.edu/" >CMU Panoptic Dataset <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><p>大型数据集，为多人参与社交活动提供 3D 姿势注释（150 万）。它包含 65 个带有多视图注释的视频（5.5 小时），但其中只有 17 个是多人场景并具有摄像机参数。</p><p><strong>65 个序列（5.5 小时）和 1.5 数百万个 3D 骨架</strong></p><p><strong>暂时没找到网盘资源</strong></p><p><strong>单&#x2F;多人 单目 多视角</strong></p>]]></content>
-    
-    
-    <summary type="html">3D人体姿态估计数据集调研</summary>
-    
-    
-    
-    <category term="学习笔记" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="人体姿态估计" scheme="http://example.com/tags/%E4%BA%BA%E4%BD%93%E5%A7%BF%E6%80%81%E4%BC%B0%E8%AE%A1/"/>
-    
-  </entry>
   
   <entry>
     <title>3D人体姿态估计简述</title>
@@ -80,11 +38,53 @@
   </entry>
   
   <entry>
+    <title>3D人体姿态估计简述——性能指标</title>
+    <link href="http://example.com/2024/02/28/3D%E4%BA%BA%E4%BD%93%E5%A7%BF%E6%80%81%E4%BC%B0%E8%AE%A1%E7%AE%80%E8%BF%B0%E2%80%94%E2%80%94%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87/"/>
+    <id>http://example.com/2024/02/28/3D%E4%BA%BA%E4%BD%93%E5%A7%BF%E6%80%81%E4%BC%B0%E8%AE%A1%E7%AE%80%E8%BF%B0%E2%80%94%E2%80%94%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87/</id>
+    <published>2024-02-28T07:26:46.000Z</published>
+    <updated>2024-06-30T07:36:18.868Z</updated>
+    
+    <content type="html"><![CDATA[<p><img                       lazyload                     src="/images/loading.svg"                     data-src="/../images/hpe/6.png"                      alt="image"                ></p><h4 id=""><a href="#" class="headerlink" title=""></a></h4><p>3D姿态估计：</p><p>3D error metric：测量预测位姿坐标与实际位姿坐标之间的平均距离</p><p><strong>MPJPE</strong>：<strong>平均每关节位置误差</strong> 在所有关节和所有姿势上平均的平均欧几里得误差，在对齐估计和地面真实3D姿势的人体根后计算</p><p><strong>PA-MPJAE</strong>（Procrustes Aligned MPJAE）：预测关节与真值关节刚性对齐后的<strong>MPJAE</strong>（平均每关节角误差）</p><p><strong>3DPCK</strong>：测量在一定距离阈值内正确估计关键点的百分比</p><p><strong>AUCrel</strong>：通过将 PCK 值与不同距离阈值绘制并积分曲线下的面积来计算的。该指标值越高，表明算法性能越好。</p><p>mesh估计：</p><p><strong>MPVE：</strong> 用于计算计算类似SMPL这种带有shape的人体的顶点（Vertex）误差</p>]]></content>
+    
+    
+    <summary type="html">3D人体姿态估计性能指标</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="人体姿态估计" scheme="http://example.com/tags/%E4%BA%BA%E4%BD%93%E5%A7%BF%E6%80%81%E4%BC%B0%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>3D人体姿态估计简述——数据集</title>
+    <link href="http://example.com/2024/02/28/3D%E4%BA%BA%E4%BD%93%E5%A7%BF%E6%80%81%E4%BC%B0%E8%AE%A1%E7%AE%80%E8%BF%B0%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E9%9B%86/"/>
+    <id>http://example.com/2024/02/28/3D%E4%BA%BA%E4%BD%93%E5%A7%BF%E6%80%81%E4%BC%B0%E8%AE%A1%E7%AE%80%E8%BF%B0%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E9%9B%86/</id>
+    <published>2024-02-28T07:25:05.000Z</published>
+    <updated>2024-06-30T07:36:22.540Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Human3-6M"><a href="#Human3-6M" class="headerlink" title="Human3.6M"></a>Human3.6M</h3><p>由高速动作捕捉系统捕获的360万个人体姿势和相应的图像组成。有 4 个高分辨率逐行扫描摄像头以 50 Hz 采集视频数据。该数据集包含11位专业演员在讨论、吸烟、拍照、打电话等17个场景中的活动，并提供准确的3D关节位置和高分辨率视频。</p><p><strong>大小约为 200G</strong></p><p><strong>单人 单目摄像头 多视角（提供摄像头参数）</strong></p><h3 id="H3WB"><a href="#H3WB" class="headerlink" title="H3WB"></a>H3WB</h3><p>从Human3.6M中的视频编译成图像，允许在图像和注释之间建立正确的对应关系</p><h3 id="AGORA-2021"><a href="#AGORA-2021" class="headerlink" title="AGORA 2021"></a>AGORA 2021</h3><p>AGORA 是一个合成的人类数据集，具有高度的真实感和准确的地面真实性。它由大约 14K 训练和 3K 测试图像组成，通过使用基于图像的照明或渲染的 3D 环境渲染每张图像 5 到 15 人，注意使图像在物理上合理且逼真。AGORA 总共包含 173K 个个体作物。 AGORA 为图像中的每个主体提供 （1） SMPL&#x2F;SMPL-X 参数和 （2） 分割掩码。</p><p><strong>多人 单目摄像头 单视角</strong></p><h3 id="3DOH50K-2020"><a href="#3DOH50K-2020" class="headerlink" title="3DOH50K 2020"></a>3DOH50K 2020</h3><p><a class="link"   href="https://www.yangangwang.com/papers/ZHANG-OOH-2020-03.html" >Object-Occluded Human Shape and Pose Estimation from a Single Color Image (yangangwang.com) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><p>3DOH50K是第一个真正的3D人体数据集，用于遮挡场景中的人体重建和姿态估计问题。它包含 51600 张具有精确的 2D 姿态和 3D 姿态、SMPL 参数和二进制掩码的图像。</p><p><strong>针对人体遮挡</strong></p><p><strong>大小约为 13G</strong></p><p><strong>单人 单目 单视角</strong></p><h3 id="3DPW-2018"><a href="#3DPW-2018" class="headerlink" title="3DPW 2018"></a>3DPW 2018</h3><p><a class="link"   href="https://virtualhumans.mpi-inf.mpg.de/3DPW/evaluation.html" >3DPW系列 |真实的虚拟人 (mpg.de) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><p><strong>野外 3D</strong> 姿势数据集是第一个具有精确 3D 姿势进行评估的野外数据集。虽然户外存在其他数据集，但它们都仅限于较小的记录量。3DPW 是第一个包含从移动手机摄像头拍摄的视频片段的。</p><p><strong>大小约为 5G</strong></p><p><strong>多人 单目 单视角</strong></p><h3 id="MPI-INF-3DHP-2017"><a href="#MPI-INF-3DHP-2017" class="headerlink" title="MPI-INF-3DHP 2017"></a>MPI-INF-3DHP 2017</h3><p><a class="link"   href="https://vcai.mpi-inf.mpg.de/3dhp-dataset/" >Monocular 3D Human Pose Estimation In The Wild Using Improved CNN Supervision, 3DV 2017 (mpg.de) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><p><strong>MPI-INF-3DHP 是一个 3D</strong> 人体姿态估计数据集，由受约束的室内场景和复杂的室外场景组成。它记录了 8 名演员从 14 个摄像机视图执行 8 项活动。它由从 14 个摄像头捕获的 &gt;1.3M 帧组成。</p><p><strong>约30g</strong></p><p><strong>单人 单目 单视角</strong></p><h3 id="EMDB-2023"><a href="#EMDB-2023" class="headerlink" title="EMDB 2023"></a>EMDB 2023</h3><p><a class="link"   href="https://eth-ait.github.io/emdb/" >EMDB: The Electromagnetic Database of Global 3D Human Pose and Shape in the Wild (eth-ait.github.io) <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><p>EMDB 包含使用手持 iPhone 录制的人类活动的野外视频。它具有参考 SMPL 身体姿势和形状参数，以及全局身体根部和相机轨迹。参考 3D 姿势是通过将 SMPL 联合拟合到 12 个可穿戴电磁传感器和图像数据中获得的。对于后者，我们拟合了一个神经隐式头像模型，以允许一个密集的像素级拟合目标。</p><p><strong>数据集需要申请 暂时没找到网盘资源</strong></p><p><strong>单人 单目 单视角</strong></p><h3 id="Panoptic-CMU-Panoptic-Studio-2016"><a href="#Panoptic-CMU-Panoptic-Studio-2016" class="headerlink" title="Panoptic (CMU Panoptic Studio) 2016"></a>Panoptic (CMU Panoptic Studio) 2016</h3><p><a class="link"   href="http://domedb.perception.cs.cmu.edu/" >CMU Panoptic Dataset <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p><p>大型数据集，为多人参与社交活动提供 3D 姿势注释（150 万）。它包含 65 个带有多视图注释的视频（5.5 小时），但其中只有 17 个是多人场景并具有摄像机参数。</p><p><strong>65 个序列（5.5 小时）和 1.5 数百万个 3D 骨架</strong></p><p><strong>暂时没找到网盘资源</strong></p><p><strong>单&#x2F;多人 单目 多视角</strong></p>]]></content>
+    
+    
+    <summary type="html">3D人体姿态估计数据集调研</summary>
+    
+    
+    
+    <category term="学习笔记" scheme="http://example.com/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="人体姿态估计" scheme="http://example.com/tags/%E4%BA%BA%E4%BD%93%E5%A7%BF%E6%80%81%E4%BC%B0%E8%AE%A1/"/>
+    
+  </entry>
+  
+  <entry>
     <title>3D人体姿态估计——简述</title>
-    <link href="http://example.com/2024/03/01/3D%E4%BA%BA%E4%BD%93%E5%A7%BF%E6%80%81%E4%BC%B0%E8%AE%A1%E2%80%94%E2%80%94%E7%AE%80%E8%BF%B0/"/>
-    <id>http://example.com/2024/03/01/3D%E4%BA%BA%E4%BD%93%E5%A7%BF%E6%80%81%E4%BC%B0%E8%AE%A1%E2%80%94%E2%80%94%E7%AE%80%E8%BF%B0/</id>
-    <published>2024-03-01T07:16:54.000Z</published>
-    <updated>2024-06-30T07:25:47.649Z</updated>
+    <link href="http://example.com/2024/02/28/3D%E4%BA%BA%E4%BD%93%E5%A7%BF%E6%80%81%E4%BC%B0%E8%AE%A1%E2%80%94%E2%80%94%E7%AE%80%E8%BF%B0/"/>
+    <id>http://example.com/2024/02/28/3D%E4%BA%BA%E4%BD%93%E5%A7%BF%E6%80%81%E4%BC%B0%E8%AE%A1%E2%80%94%E2%80%94%E7%AE%80%E8%BF%B0/</id>
+    <published>2024-02-28T07:16:54.000Z</published>
+    <updated>2024-06-30T07:36:25.927Z</updated>
     
     <content type="html"><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>3D Human Pose Estimation（以下简称 3D HPE ）的目标是在三维空间中估计人体关键点的位置。</p><p>3D HPE 的应用非常广泛，包括人机交互、运动分析、康复训练等，它也可以为其他计算机视觉任务（例如行为识别）提供 skeleton 等方面的信息。</p><p>关于人体的表示一般有两种方式：第一种以骨架的形式表示人体姿态，由一系列的人体关键点和关键点之间的连线构成；另一种是参数化的人体模型（如 SMPL [2]），以 mesh 形式表示人体姿态和体型。</p><p><img                       lazyload                     src="/images/loading.svg"                     data-src="/../images/hpe/1.png"                      alt="image"                ></p><h4 id="主要问题"><a href="#主要问题" class="headerlink" title="主要问题"></a>主要问题</h4><p>一方面，受数据采集难度的限制，目前大多数方法都是基于单目图像或视频的，而从 <strong>2D 图像到 3D 姿态的映射</strong>本就是一个多解问题。另一方面，深度学习算法依赖于大量的训练数据，但由于 3D 姿态标注的难度和成本都比较高，目前的主流数据集基本都是在实验室环境下采集的，这势必会影响到算法在户外数据上的泛化性能。另外，2D HPE 面临的一些难题（例如<strong>自遮挡</strong>）同样也是 3D HPE 亟待解决的问题。</p><h3 id="主流算法"><a href="#主流算法" class="headerlink" title="主流算法"></a>主流算法</h3><h4 id="基于单目图像的方法"><a href="#基于单目图像的方法" class="headerlink" title="基于单目图像的方法"></a><strong>基于单目图像的方法</strong></h4><h5 id="直接预测"><a href="#直接预测" class="headerlink" title="直接预测"></a>直接预测</h5><p>不依赖 2D HPE，直接从图像回归得到 3D 关键点坐标</p><p>例如 C2F-Vol  <em>（Coarse-to-Fine Volumetric Prediction for Single-Image 3D Human Pose）</em>  借鉴了 2D HPE 中的 Hourglass 网络结构，并以 3D Heatmap 的形式表示 3D pose。为了降低三维数据带来的巨大存储消耗，采用了在 depth 维度上逐渐提升分辨率的方法。</p><p><img                       lazyload                     src="/images/loading.svg"                     data-src="/../images/hpe/2.png"                      alt="image"                ></p><h5 id="2D-to-3D-Lifting"><a href="#2D-to-3D-Lifting" class="headerlink" title="2D-to-3D Lifting"></a>2D-to-3D Lifting</h5><p>以 2D HPE 作为中间步骤，根据 2D pose（和原始图像特征）去估计 3D pose。</p><p>例如 SimpleBaseline3D  <em>（A simple yet effective baseline for 3d human pose estimation）</em>  以 2D 关键点坐标作为输入，通过残差连接的全连接层直接将 2D pose 映射到 3D 空间。</p><p><img                       lazyload                     src="/images/loading.svg"                     data-src="/../images/hpe/3.png"                      alt="image"                ></p><h4 id="基于多目图像的方法"><a href="#基于多目图像的方法" class="headerlink" title="基于多目图像的方法"></a><strong>基于多目图像的方法</strong></h4><p>从多目图像中重建 3D pose</p><p>关键在于如何确定场景中同一个点在不同视角下的位置关系</p><p>例如  <em>(Weakly-Supervised Discovery of Geometry-Aware Representation for 3D Human Pose Estimation)</em>  同时输入两个视角的图像，对于其中某一个视角的 2D pose 输入，根据两个视角间的转换关系，预测另一个视角的 3D pose 输出。</p><p><img                       lazyload                     src="/images/loading.svg"                     data-src="/../images/hpe/4.png"                      alt="image"                ><br><img                       lazyload                     src="/images/loading.svg"                     data-src="/../images/hpe/5.png"                      alt="image"                ></p><h4 id="基于视频的方法"><a href="#基于视频的方法" class="headerlink" title="基于视频的方法"></a><strong>基于视频的方法</strong></h4><p>引入时间维度上的信息</p><p>相邻帧提供的上下文信息可以帮助我们更好地预测当前帧的姿态，对于<strong>遮挡情况</strong>，也可以根据前后几帧的姿态做一些合理推测。</p><h4 id="其他方法"><a href="#其他方法" class="headerlink" title="其他方法"></a>其他方法</h4><p>除了 RGB 图像以外，也有越来越多的传感器被应用于 3D HPE 任务中。常见的有深度相机、雷达、IMU（惯性测量单元）等。深度相机和雷达都提供了三维空间上的信息，这对于 3D HPE 来说非常重要，可以帮助缓解或消除深度不确定性问题。IMU 设备可以提供关节方向信息，它不依赖于视觉信号，因此可以帮助解决遮挡问题。</p>]]></content>
     
