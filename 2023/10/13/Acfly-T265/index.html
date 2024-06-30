@@ -26,7 +26,7 @@
 <meta property="og:description" content="基于Jetson平台，搭建Mavros，并配置T265为Acfly飞控提供定位">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2023-10-13T09:14:53.000Z">
-<meta property="article:modified_time" content="2023-10-13T09:15:40.989Z">
+<meta property="article:modified_time" content="2024-06-30T07:41:29.573Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="无人机">
 <meta property="article:tag" content="双目相机">
@@ -369,8 +369,8 @@
     
         <span class="article-date article-meta-item">
             <i class="fa-regular fa-wrench"></i>&nbsp;
-            <span class="desktop">2023-10-13 17:15:40</span>
-            <span class="mobile">2023-10-13 17:15</span>
+            <span class="desktop">2024-06-30 15:41:29</span>
+            <span class="mobile">2024-06-30 15:41</span>
             <span class="hover-info">Updated</span>
         </span>
     
@@ -448,12 +448,15 @@
 
 <h2 id="安装T265及相关包"><a href="#安装T265及相关包" class="headerlink" title="安装T265及相关包"></a>安装T265及相关包</h2><div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~/acfly_ws/src</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/thien94/vision_to_mavros.git</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/IntelRealSense/librealsense.git</span><br><span class="line"><span class="built_in">cd</span> ~/acfly_ws &amp;&amp; catkin build</span><br></pre></td></tr></table></figure></div>
 
-<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 第一个终端</span><br><span class="line"># 打开t265</span><br><span class="line">roslaunch realsense2_camera rs_t265.launch</span><br><span class="line"></span><br><span class="line"># 第二个终端</span><br><span class="line"># 添加权限</span><br><span class="line">sudo chmod 777 /dev/ttyAMA0</span><br><span class="line">roslaunch mavros acfly.launch fcu_url:=/dev/ttyUSB0:57600</span><br><span class="line"></span><br><span class="line"># 第三个终端</span><br><span class="line"># 此处需要先source前一步安装mavros工作空间中的setup.bash</span><br><span class="line">source devel/setup.bash</span><br><span class="line">roslaunch vision_to_mavros t265_tf_to_mavros.launch</span><br></pre></td></tr></table></figure></div>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><div class="highlight-container" data-rel="Plaintext"><figure class="iseeu highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 第一个终端</span><br><span class="line"># 打开t265</span><br><span class="line">roslaunch realsense2_camera rs_t265.launch</span><br><span class="line"></span><br><span class="line"># 第二个终端</span><br><span class="line"># 添加权限</span><br><span class="line">sudo chmod 777 /dev/ttyUSB0</span><br><span class="line">roslaunch mavros acfly.launch fcu_url:=/dev/ttyUSB0:57600</span><br><span class="line"></span><br><span class="line"># 第三个终端</span><br><span class="line"># 此处需要先source前一步安装mavros工作空间中的setup.bash</span><br><span class="line">source devel/setup.bash</span><br><span class="line">roslaunch vision_to_mavros t265_tf_to_mavros.launch</span><br></pre></td></tr></table></figure></div>
 <p>或者单独写一个launch文件 <code>start_all.launch</code></p>
 <div class="highlight-container" data-rel="Xml"><figure class="iseeu highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">launch</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">include</span> <span class="attr">file</span>=<span class="string">&quot;$(find realsense2_camera)/launch/rs_t265.launch&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">include</span> <span class="attr">file</span>=<span class="string">&quot;$(find mavros)/launch/acfly.launch&quot;</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">include</span> <span class="attr">file</span>=<span class="string">&quot;$(find vision_to_mavros)/launch/t265_tf_to_mavros.launch&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">launch</span>&gt;</span></span><br></pre></td></tr></table></figure></div>
 <p>将文件放在新的ros包 <code>atart_all</code> 中 执行</p>
 <div class="highlight-container" data-rel="Bash"><figure class="iseeu highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">roslaunch atart_all start_all.launch</span><br></pre></td></tr></table></figure></div>
 
+<blockquote>
+<p>请注意<br><code>roslaunch mavros acfly.launch fcu_url:=/dev/ttyUSB0:57600</code><br>中的 <code>fcu_url</code> 请修改为对应 mavlink 输出串口及波特率（也可以直接在launch文件中修改）</p>
+</blockquote>
 <h2 id="其他-使用指南"><a href="#其他-使用指南" class="headerlink" title="其他 使用指南"></a>其他 使用指南</h2><blockquote>
 <p>acfly-mavros 作者提供了使用指南及二次开发指南<br><a class="link"   target="_blank" rel="noopener" href="https://github.com/LauZanMo/acfly-mavros/blob/acfly-develop/acfly-mavros%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97.md" >使用指南 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a><br><a class="link"   target="_blank" rel="noopener" href="https://github.com/LauZanMo/acfly-mavros/blob/acfly-develop/acfly-mavros%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97.md" >二次开发指南 <i class="fa-regular fa-arrow-up-right-from-square fa-sm"></i></a></p>
 </blockquote>
@@ -469,7 +472,7 @@
         <li><strong>Created at:</strong> 2023-10-13 17:14:53</li>
         
             <li>
-                <strong>Updated at:</strong> 2023-10-13 17:15:40
+                <strong>Updated at:</strong> 2024-06-30 15:41:29
             </li>
         
         <li>
