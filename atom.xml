@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-06-30T07:28:02.418Z</updated>
+  <updated>2024-06-30T07:35:22.818Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://example.com/2024/03/30/3D%E4%BA%BA%E4%BD%93%E5%A7%BF%E6%80%81%E4%BC%B0%E8%AE%A1%E7%AE%80%E8%BF%B0%E2%80%94%E2%80%94%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87/"/>
     <id>http://example.com/2024/03/30/3D%E4%BA%BA%E4%BD%93%E5%A7%BF%E6%80%81%E4%BC%B0%E8%AE%A1%E7%AE%80%E8%BF%B0%E2%80%94%E2%80%94%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87/</id>
     <published>2024-03-30T07:26:46.000Z</published>
-    <updated>2024-06-30T07:28:02.418Z</updated>
+    <updated>2024-06-30T07:35:22.818Z</updated>
     
-    <content type="html"><![CDATA[<p><img                       lazyload                     src="/images/loading.svg"                     data-src="/../images/hpe/6.png"                      alt="image"                ></p><h4 id=""><a href="#" class="headerlink" title=""></a></h4><p>3D姿态估计：</p><p>3D error metric：测量预测位姿坐标与实际位姿坐标之间的平均距离</p><p><strong>MPJPE</strong>：<strong>平均每关节位置误差</strong> 在所有关节和所有姿势上平均的平均欧几里得误差，在对齐估计和地面真实3D姿势的人体根后计算</p><p><strong>PA-MPJAE</strong>（Procrustes Aligned MPJAE）：预测关节与真值关节刚性对齐后的<strong>MPJAE</strong>（平均每关节角误差）</p><p>3DPCK：测量在一定距离阈值内正确估计关键点的百分比</p><p>AUCrel：通过将 PCK 值与不同距离阈值绘制并积分曲线下的面积来计算的。该指标值越高，表明算法性能越好。</p><p>mesh估计：</p><p><strong>MPVE：</strong> 用于计算计算类似SMPL这种带有shape的人体的顶点（Vertex）误差</p>]]></content>
+    <content type="html"><![CDATA[<p><img                       lazyload                     src="/images/loading.svg"                     data-src="/../images/hpe/6.png"                      alt="image"                ></p><h4 id=""><a href="#" class="headerlink" title=""></a></h4><p>3D姿态估计：</p><p>3D error metric：测量预测位姿坐标与实际位姿坐标之间的平均距离</p><p><strong>MPJPE</strong>：<strong>平均每关节位置误差</strong> 在所有关节和所有姿势上平均的平均欧几里得误差，在对齐估计和地面真实3D姿势的人体根后计算</p><p><strong>PA-MPJAE</strong>（Procrustes Aligned MPJAE）：预测关节与真值关节刚性对齐后的<strong>MPJAE</strong>（平均每关节角误差）</p><p><strong>3DPCK</strong>：测量在一定距离阈值内正确估计关键点的百分比</p><p><strong>AUCrel</strong>：通过将 PCK 值与不同距离阈值绘制并积分曲线下的面积来计算的。该指标值越高，表明算法性能越好。</p><p>mesh估计：</p><p><strong>MPVE：</strong> 用于计算计算类似SMPL这种带有shape的人体的顶点（Vertex）误差</p>]]></content>
     
     
     <summary type="html">3D人体姿态估计性能指标</summary>
