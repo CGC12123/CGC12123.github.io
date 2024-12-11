@@ -1,3 +1,4 @@
+http://example.com/tags/index.html
 http://example.com/2023/10/13/Acfly-T265/
 http://example.com/2024/02/28/3D%E4%BA%BA%E4%BD%93%E5%A7%BF%E6%80%81%E4%BC%B0%E8%AE%A1%E2%80%94%E2%80%94%E7%AE%80%E8%BF%B0/
 http://example.com/2024/02/28/3D%E4%BA%BA%E4%BD%93%E5%A7%BF%E6%80%81%E4%BC%B0%E8%AE%A1%E7%AE%80%E8%BF%B0%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E9%9B%86/
@@ -41,7 +42,6 @@ http://example.com/2023/03/22/%E4%BD%BF%E7%94%A8mmdet%E5%BF%AB%E9%80%9F%E6%90%AD
 http://example.com/about/index.html
 http://example.com/categories/index.html
 http://example.com/archives/index.html
-http://example.com/tags/index.html
 http://example.com/
 http://example.com/tags/Conda/
 http://example.com/tags/Python/
